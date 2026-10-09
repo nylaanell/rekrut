@@ -1,0 +1,299 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Formulir Lamaran Kerja - Step 2 (Keluarga) - PT Gagah Putera Satria</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Bootstrap CSS & Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"/>
+
+    <!-- File Style Custom Utama -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="detail-karyawan.css">
+
+    <!-- Styling Tambahan agar Ukuran & Tinggi Input Sama Persis dengan Step 1 -->
+    <style>
+      .detail-container-compact {
+        max-width: 680px;
+        margin: 0 auto;
+        width: 100%;
+      }
+      .card-detail-wrapper {
+        background-color: #ffffff;
+        border-radius: 12px;
+        overflow: hidden;
+        border: 1px solid rgba(0,0,0,0.08);
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+      }
+      .header-blue-banner {
+        background-color: #1677ff;
+      }
+      /* Menyamakan persis tinggi & padding field text dan dropdown agar sama persis dengan step 1 */
+      .form-control-sm, .form-select-sm {
+        padding: 6px 10px !important;
+        font-size: 12px !important;
+        height: calc(1.5em + 0.75rem + 2px);
+      }
+    </style>
+  </head>
+  <body class="bg-body-tertiary">
+
+    <!-- 1. HEADER / NAVBAR DENGAN TOMBOL BACK YANG DISAMAKAN -->
+    <header class="header">
+      <div class="div">
+        <a href="index.html" class="btn-back-figma" title="Kembali ke Beranda">
+          <i class="bi bi-arrow-left"></i>
+        </a>
+        <div class="brand-container">
+          <img class="gps-logo-img" src="images/logo.png" alt="Logo GPS" />
+          <div class="brand-text">
+            <div class="brand-title-top">PORTAL LAYANAN</div>
+            <div class="brand-title-main">LOWONGAN KERJA</div>
+          </div>
+        </div>
+
+        <div class="nav-right-container">
+          <nav class="nav-menu">
+            <a href="index.html" class="text-wrapper-2 text-decoration-none">Beranda</a>
+            <a href="index.html#lowongan" class="text-wrapper-2 text-decoration-none">Lowongan</a>
+            <a href="index.html#cek-status" class="text-wrapper-2 text-decoration-none">Cek Status</a>
+          </nav>
+          <a href="login.html" class="btn btn-primary px-3 py-1 rounded-pill text-white text-decoration-none fw-medium shadow-sm" style="background-color: #1677ff; border: none; font-size: 12.5px;">Masuk</a>
+        </div>
+      </div>
+    </header>
+
+    <!-- 2. MAIN CONTENT AREA -->
+    <div class="dashboard-hrd-admin py-4">
+        <main class="detail-container-compact">
+            
+            <!-- JUDUL & STEPPER -->
+            <div class="text-center mb-3">
+              <h1 class="fw-bold fs-4 mb-1 text-dark" style="font-family: 'Poppins', sans-serif;">Form Lamaran Kerja</h1>
+              <p class="text-muted small mb-4" id="posisiDilamarText" style="font-size: 13px;">Posisi dilamar: IT Support</p>
+            </div>
+
+            <!-- STEPPER INDICATOR -->
+            <div class="position-relative mb-5" style="max-width: 540px; margin: 0 auto;">
+              <!-- Garis Abu-abu (Background) -->
+              <div class="position-absolute bg-secondary-subtle" style="top: 20px; left: 35px; right: 55px; height: 3px; z-index: 1;"></div>
+              <!-- Garis Biru (Progress Aktif: 25%) -->
+              <div class="position-absolute bg-primary" style="top: 20px; left: 35px; width: 20%; height: 3px; z-index: 1; transition: width 0.3s ease;"></div>
+              
+              <div class="d-flex justify-content-between align-items-center position-relative" style="z-index: 2;">
+                <div class="d-flex flex-column align-items-center">
+                  <div class="rounded-circle text-white d-flex align-items-center justify-content-center fw-semibold shadow-sm" style="width: 40px; height: 40px; font-size: 13px; background-color: #1677ff;"><i class="bi bi-check-lg"></i></div>
+                  <span style="font-size: 11px;" class="mt-1 text-muted text-nowrap">Data pribadi</span>
+                </div>
+                <div class="d-flex flex-column align-items-center">
+                  <div class="rounded-circle text-white d-flex align-items-center justify-content-center fw-semibold shadow-sm" style="width: 40px; height: 40px; font-size: 13px; background-color: #1677ff;">2</div>
+                  <span style="font-size: 11px;" class="mt-1 fw-medium text-dark text-nowrap">Keluarga</span>
+                </div>
+                <div class="d-flex flex-column align-items-center">
+                  <div class="rounded-circle text-muted bg-secondary-subtle d-flex align-items-center justify-content-center fw-semibold shadow-sm" style="width: 40px; height: 40px; font-size: 13px;">3</div>
+                  <span style="font-size: 11px;" class="mt-1 text-muted text-nowrap">Pendidikan</span>
+                </div>
+                <div class="d-flex flex-column align-items-center">
+                  <div class="rounded-circle text-muted bg-secondary-subtle d-flex align-items-center justify-content-center fw-semibold shadow-sm" style="width: 40px; height: 40px; font-size: 13px;">4</div>
+                  <span style="font-size: 11px;" class="mt-1 text-muted text-nowrap">Pekerjaan</span>
+                </div>
+                <div class="d-flex flex-column align-items-center">
+                  <div class="rounded-circle text-muted bg-secondary-subtle d-flex align-items-center justify-content-center fw-semibold shadow-sm" style="width: 40px; height: 40px; font-size: 13px;">5</div>
+                  <span style="font-size: 11px;" class="mt-1 text-muted text-nowrap">Dokumen & Tambahan</span>
+                </div>
+              </div>
+            </div>
+            
+            <form id="formKeluarga" class="needs-validation" novalidate>
+                <div class="card-detail-wrapper mb-4">
+                    
+                    <!-- Header Banner Biru -->
+                    <div class="header-blue-banner py-3 px-4">
+                        <h2 class="text-white mb-0" style="font-size: 15px; font-weight: 600;">Keluarga</h2>
+                        <p class="text-white mb-0" style="font-size: 11px; opacity: 0.9;">Lengkapi bagian wajib terlebih dahulu, bagian opsional ada di bawahnya.</p>
+                    </div>
+
+                    <!-- Card Body Form (Wajib) -->
+                    <div class="p-4 pb-0">
+                        <div class="fw-semibold text-danger mb-3" style="font-size: 12px;">*Wajib diisi</div>
+
+                        <!-- Data Ayah -->
+                        <div class="fw-bold text-dark mb-2" style="font-size: 13px;">Ayah</div>
+                        <div class="vstack gap-3 mb-3">
+                            <div>
+                                <label for="namaAyah" class="form-label text-dark fw-medium mb-1" style="font-size: 12px;">Nama lengkap</label>
+                                <input type="text" id="namaAyah" class="form-control form-control-sm rounded-2" placeholder="Nama lengkap ayah" required />
+                            </div>
+                            <div>
+                                <label for="usiaAyah" class="form-label text-dark fw-medium mb-1" style="font-size: 12px;">Usia</label>
+                                <input type="number" id="usiaAyah" class="form-control form-control-sm rounded-2" placeholder="Usia ayah" required />
+                            </div>
+                            <div>
+                                <label for="pekerjaanAyah" class="form-label text-dark fw-medium mb-1" style="font-size: 12px;">Pekerjaan</label>
+                                <input type="text" id="pekerjaanAyah" class="form-control form-control-sm rounded-2" placeholder="Pekerjaan ayah" required />
+                            </div>
+                        </div>
+
+                        <hr class="text-secondary opacity-25 my-3">
+
+                        <!-- Data Ibu -->
+                        <div class="fw-bold text-dark mb-2" style="font-size: 13px;">Ibu</div>
+                        <div class="vstack gap-3 mb-2">
+                            <div>
+                                <label for="namaIbu" class="form-label text-dark fw-medium mb-1" style="font-size: 12px;">Nama lengkap</label>
+                                <input type="text" id="namaIbu" class="form-control form-control-sm rounded-2" placeholder="Nama lengkap ibu" required />
+                            </div>
+                            <div>
+                                <label for="usiaIbu" class="form-label text-dark fw-medium mb-1" style="font-size: 12px;">Usia</label>
+                                <input type="number" id="usiaIbu" class="form-control form-control-sm rounded-2" placeholder="Usia ibu" required />
+                            </div>
+                            <div>
+                                <label for="pekerjaanIbu" class="form-label text-dark fw-medium mb-1" style="font-size: 12px;">Pekerjaan</label>
+                                <input type="text" id="pekerjaanIbu" class="form-control form-control-sm rounded-2" placeholder="Pekerjaan ibu" required />
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- BAGIAN OPSIONAL (Disamakan dengan Step 1 + Container Dinamis untuk Tambah Field) -->
+                    <div class="p-4 mt-3" style="background-color: #e6f4ff; border-top: 1px solid #bae0ff;">
+                        <div class="fw-semibold text-dark mb-3" style="font-size: 12px;">*Opsional</div>
+                        <div class="vstack gap-3">
+                            <!-- Saudara Kandung -->
+                            <div class="bg-white p-3 rounded-2 border shadow-sm">
+                                <div class="d-flex align-items-center justify-content-between">
+                                    <span class="fw-medium text-dark" style="font-size: 12px;">Saudara Kandung</span>
+                                    <button type="button" class="btn btn-primary px-3 py-1 rounded-2 fw-medium text-white shadow-sm" onclick="tambahField('containerSaudara', 'Nama Saudara Kandung')" style="font-size: 11.5px; background-color: #1677ff; border: none;">+ Tambah</button>
+                                </div>
+                                <div id="containerSaudara" class="vstack gap-2 mt-2"></div>
+                            </div>
+
+                            <!-- Suami/Istri -->
+                            <div class="bg-white p-3 rounded-2 border shadow-sm">
+                                <div class="d-flex align-items-center justify-content-between">
+                                    <span class="fw-medium text-dark" style="font-size: 12px;">Suami/Istri</span>
+                                    <button type="button" class="btn btn-primary px-3 py-1 rounded-2 fw-medium text-white shadow-sm" onclick="tambahField('containerPasangan', 'Nama Suami/Istri')" style="font-size: 11.5px; background-color: #1677ff; border: none;">+ Tambah</button>
+                                </div>
+                                <div id="containerPasangan" class="vstack gap-2 mt-2"></div>
+                            </div>
+
+                            <!-- Anak -->
+                            <div class="bg-white p-3 rounded-2 border shadow-sm">
+                                <div class="d-flex align-items-center justify-content-between">
+                                    <span class="fw-medium text-dark" style="font-size: 12px;">Anak</span>
+                                    <button type="button" class="btn btn-primary px-3 py-1 rounded-2 fw-medium text-white shadow-sm" onclick="tambahField('containerAnak', 'Nama Anak')" style="font-size: 11.5px; background-color: #1677ff; border: none;">+ Tambah</button>
+                                </div>
+                                <div id="containerAnak" class="vstack gap-2 mt-2"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- ACTION BUTTONS -->
+                <div class="d-flex align-items-center justify-content-between mb-4 px-2">
+                    <a href="form-lamaran-1.html" class="btn btn-secondary px-3 py-1.5 fw-medium rounded-2 text-dark text-decoration-none shadow-sm" style="background-color: #e4e6eb; border: none; font-size: 12.5px;">Kembali ke step sebelumnya</a>
+                    <button type="submit" class="btn btn-primary px-3.5 py-1.5 rounded-2 fw-medium text-white shadow-sm" style="font-size: 12.5px; background-color: #1677ff; border: none;">Lanjut ke step berikutnya</button>
+                </div>
+
+            </form>
+        </main>
+    </div>
+
+    <!-- Bootstrap JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- Script Perbaikan Navigasi & Penyimpanan Data Aman -->
+    <script>
+      function tambahField(containerId, placeholderText, nilaiTeks = '') {
+          const container = document.getElementById(containerId);
+          
+          const wrapper = document.createElement('div');
+          wrapper.className = 'input-group input-group-sm mb-2';
+          
+          const input = document.createElement('input');
+          input.type = 'text';
+          input.className = 'form-control form-control-sm rounded-2';
+          input.placeholder = placeholderText;
+          input.value = nilaiTeks;
+          
+          const deleteBtn = document.createElement('button');
+          deleteBtn.type = 'button';
+          deleteBtn.className = 'btn btn-outline-danger btn-sm rounded-2 ms-2';
+          deleteBtn.innerHTML = '<i class="bi bi-trash"></i>';
+          deleteBtn.onclick = function() {
+              container.removeChild(wrapper);
+          };
+          
+          wrapper.appendChild(input);
+          wrapper.appendChild(deleteBtn);
+          container.appendChild(wrapper);
+      }
+
+      document.addEventListener("DOMContentLoaded", function () {
+          // 1. SINKRONISASI POSISI LOWONGAN
+          const posisiTerpilih = localStorage.getItem("formDataPosisi") || "IT Support";
+          const posisiTextEl = document.getElementById("posisiDilamarText");
+          if (posisiTextEl) {
+              posisiTextEl.innerText = "Posisi dilamar: " + posisiTerpilih;
+          }
+
+          // 2. MUAT KEMBALI DATA UTAMA KELUARGA
+          if (localStorage.getItem("formDataNamaAyah")) document.getElementById("namaAyah").value = localStorage.getItem("formDataNamaAyah");
+          if (localStorage.getItem("formDataUsiaAyah")) document.getElementById("usiaAyah").value = localStorage.getItem("formDataUsiaAyah");
+          if (localStorage.getItem("formDataPekerjaanAyah")) document.getElementById("pekerjaanAyah").value = localStorage.getItem("formDataPekerjaanAyah");
+          
+          if (localStorage.getItem("formDataNamaIbu")) document.getElementById("namaIbu").value = localStorage.getItem("formDataNamaIbu");
+          if (localStorage.getItem("formDataUsiaIbu")) document.getElementById("usiaIbu").value = localStorage.getItem("formDataUsiaIbu");
+          if (localStorage.getItem("formDataPekerjaanIbu")) document.getElementById("pekerjaanIbu").value = localStorage.getItem("formDataPekerjaanIbu");
+
+          // 3. MUAT KEMBALI DATA OPSIONAL DINAMIS
+          const savedSaudara = JSON.parse(localStorage.getItem("formDataSaudara") || "[]");
+          savedSaudara.forEach(nama => tambahField('containerSaudara', 'Nama Saudara Kandung', nama));
+
+          const savedPasangan = JSON.parse(localStorage.getItem("formDataPasangan") || "[]");
+          savedPasangan.forEach(nama => tambahField('containerPasangan', 'Nama Suami/Istri', nama));
+
+          const savedAnak = JSON.parse(localStorage.getItem("formDataAnak") || "[]");
+          savedAnak.forEach(nama => tambahField('containerAnak', 'Nama Anak', nama));
+
+          // 4. TOMBOL LANJUT DIKLIK (Menggunakan tipe button biasa agar tidak terhalang validasi wajib HTML5)
+          const formKeluarga = document.getElementById("formKeluarga");
+
+          if (formKeluarga) {
+              formKeluarga.addEventListener("submit", function (e) {
+                  e.preventDefault(); 
+                  
+                  // Simpan data utama
+                  localStorage.setItem("formDataNamaAyah", document.getElementById("namaAyah").value);
+                  localStorage.setItem("formDataUsiaAyah", document.getElementById("usiaAyah").value);
+                  localStorage.setItem("formDataPekerjaanAyah", document.getElementById("pekerjaanAyah").value);
+                  
+                  localStorage.setItem("formDataNamaIbu", document.getElementById("namaIbu").value);
+                  localStorage.setItem("formDataUsiaIbu", document.getElementById("usiaIbu").value);
+                  localStorage.setItem("formDataPekerjaanIbu", document.getElementById("pekerjaanIbu").value);
+
+                  // Simpan data opsional dinamis
+                  const arrSaudara = Array.from(document.querySelectorAll('#containerSaudara input')).map(input => input.value).filter(val => val.trim() !== "");
+                  localStorage.setItem("formDataSaudara", JSON.stringify(arrSaudara));
+
+                  const arrPasangan = Array.from(document.querySelectorAll('#containerPasangan input')).map(input => input.value).filter(val => val.trim() !== "");
+                  localStorage.setItem("formDataPasangan", JSON.stringify(arrPasangan));
+
+                  const arrAnak = Array.from(document.querySelectorAll('#containerAnak input')).map(input => input.value).filter(val => val.trim() !== "");
+                  localStorage.setItem("formDataAnak", JSON.stringify(arrAnak));
+
+                  // Pindah ke step 3
+                  window.location.href = "form-lamaran-3.html";
+              });
+          }
+      });
+    </script>
+  </body>
+</html>

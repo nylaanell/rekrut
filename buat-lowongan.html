@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Buat Lowongan Baru - HRD Admin</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&family=Poppins:wght@400;500;600;700&display=swap"
+    rel="stylesheet"
+  />
+
+  <!-- Bootstrap CSS & Icons -->
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+  />
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+  />
+
+  <!-- File Style Custom Utama -->
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body class="bg-body-tertiary">
+  <!-- 1. HEADER / NAVBAR UTAMA -->
+  <header class="header position-relative">
+    <!-- Tombol Back dengan jarak left yang pas -->
+    <a href="kelola-lowongan.html" class="text-dark text-decoration-none position-absolute d-flex align-items-center justify-content-center" style="left: 45px; top: 50%; transform: translateY(-50%); font-size: 20px; z-index: 10;" title="Kembali">
+      <i class="bi bi-arrow-left"></i>
+    </a>
+
+    <div class="div">
+      <!-- Brand / Logo -->
+      <div class="brand-container">
+        <img class="gps-logo-img" src="images/logo.png" alt="Logo GPS" />
+        <div class="brand-text">
+          <div class="brand-title-top">PORTAL LAYANAN</div>
+          <div class="brand-title-main">LOWONGAN KERJA</div>
+        </div>
+      </div>
+
+      <!-- Menu Navigasi Kanan & Profil -->
+      <div class="nav-right-container">
+        <nav class="nav-menu">
+          <a href="dashboard.html" class="text-wrapper-2 text-decoration-none">Dashboard</a>
+          <a href="kelola-lamaran.html" class="text-wrapper-2 text-decoration-none">Lamaran</a>
+          <a href="kelola-lowongan.html" class="text-wrapper-2 text-decoration-none fw-bold text-primary">Lowongan</a>
+          <a href="kelola-jadwal.html" class="text-wrapper-2 text-decoration-none">Jadwal Seleksi</a>
+          <a href="kelola-karyawan.html" class="text-wrapper-2 text-decoration-none">Karyawan Baru</a>
+        </nav>
+        <a href="akun.html" title="Akun Saya">
+          <img
+            class="akun border border-primary border-2 rounded-circle"
+            src="images/akun.png"
+            alt="Foto Profil"
+          />
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- 2. MAIN CONTENT -->
+  <div class="dashboard-hrd-admin py-4">
+    <main class="detail-container-compact">
+      <div class="card-detail-wrapper mb-5">
+        
+        <!-- Header Banner Biru -->
+        <div class="header-blue-banner py-2 px-3">
+          <h1 class="text-white mb-0" style="font-size: 15px; font-weight: 600;">
+            Buat Lowongan Baru
+          </h1>
+          <p class="text-white mb-0" style="font-size: 11px; opacity: 0.9;">
+            Isi singkat berikut, lamaran akan otomatis tampil ke pelamar.
+          </p>
+        </div>
+
+        <!-- Form Body -->
+        <div class="p-3.5 p-md-4">
+          <!-- INFORMASI POSISI -->
+          <div class="mb-3.5">
+            <h3 class="section-title">Informasi Posisi</h3>
+            <p class="section-subtitle">
+              Data inti yang akan tampil di daftar lowongan pelamar.
+            </p>
+
+            <div class="mb-2.5">
+              <label class="form-label fw-medium text-dark mb-1" style="font-size: 13px">Judul Posisi</label>
+              <input type="text" id="inputJudul" class="form-control form-control-compact" placeholder="Contoh: Staff Finance" />
+            </div>
+
+            <div class="mb-2.5">
+              <label class="form-label fw-medium text-dark mb-1" style="font-size: 13px">Departemen</label>
+              <input type="text" id="inputDepartemen" class="form-control form-control-compact" placeholder="Contoh: IT" />
+            </div>
+
+            <div class="mb-2.5">
+              <label class="form-label fw-medium text-dark mb-1" style="font-size: 13px">Lokasi</label>
+              <input type="text" id="inputLokasi" class="form-control form-control-compact" placeholder="Contoh: Banjarmasin" />
+            </div>
+
+            <div class="mb-2.5">
+              <label class="form-label fw-medium text-dark mb-1" style="font-size: 13px">Jumlah dibutuhkan</label>
+              <input type="text" id="inputJumlah" class="form-control form-control-compact" placeholder="Contoh: 2 Orang" />
+            </div>
+
+            <div class="mb-2.5">
+              <label class="form-label fw-medium text-dark mb-1" style="font-size: 13px">Rentang Gaji</label>
+              <input type="text" id="inputGaji" class="form-control form-control-compact" placeholder="Contoh: Rp4.000.000 - Rp6.000.000" />
+            </div>
+
+            <div class="form-check d-flex align-items-center gap-2 mt-2">
+              <input class="form-check-input mt-0" type="checkbox" id="checkGaji" style="width: 16px; height: 16px" />
+              <label class="form-check-label text-dark custom-label-gaji" for="checkGaji">
+                Tampilkan gaji ke pelamar
+              </label>
+            </div>
+          </div>
+
+          <hr class="text-secondary opacity-25 my-3.5" />
+
+          <!-- DOKUMEN YANG DIMINTA DARI PELAMAR -->
+          <div class="mb-3.5">
+            <h3 class="section-title">Dokumen yang diminta dari pelamar</h3>
+            <p class="section-subtitle">
+              Pilih dokumen yang wajib diupload pelamar untuk lowongan ini.
+            </p>
+
+            <!-- Container List Dokumen -->
+            <div id="listDokumenContainer" class="d-flex flex-column gap-2 mb-2">
+              <!-- Item 1 -->
+              <div class="item-card-row d-flex align-items-center justify-content-between p-2 border rounded-2 bg-white">
+                <div class="form-check d-flex align-items-center gap-2 mb-0">
+                  <input class="form-check-input mt-0" type="checkbox" checked style="width: 16px; height: 16px" />
+                  <label class="form-check-label fw-semibold text-dark" style="font-size: 13px">CV / Resume</label>
+                </div>
+                <div class="d-flex align-items-center gap-2">
+                  <select class="form-select form-select-sm bg-white py-1 px-2" style="font-size: 12.5px; width: 105px; border-radius: 6px;">
+                    <option selected>Wajib</option>
+                    <option>Opsional</option>
+                  </select>
+                  <button type="button" class="btn btn-danger text-white px-2 py-1 btn-sm rounded-1" style="background-color: #ff3b30; border: none">
+                    <i class="bi bi-trash"></i>
+                  </button>
+                </div>
+              </div>
+
+              <!-- Item 2 -->
+              <div class="item-card-row d-flex align-items-center justify-content-between p-2 border rounded-2 bg-white">
+                <div class="form-check d-flex align-items-center gap-2 mb-0">
+                  <input class="form-check-input mt-0" type="checkbox" checked style="width: 16px; height: 16px" />
+                  <label class="form-check-label fw-semibold text-dark" style="font-size: 13px">Surat lamaran</label>
+                </div>
+                <div class="d-flex align-items-center gap-2">
+                  <select class="form-select form-select-sm bg-white py-1 px-2" style="font-size: 12.5px; width: 105px; border-radius: 6px;">
+                    <option selected>Wajib</option>
+                    <option>Opsional</option>
+                  </select>
+                  <button type="button" class="btn btn-danger text-white px-2 py-1 btn-sm rounded-1" style="background-color: #ff3b30; border: none">
+                    <i class="bi bi-trash"></i>
+                  </button>
+                </div>
+              </div>
+
+              <!-- Item 3 -->
+              <div class="item-card-row d-flex align-items-center justify-content-between p-2 border rounded-2 bg-white">
+                <div class="form-check d-flex align-items-center gap-2 mb-0">
+                  <input class="form-check-input mt-0" type="checkbox" checked style="width: 16px; height: 16px" />
+                  <label class="form-check-label fw-semibold text-dark" style="font-size: 13px">Ijazah / Transkrip nilai</label>
+                </div>
+                <div class="d-flex align-items-center gap-2">
+                  <select class="form-select form-select-sm bg-white py-1 px-2" style="font-size: 12.5px; width: 105px; border-radius: 6px;">
+                    <option selected>Wajib</option>
+                    <option>Opsional</option>
+                  </select>
+                  <button type="button" class="btn btn-danger text-white px-2 py-1 btn-sm rounded-1" style="background-color: #ff3b30; border: none">
+                    <i class="bi bi-trash"></i>
+                  </button>
+                </div>
+              </div>
+
+              <!-- Item 4 -->
+              <div class="item-card-row d-flex align-items-center justify-content-between p-2 border rounded-2 bg-white">
+                <div class="form-check d-flex align-items-center gap-2 mb-0">
+                  <input class="form-check-input mt-0" type="checkbox" checked style="width: 16px; height: 16px" />
+                  <label class="form-check-label fw-semibold text-dark" style="font-size: 13px">Pas foto</label>
+                </div>
+                <div class="d-flex align-items-center gap-2">
+                  <select class="form-select form-select-sm bg-white py-1 px-2" style="font-size: 12.5px; width: 105px; border-radius: 6px;">
+                    <option selected>Wajib</option>
+                    <option>Opsional</option>
+                  </select>
+                  <button type="button" class="btn btn-danger text-white px-2 py-1 btn-sm rounded-1" style="background-color: #ff3b30; border: none">
+                    <i class="bi bi-trash"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Tombol Tambah Dokumen -->
+            <button type="button" class="btn btn-primary px-3 py-1.5 fw-medium text-white btn-sm mt-2" style="font-size: 13px; border-radius: 6px; background-color: #1677ff;" onclick="bukaModalTambahDokumen()">
+              + Tambah dokumen
+            </button>
+          </div>
+
+          <hr class="text-secondary opacity-25 my-3.5" />
+
+          <!-- DESKRIPSI & KUALIFIKASI -->
+          <div class="mb-3.5">
+            <h3 class="section-title">Deskripsi & kualifikasi</h3>
+            <p class="section-subtitle">
+              Jelaskan tugas dan syarat dengan singkat agar mudah dipindai pelamar.
+            </p>
+
+            <div class="mb-2.5">
+              <label class="form-label fw-medium text-dark mb-1" style="font-size: 13px">Deskripsi pekerjaan</label>
+              <textarea id="inputDeskripsi" class="form-control form-control-compact" rows="3" placeholder="Jelaskan gambaran umum posisi ini..."></textarea>
+            </div>
+
+            <div class="mb-2.5">
+              <label class="form-label fw-medium text-dark mb-1" style="font-size: 13px">Tanggung Jawab Utama</label>
+              <textarea id="inputTanggungJawab" class="form-control form-control-compact" rows="3" placeholder="Jelaskan tanggung jawab dan tugas utama posisi ini (gunakan baris baru untuk setiap poin)..."></textarea>
+            </div>
+
+            <div class="mb-2.5">
+              <label class="form-label fw-medium text-dark mb-1" style="font-size: 13px">Kualifikasi / persyaratan</label>
+              <textarea id="inputKualifikasi" class="form-control form-control-compact" rows="3" placeholder="Contoh: minimal D3/S1 Akuntansi, pengalaman 1 tahun, teliti..."></textarea>
+            </div>
+          </div>
+
+          <hr class="text-secondary opacity-25 my-3.5" />
+
+          <!-- TAHAP SELEKSI -->
+          <div class="mb-3.5">
+            <h3 class="section-title">Tahap seleksi</h3>
+            <p class="section-subtitle">
+              Urutan default mengikuti alur perusahaan. Atur juga batas waktu respons pelamar per tahap.
+            </p>
+
+            <!-- Container List Tahap Seleksi -->
+            <div id="listTahapContainer" class="d-flex flex-column gap-2 mb-2">
+              <!-- Tahap 1 -->
+              <div class="item-card-row d-flex align-items-center justify-content-between p-2 border rounded-2 bg-white">
+                <div class="d-flex align-items-center gap-2">
+                  <span class="badge bg-primary text-white rounded-pill px-2 py-1 nomor-tahap" style="font-size: 11px">1</span>
+                  <span class="fw-semibold text-dark nama-tahap" style="font-size: 13px">Seleksi CV</span>
+                </div>
+                <div class="d-flex align-items-center gap-2">
+                  <!-- Custom Dropdown Durasi -->
+                  <div class="dropdown custom-dropdown-durasi">
+                    <button class="btn btn-outline-secondary btn-sm bg-white text-dark d-flex align-items-center justify-content-between dropdown-toggle px-2 py-1 select-durasi-tahap" type="button" data-bs-toggle="dropdown" aria-expanded="false" style="font-size: 12.5px; width: 105px; border-radius: 6px;">
+                      <span>5 hari</span>
+                    </button>
+                    <ul class="dropdown-menu shadow-sm p-1" style="font-size: 12.5px; min-width: 120px;">
+                      <li><div class="d-flex align-items-center justify-content-between px-2 py-1 dropdown-item rounded-1" style="cursor: pointer;"><span onclick="pilihDurasi(this, '5 hari')">5 hari</span><button type="button" class="btn btn-link text-danger p-0 ms-2 text-decoration-none" onclick="hapusOpsiCustom(this)" title="Hapus">×</button></div></li>
+                      <li><div class="d-flex align-items-center justify-content-between px-2 py-1 dropdown-item rounded-1" style="cursor: pointer;"><span onclick="pilihDurasi(this, '4 hari')">4 hari</span><button type="button" class="btn btn-link text-danger p-0 ms-2 text-decoration-none" onclick="hapusOpsiCustom(this)" title="Hapus">×</button></div></li>
+                      <li><div class="d-flex align-items-center justify-content-between px-2 py-1 dropdown-item rounded-1" style="cursor: pointer;"><span onclick="pilihDurasi(this, '3 hari')">3 hari</span><button type="button" class="btn btn-link text-danger p-0 ms-2 text-decoration-none" onclick="hapusOpsiCustom(this)" title="Hapus">×</button></div></li>
+                      <li><div class="d-flex align-items-center justify-content-between px-2 py-1 dropdown-item rounded-1" style="cursor: pointer;"><span onclick="pilihDurasi(this, '2 hari')">2 hari</span><button type="button" class="btn btn-link text-danger p-0 ms-2 text-decoration-none" onclick="hapusOpsiCustom(this)" title="Hapus">×</button></div></li>
+                      <li><div class="d-flex align-items-center justify-content-between px-2 py-1 dropdown-item rounded-1" style="cursor: pointer;"><span onclick="pilihDurasi(this, '1 hari')">1 hari</span><button type="button" class="btn btn-link text-danger p-0 ms-2 text-decoration-none" onclick="hapusOpsiCustom(this)" title="Hapus">×</button></div></li>
+                    </ul>
+                  </div>
+
+                  <button type="button" class="btn btn-warning text-white py-1 px-2.5 btn-sm rounded-1" style="background-color: #ffc107; border: none">
+                    <i class="bi bi-pencil"></i>
+                  </button>
+                  <button type="button" class="btn btn-danger text-white py-1 px-2.5 btn-sm rounded-1" style="background-color: #ff3b30; border: none">
+                    <i class="bi bi-trash"></i>
+                  </button>
+                </div>
+              </div>
+
+              <!-- Tahap 2 -->
+              <div class="item-card-row d-flex align-items-center justify-content-between p-2 border rounded-2 bg-white">
+                <div class="d-flex align-items-center gap-2">
+                  <span class="badge bg-primary text-white rounded-pill px-2 py-1 nomor-tahap" style="font-size: 11px">2</span>
+                  <span class="fw-semibold text-dark nama-tahap" style="font-size: 13px">HR Call</span>
+                </div>
+                <div class="d-flex align-items-center gap-2">
+                  <div class="dropdown custom-dropdown-durasi">
+                    <button class="btn btn-outline-secondary btn-sm bg-white text-dark d-flex align-items-center justify-content-between dropdown-toggle px-2 py-1 select-durasi-tahap" type="button" data-bs-toggle="dropdown" aria-expanded="false" style="font-size: 12.5px; width: 105px; border-radius: 6px;">
+                      <span>5 hari</span>
+                    </button>
+                    <ul class="dropdown-menu shadow-sm p-1" style="font-size: 12.5px; min-width: 120px;">
+                      <li><div class="d-flex align-items-center justify-content-between px-2 py-1 dropdown-item rounded-1" style="cursor: pointer;"><span onclick="pilihDurasi(this, '5 hari')">5 hari</span><button type="button" class="btn btn-link text-danger p-0 ms-2 text-decoration-none" onclick="hapusOpsiCustom(this)" title="Hapus">×</button></div></li>
+                      <li><div class="d-flex align-items-center justify-content-between px-2 py-1 dropdown-item rounded-1" style="cursor: pointer;"><span onclick="pilihDurasi(this, '4 hari')">4 hari</span><button type="button" class="btn btn-link text-danger p-0 ms-2 text-decoration-none" onclick="hapusOpsiCustom(this)" title="Hapus">×</button></div></li>
+                      <li><div class="d-flex align-items-center justify-content-between px-2 py-1 dropdown-item rounded-1" style="cursor: pointer;"><span onclick="pilihDurasi(this, '3 hari')">3 hari</span><button type="button" class="btn btn-link text-danger p-0 ms-2 text-decoration-none" onclick="hapusOpsiCustom(this)" title="Hapus">×</button></div></li>
+                      <li><div class="d-flex align-items-center justify-content-between px-2 py-1 dropdown-item rounded-1" style="cursor: pointer;"><span onclick="pilihDurasi(this, '2 hari')">2 hari</span><button type="button" class="btn btn-link text-danger p-0 ms-2 text-decoration-none" onclick="hapusOpsiCustom(this)" title="Hapus">×</button></div></li>
+                      <li><div class="d-flex align-items-center justify-content-between px-2 py-1 dropdown-item rounded-1" style="cursor: pointer;"><span onclick="pilihDurasi(this, '1 hari')">1 hari</span><button type="button" class="btn btn-link text-danger p-0 ms-2 text-decoration-none" onclick="hapusOpsiCustom(this)" title="Hapus">×</button></div></li>
+                    </ul>
+                  </div>
+
+                  <button type="button" class="btn btn-warning text-white py-1 px-2.5 btn-sm rounded-1" style="background-color: #ffc107; border: none">
+                    <i class="bi bi-pencil"></i>
+                  </button>
+                  <button type="button" class="btn btn-danger text-white py-1 px-2.5 btn-sm rounded-1" style="background-color: #ff3b30; border: none">
+                    <i class="bi bi-trash"></i>
+                  </button>
+                </div>
+              </div>
+
+              <!-- Tahap 3 -->
+              <div class="item-card-row d-flex align-items-center justify-content-between p-2 border rounded-2 bg-white">
+                <div class="d-flex align-items-center gap-2">
+                  <span class="badge bg-primary text-white rounded-pill px-2 py-1 nomor-tahap" style="font-size: 11px">3</span>
+                  <span class="fw-semibold text-dark nama-tahap" style="font-size: 13px">Interview - I</span>
+                </div>
+                <div class="d-flex align-items-center gap-2">
+                  <div class="dropdown custom-dropdown-durasi">
+                    <button class="btn btn-outline-secondary btn-sm bg-white text-dark d-flex align-items-center justify-content-between dropdown-toggle px-2 py-1 select-durasi-tahap" type="button" data-bs-toggle="dropdown" aria-expanded="false" style="font-size: 12.5px; width: 105px; border-radius: 6px;">
+                      <span>5 hari</span>
+                    </button>
+                    <ul class="dropdown-menu shadow-sm p-1" style="font-size: 12.5px; min-width: 120px;">
+                      <li><div class="d-flex align-items-center justify-content-between px-2 py-1 dropdown-item rounded-1" style="cursor: pointer;"><span onclick="pilihDurasi(this, '5 hari')">5 hari</span><button type="button" class="btn btn-link text-danger p-0 ms-2 text-decoration-none" onclick="hapusOpsiCustom(this)" title="Hapus">×</button></div></li>
+                      <li><div class="d-flex align-items-center justify-content-between px-2 py-1 dropdown-item rounded-1" style="cursor: pointer;"><span onclick="pilihDurasi(this, '4 hari')">4 hari</span><button type="button" class="btn btn-link text-danger p-0 ms-2 text-decoration-none" onclick="hapusOpsiCustom(this)" title="Hapus">×</button></div></li>
+                      <li><div class="d-flex align-items-center justify-content-between px-2 py-1 dropdown-item rounded-1" style="cursor: pointer;"><span onclick="pilihDurasi(this, '3 hari')">3 hari</span><button type="button" class="btn btn-link text-danger p-0 ms-2 text-decoration-none" onclick="hapusOpsiCustom(this)" title="Hapus">×</button></div></li>
+                      <li><div class="d-flex align-items-center justify-content-between px-2 py-1 dropdown-item rounded-1" style="cursor: pointer;"><span onclick="pilihDurasi(this, '2 hari')">2 hari</span><button type="button" class="btn btn-link text-danger p-0 ms-2 text-decoration-none" onclick="hapusOpsiCustom(this)" title="Hapus">×</button></div></li>
+                      <li><div class="d-flex align-items-center justify-content-between px-2 py-1 dropdown-item rounded-1" style="cursor: pointer;"><span onclick="pilihDurasi(this, '1 hari')">1 hari</span><button type="button" class="btn btn-link text-danger p-0 ms-2 text-decoration-none" onclick="hapusOpsiCustom(this)" title="Hapus">×</button></div></li>
+                    </ul>
+                  </div>
+
+                  <button type="button" class="btn btn-warning text-white py-1 px-2.5 btn-sm rounded-1" style="background-color: #ffc107; border: none">
+                    <i class="bi bi-pencil"></i>
+                  </button>
+                  <button type="button" class="btn btn-danger text-white py-1 px-2.5 btn-sm rounded-1" style="background-color: #ff3b30; border: none">
+                    <i class="bi bi-trash"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Tombol Tambah Tahap -->
+            <button type="button" class="btn btn-primary px-3 py-1.5 fw-medium text-white btn-sm mt-1.5" style="font-size: 13px; border-radius: 6px; background-color: #1677ff;" onclick="bukaModalTambahTahap()">
+              + Tambah tahap seleksi
+            </button>
+          </div>
+
+          <hr class="text-secondary opacity-25 my-3.5" />
+
+          <!-- PERIODE & PUBLIKASI -->
+          <div class="mb-3.5">
+            <h3 class="section-title">Periode & publikasi</h3>
+            <p class="section-subtitle">
+              Atur kapan lowongan tayang dan status awalnya.
+            </p>
+
+            <!-- Tanggal mulai dibuka -->
+            <div class="mb-2.5">
+              <label class="form-label fw-medium text-dark mb-1" style="font-size: 13px">Tanggal mulai dibuka</label>
+              <div class="position-relative">
+                <input type="text" id="inputTglMulai" class="form-control form-control-compact" placeholder="mm/dd/yyyy" onfocus="this.type='date'" onblur="if(!this.value)this.type='text'" />
+                <i class="bi bi-calendar-fill position-absolute top-50 translate-middle-y text-secondary" style="right: 14px; font-size: 13px; pointer-events: none; opacity: 0.7;"></i>
+              </div>
+            </div>
+
+            <!-- Tanggal tutup -->
+            <div class="mb-2.5">
+              <label class="form-label fw-medium text-dark mb-1" style="font-size: 13px">Tanggal tutup</label>
+              <div class="position-relative">
+                <input type="text" id="inputTglTutup" class="form-control form-control-compact" placeholder="mm/dd/yyyy" onfocus="this.type='date'" onblur="if(!this.value)this.type='text'" />
+                <i class="bi bi-calendar-fill position-absolute top-50 translate-middle-y text-secondary" style="right: 14px; font-size: 13px; pointer-events: none; opacity: 0.7;"></i>
+              </div>
+            </div>
+          </div>
+
+          <!-- TOMBOL AKSI BAWAH -->
+          <div class="d-flex justify-content-between align-items-center pt-3 mt-4">
+            <button type="button" class="btn px-4 py-2 fw-medium btn-sm shadow-none" style="font-size: 13px; background-color: #e2e2e2; border-radius: 6px; color: #333; outline: none; box-shadow: none;" onclick="batalkanForm()">
+              Batalkan
+            </button>
+            <button type="button" class="btn btn-primary px-4 py-2 fw-medium d-flex align-items-center gap-2 text-white btn-sm" style="font-size: 13px; border-radius: 6px; background-color: #1677ff;">
+              Publikasikan <i class="bi bi-send-fill"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/script.js"></script>
+
+  <!-- MODAL TAMBAH DOKUMEN -->
+  <div class="modal fade" id="modalTambahDokumen" tabindex="-1" aria-labelledby="modalTambahDokumenLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" style="max-width: 440px;">
+      <div class="modal-content border-0 shadow-lg" style="border-radius: 20px; padding: 24px 20px; background-color: #ffffff;">
+        <div class="modal-header border-0 pb-0 pt-0 px-2 mb-2">
+          <div>
+            <h5 class="modal-title fw-bold text-dark" id="modalTambahDokumenLabel" style="font-size: 16px;">Tambah Dokumen Persyaratan</h5>
+            <p class="text-secondary mb-0" style="font-size: 11px;">Masukkan nama dokumen yang wajib atau opsional diunggah oleh pelamar.</p>
+          </div>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" style="font-size: 12px;"></button>
+        </div>
+        <div class="modal-body px-2 pt-2 pb-3">
+          <div class="mb-3">
+            <label class="form-label text-dark fw-bold mb-1" style="font-size: 11px;">Nama Dokumen</label>
+            <input type="text" id="inputNamaDokumenBaru" class="form-control form-control-sm bg-white" placeholder="Contoh: Sertifikat Pendukung / Portofolio" style="font-size: 12px; height: 38px;">
+          </div>
+          <div class="mb-3">
+            <label class="form-label text-dark fw-bold mb-1" style="font-size: 11px;">Ketentuan Dokumen</label>
+            <select id="selectKetentuanDokumen" class="form-select form-select-sm bg-white" style="font-size: 12px; height: 38px;">
+              <option value="Wajib" selected>Wajib</option>
+              <option value="Opsional">Opsional</option>
+            </select>
+          </div>
+        </div>
+        <div class="modal-footer border-0 pt-0 px-2 d-flex justify-content-end gap-2">
+          <button type="button" class="btn btn-secondary px-4" data-bs-dismiss="modal" style="font-size: 11px; font-weight: 500; border-radius: 6px; background-color: #d6d8db; border: none; color: #333; height: 36px;">Batal</button>
+          <button type="button" class="btn btn-primary px-4" id="btnSimpanDokumenBaru" style="font-size: 11px; font-weight: 500; border-radius: 6px; background-color: #0d6efd; border: none; height: 36px;">Simpan</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL KONFIRMASI HAPUS DOKUMEN -->
+  <div class="modal fade" id="modalHapusDokumen" tabindex="-1" aria-labelledby="modalHapusDokumenLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" style="max-width: 380px;">
+      <div class="modal-content border-0 shadow-lg rounded-4 p-3 text-center bg-white">
+        <div class="modal-body p-2">
+          <div class="mb-3 text-danger" style="font-size: 40px;">
+            <i class="bi bi-exclamation-circle"></i>
+          </div>
+          <h5 class="fw-bold text-dark mb-2" id="modalHapusDokumenLabel" style="font-size: 16px;">Hapus Dokumen?</h5>
+          <p class="text-muted mb-4" style="font-size: 13px;">
+            Apakah Anda yakin ingin menghapus dokumen <strong id="namaDokumenHapus" class="text-dark">ini</strong> dari daftar persyaratan?
+          </p>
+          <div class="d-flex justify-content-center gap-2">
+            <button type="button" class="btn btn-light px-3 py-2 fw-medium text-secondary rounded-3 border d-flex align-items-center justify-content-center" data-bs-dismiss="modal" style="font-size: 13px; width: 100px;">Batal</button>
+            <button type="button" class="btn btn-danger px-3 py-2 fw-medium text-white rounded-3 shadow-sm d-flex align-items-center justify-content-center" id="btnKonfirmasiHapus" style="font-size: 13px; width: 100px; background-color: #ff3b30; border: none;">Ya, Hapus</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL TAMBAH TAHAP SELEKSI -->
+  <div class="modal fade" id="modalTambahTahap" tabindex="-1" aria-labelledby="modalTambahTahapLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" style="max-width: 420px;">
+      <div class="modal-content border-0 shadow rounded-4 p-3 bg-white">
+        <div class="modal-header border-0 pb-1 px-3">
+          <h5 class="modal-title fw-bold text-dark" id="modalTambahTahapLabel" style="font-size: 16px;">Tambah Tahap Seleksi</h5>
+          <button type="button" class="btn-close shadow-none" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body px-3 pt-1 pb-2">
+          <div class="mb-3 text-start">
+            <label class="form-label fw-medium text-dark mb-1" style="font-size: 13px;">Nama Tahap Seleksi</label>
+            <input type="text" id="inputNamaTahapBaru" class="form-control form-control-sm py-2 px-3 shadow-none border" placeholder="Contoh: Tes Teknis" style="border-radius: 8px; font-size: 13px;" />
+          </div>
+          <div class="mb-3 text-start">
+            <label class="form-label fw-medium text-dark mb-1" style="font-size: 13px;">Batas Waktu Respons</label>
+            <input type="text" id="inputDurasiTahapBaru" class="form-control form-control-sm py-2 px-3 shadow-none border" placeholder="Contoh: 5 hari" value="5 hari" style="border-radius: 8px; font-size: 13px;" />
+          </div>
+          <div class="d-flex justify-content-end gap-2 mt-4 pt-1">
+            <button type="button" class="btn btn-light px-3 py-2 fw-medium text-secondary rounded-2 border shadow-none d-flex align-items-center justify-content-center" data-bs-dismiss="modal" style="font-size: 13px; width: 90px;">Batal</button>
+            <button type="button" class="btn btn-primary px-4 py-2 fw-medium text-white rounded-2 shadow-none d-flex align-items-center justify-content-center" id="btnSimpanTahapBaru" style="font-size: 13px; width: 90px; background-color: #1677ff; border: none;">Simpan</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL EDIT TAHAP SELEKSI -->
+  <div class="modal fade" id="modalEditTahap" tabindex="-1" aria-labelledby="modalEditTahapLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" style="max-width: 420px;">
+      <div class="modal-content border-0 shadow rounded-4 p-3 bg-white">
+        <div class="modal-header border-0 pb-1 px-3">
+          <h5 class="modal-title fw-bold text-dark" id="modalEditTahapLabel" style="font-size: 16px;">Ubah Tahap Seleksi</h5>
+          <button type="button" class="btn-close shadow-none" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body px-3 pt-1 pb-2">
+          <div class="mb-3 text-start">
+            <label class="form-label fw-medium text-dark mb-1" style="font-size: 13px;">Nama Tahap Seleksi</label>
+            <input type="text" id="inputEditNamaTahap" class="form-control form-control-sm py-2 px-3 shadow-none border" style="border-radius: 8px; font-size: 13px;" />
+          </div>
+          <div class="mb-3 text-start">
+            <label class="form-label fw-medium text-dark mb-1" style="font-size: 13px;">Batas Waktu Respons</label>
+            <input type="text" id="inputEditDurasiTahap" class="form-control form-control-sm py-2 px-3 shadow-none border" placeholder="Contoh: 5 hari" style="border-radius: 8px; font-size: 13px;" />
+          </div>
+          <div class="d-flex justify-content-end gap-2 mt-4 pt-1">
+            <button type="button" class="btn btn-light px-3 py-2 fw-medium text-secondary rounded-2 border shadow-none d-flex align-items-center justify-content-center" data-bs-dismiss="modal" style="font-size: 13px; width: 90px;">Batal</button>
+            <button type="button" class="btn btn-primary px-4 py-2 fw-medium text-white rounded-2 shadow-none d-flex align-items-center justify-content-center" id="btnSimpanEditTahap" style="font-size: 13px; width: 90px; background-color: #1677ff; border: none;">Simpan</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL KONFIRMASI HAPUS TAHAP SELEKSI -->
+  <div class="modal fade" id="modalHapusTahap" tabindex="-1" aria-labelledby="modalHapusTahapLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" style="max-width: 380px;">
+      <div class="modal-content border-0 shadow-lg rounded-4 p-3 text-center bg-white">
+        <div class="modal-body p-2">
+          <div class="mb-3 text-danger" style="font-size: 40px;">
+            <i class="bi bi-exclamation-circle"></i>
+          </div>
+          <h5 class="fw-bold text-dark mb-2" id="modalHapusTahapLabel" style="font-size: 16px;">Hapus Tahap Seleksi?</h5>
+          <p class="text-muted mb-4" style="font-size: 13px;">
+            Apakah Anda yakin ingin menghapus tahap <strong id="namaTahapDihapusText" class="text-dark">ini</strong> dari alur rekrutmen?
+          </p>
+          <div class="d-flex justify-content-center gap-2">
+            <button type="button" class="btn btn-light px-3 py-2 fw-medium text-secondary rounded-3 border d-flex align-items-center justify-content-center" data-bs-dismiss="modal" style="font-size: 13px; width: 100px;">Batal</button>
+            <button type="button" class="btn btn-danger px-3 py-2 fw-medium text-white rounded-3 shadow-sm d-flex align-items-center justify-content-center" id="btnKonfirmasiHapusTahap" style="font-size: 13px; width: 100px; background-color: #ff3b30; border: none;">Ya, Hapus</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL PERINGATAN DATA BELUM LENGKAP -->
+  <div class="modal fade" id="modalPeringatanLowongan" tabindex="-1" aria-labelledby="modalPeringatanLowonganLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" style="max-width: 420px;">
+      <div class="modal-content border-0 shadow-lg rounded-4 p-4 text-center bg-white">
+        <div class="modal-body p-2">
+          <div class="mb-3 text-warning" style="font-size: 40px;">
+            <i class="bi bi-exclamation-triangle-fill"></i>
+          </div>
+          <h5 class="fw-bold text-dark mb-2" id="modalPeringatanLowonganLabel" style="font-size: 18px;">Peringatan</h5>
+          <p class="text-muted mb-4" style="font-size: 13px; line-height: 1.5;">
+            Silahkan masukkan data dengan lengkap terlebih dahulu!
+          </p>
+          <div class="d-flex justify-content-center">
+            <button type="button" class="btn text-white fw-medium shadow-sm py-2 px-5" data-bs-dismiss="modal" style="font-size: 14px; background-color: #1677ff; border: none; border-radius: 8px; min-width: 160px;">OK</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL SUKSES PUBLIKASI LOWONGAN -->
+  <div class="modal fade" id="modalSuksesPublikasi" tabindex="-1" aria-labelledby="modalSuksesPublikasiLabel" aria-hidden="true" data-bs-backdrop="static">
+    <div class="modal-dialog modal-dialog-centered" style="max-width: 420px;">
+      <div class="modal-content border-0 shadow-lg rounded-4 p-4 text-center bg-white">
+        <div class="modal-body p-2">
+          <!-- Icon Centang Hijau -->
+          <div class="mb-3 d-flex justify-content-center align-items-center">
+            <div style="width: 70px; height: 70px; background-color: #e8f8ec; border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+              <i class="bi bi-check-lg" style="font-size: 35px; color: #28a745;"></i>
+            </div>
+          </div>
+          <h5 class="fw-bold text-dark mb-2" id="modalSuksesPublikasiLabel" style="font-size: 18px;">Perubahan berhasil!</h5>
+          <p class="text-muted mb-4" style="font-size: 13px; line-height: 1.5;">
+            Perubahan Anda telah berhasil disimpan dan langsung diterapkan pada sistem.
+          </p>
+          <div class="d-flex justify-content-center">
+            <button type="button" class="btn text-white fw-medium shadow-sm py-2 px-5" id="btnSelesaiPublikasi" style="font-size: 14px; background-color: #28a745; border: none; border-radius: 8px; min-width: 160px;">Selesai</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>

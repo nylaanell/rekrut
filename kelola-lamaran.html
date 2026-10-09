@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Kelola Lamaran - HRD Admin</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Bootstrap CSS & Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
+
+  <!-- File Style Custom Utama -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="bg-body-tertiary">
+
+  <!-- 1. HEADER / NAVBAR -->
+  <header class="header" id="mainHeader">
+    <div class="div">
+      <!-- Brand / Logo -->
+      <div class="brand-container">
+        <img class="gps-logo-img" src="images/logo.png" alt="Logo GPS" />
+        <div class="brand-text">
+          <div class="brand-title-top">PORTAL LAYANAN</div>
+          <div class="brand-title-main">LOWONGAN KERJA</div>
+        </div>
+      </div>
+
+      <!-- Menu Navigasi Kanan & Profil -->
+      <div class="nav-right-container">
+        <nav class="nav-menu">
+          <a href="dashboard.html" class="text-wrapper-2 text-decoration-none">Dashboard</a>
+          <a href="kelola-lamaran.html" class="text-wrapper-2 text-decoration-none fw-bold text-primary">Lamaran</a>
+          <a href="kelola-lowongan.html" class="text-wrapper-2 text-decoration-none">Lowongan</a>
+          <a href="kelola-jadwal.html" class="text-wrapper-2 text-decoration-none">Jadwal Seleksi</a>
+          <a href="kelola-karyawan.html" class="text-wrapper-2 text-decoration-none">Karyawan Baru</a>
+        </nav>
+        <a href="akun.html" title="Akun Saya">
+          <img class="akun border border-primary border-2 rounded-circle" src="images/akun.png" alt="Foto Profil" />
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- 2. MAIN CONTENT AREA -->
+  <div class="dashboard-hrd-admin">
+    <main class="frame-2">
+      
+      <!-- Judul Halaman -->
+      <div class="frame-3">
+        <h1 class="text-wrapper-3">Lamaran</h1>
+        <p class="sub-text mb-0">Perbarui status seleksi per tahap. Riwayat perubahan tercatat otomatis.</p>
+      </div>
+
+      <!-- Section Cari & Filter -->
+      <div class="search-section">
+        <div class="filter-icon" style="cursor: pointer;" title="Filter Lamaran" data-bs-toggle="modal" data-bs-target="#modalFilterLamaran">
+          <i class="bi bi-funnel-fill text-dark fs-5"></i>
+        </div>
+
+        <form class="search-bar" action="#" method="GET">
+          <input type="text" placeholder="Cari nama atau email pelamar..." class="input-search">
+          <button type="submit" class="btn-search">Cari</button>
+        </form>
+      </div>
+
+      <!-- Section Tabel Utama -->
+      <div class="tabel-container">
+        <table class="lamaran-table">
+          <thead>
+            <tr>
+              <th style="width: 16%;">No Lamaran</th>
+              <th style="width: 22%;">Pelamar</th>
+              <th style="width: 15%;">Posisi</th>
+              <th style="width: 17%;">Tahap Saat Ini</th>
+              <th style="width: 12%;">Tenggat</th>
+              <th style="width: 18%;">Tanggal Lamar</th>
+              <th style="width: 10%; text-align: center;">Detail</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="font-code">GPS-2026-00842</td>
+              <td>
+                <div class="applicant-cell">
+                  <span class="name">Budi Hartono</span>
+                  <span class="email">Budi@gmail.com</span>
+                </div>
+              </td>
+              <td>IT Support</td>
+              <td>Seleksi CV</td>
+              <td>3 hari</td>
+              <td>22 Jul 2026</td>
+              <td style="text-align: center;"><a href="detail-lamaran.html?id=GPS-2026-00842" class="link-detail">klik disini</a></td>
+            </tr>
+            <tr>
+              <td class="font-code">GPS-2026-00843</td>
+              <td>
+                <div class="applicant-cell">
+                  <span class="name">Rizky Ananda</span>
+                  <span class="email">Rizky@gmail.com</span>
+                </div>
+              </td>
+              <td>Marketing</td>
+              <td>Interview II</td>
+              <td>2 hari</td>
+              <td>22 Jul 2026</td>
+              <td style="text-align: center;"><a href="detail-lamaran.html?id=GPS-2026-00843" class="link-detail">klik disini</a></td>
+            </tr>
+            <tr>
+              <td class="font-code">GPS-2026-00844</td>
+              <td>
+                <div class="applicant-cell">
+                  <span class="name">Siti Rahmawati</span>
+                  <span class="email">Siti@gmail.com</span>
+                </div>
+              </td>
+              <td>Pajak</td>
+              <td>Psikotes</td>
+              <td>5 hari</td>
+              <td>21 Jul 2026</td>
+              <td style="text-align: center;"><a href="detail-lamaran.html?id=GPS-2026-00844" class="link-detail">klik disini</a></td>
+            </tr>
+            <tr>
+              <td class="font-code">GPS-2026-00845</td>
+              <td>
+                <div class="applicant-cell">
+                  <span class="name">Dimas Pratama</span>
+                  <span class="email">dimas@gmail.com</span>
+                </div>
+              </td>
+              <td>HRGA</td>
+              <td>Technical Test</td>
+              <td><span class="badge-text warning">Hari Ini</span></td>
+              <td>20 Jul 2026</td>
+              <td style="text-align: center;"><a href="detail-lamaran.html?id=GPS-2026-00845" class="link-detail">klik disini</a></td>
+            </tr>
+            <tr>
+              <td class="font-code">GPS-2026-00846</td>
+              <td>
+                <div class="applicant-cell">
+                  <span class="name">Nadia Wijaya</span>
+                  <span class="email">nadia@gmail.com</span>
+                </div>
+              </td>
+              <td>Accounting</td>
+              <td>Interview HR</td>
+              <td>2 Hari</td>
+              <td>22 Jul 2026</td>
+              <td style="text-align: center;"><a href="detail-lamaran.html?id=GPS-2026-00846" class="link-detail">klik disini</a></td>
+            </tr>
+            <tr>
+              <td class="font-code">GPS-2026-00847</td>
+              <td>
+                <div class="applicant-cell">
+                  <span class="name">Fajar Nugraha</span>
+                  <span class="email">fajar@gmail.com</span>
+                </div>
+              </td>
+              <td>Software Engineer</td>
+              <td>Offering Letter</td>
+              <td><span class="badge-text danger">Terlewat</span></td>
+              <td>15 Jul 2026</td>
+              <td style="text-align: center;"><a href="detail-lamaran.html?id=GPS-2026-00847" class="link-detail">klik disini</a></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Section Pagination -->
+      <div class="pagination-container">
+        <div class="pagination">
+          <a href="#" class="page-btn nav-btn">&laquo;</a>
+          <a href="#" class="page-btn nav-btn">&#8249;</a>
+          <a href="#" class="page-btn active">1</a>
+          <a href="#" class="page-btn">2</a>
+          <a href="#" class="page-btn">3</a>
+          <a href="#" class="page-btn">4</a>
+          <a href="#" class="page-btn">5</a>
+          <a href="#" class="page-btn nav-btn">&#8250;</a>
+          <a href="#" class="page-btn nav-btn">&raquo;</a>
+        </div>
+      </div>
+
+    </main>
+  </div>
+
+  <!-- MODAL FILTER LAMARAN -->
+  <div class="modal fade" id="modalFilterLamaran" tabindex="-1" aria-labelledby="modalFilterLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" style="max-width: 440px;">
+      <div class="modal-content rounded-4 border-0 p-2 shadow">
+        
+        <!-- Modal Header -->
+        <div class="modal-header border-0 flex-column align-items-center pb-0 text-center position-relative">
+          <button type="button" class="btn-close position-absolute top-0 end-0 m-1" data-bs-dismiss="modal" aria-label="Close"></button>
+          
+          <div class="rounded-circle bg-primary-subtle d-flex align-items-center justify-content-center mb-2" style="width: 48px; height: 48px;">
+            <i class="bi bi-funnel-fill text-primary fs-5"></i>
+          </div>
+          
+          <h5 class="modal-title fw-bold text-dark fs-6" id="modalFilterLabel">Filter Lamaran</h5>
+          <p class="text-secondary mb-0" style="font-size: 11.5px;">Cari daftar lamaran berdasarkan posisi, tahap, atau tanggal</p>
+        </div>
+
+        <!-- Modal Body -->
+        <div class="modal-body pt-2 pb-2">
+          <form id="formFilterLamaran">
+            <div class="p-3 bg-primary-subtle bg-opacity-25 rounded-3 border border-primary-subtle d-flex flex-column gap-2">
+              
+              <div>
+                <label for="filterPosisi" class="form-label text-dark mb-1 fw-medium" style="font-size: 12px;">Posisi</label>
+                <select class="form-select form-select-sm border-secondary-subtle" id="filterPosisi" style="font-size: 12px;">
+                  <option value="" selected>Semua Posisi</option>
+                  <option value="IT Support">IT Support</option>
+                  <option value="Marketing">Marketing</option>
+                  <option value="Pajak">Pajak</option>
+                  <option value="HRGA">HRGA</option>
+                  <option value="Accounting">Accounting</option>
+                  <option value="Software Engineer">Software Engineer</option>
+                </select>
+              </div>
+
+              <div>
+                <label for="filterTahap" class="form-label text-dark mb-1 fw-medium" style="font-size: 12px;">Tahap Saat Ini</label>
+                <select class="form-select form-select-sm border-secondary-subtle" id="filterTahap" style="font-size: 12px;">
+                  <option value="" selected>Semua Tahap</option>
+                  <option value="Seleksi CV">Seleksi CV</option>
+                  <option value="Interview HR">Interview HR</option>
+                  <option value="Interview II">Interview II</option>
+                  <option value="Psikotes">Psikotes</option>
+                  <option value="Technical Test">Technical Test</option>
+                  <option value="Offering Letter">Offering Letter</option>
+                </select>
+              </div>
+
+              <div class="row g-2">
+                <div class="col-6">
+                  <label for="filterTanggalDari" class="form-label text-dark mb-1 fw-medium" style="font-size: 12px;">Tanggal Lamar Dari</label>
+                  <input type="date" class="form-control form-control-sm border-secondary-subtle text-muted" id="filterTanggalDari" style="font-size: 11.5px;">
+                </div>
+                <div class="col-6">
+                  <label for="filterTanggalSampai" class="form-label text-dark mb-1 fw-medium" style="font-size: 12px;">Sampai</label>
+                  <input type="date" class="form-control form-control-sm border-secondary-subtle text-muted" id="filterTanggalSampai" style="font-size: 11.5px;">
+                </div>
+              </div>
+
+              <div>
+                <label for="filterTenggat" class="form-label text-dark mb-1 fw-medium" style="font-size: 12px;">Status Tenggat</label>
+                <select class="form-select form-select-sm border-secondary-subtle" id="filterTenggat" style="font-size: 12px;">
+                  <option value="" selected>Semua status</option>
+                  <option value="normal">Masih Berjalan</option>
+                  <option value="hari-ini">Hari Ini</option>
+                  <option value="terlewat">Terlewat</option>
+                </select>
+              </div>
+
+            </div>
+
+            <div class="d-flex justify-content-between align-items-center gap-2 mt-3">
+              <button type="reset" class="btn btn-secondary bg-secondary-subtle text-secondary border-0 fw-medium flex-grow-1 py-1-5 rounded-2 btn-sm" id="btnResetFilter" style="font-size: 12px;">Reset</button>
+              <button type="submit" class="btn btn-primary fw-medium flex-grow-1 py-1-5 rounded-2 btn-sm" style="font-size: 12px;">Terapkan perubahan</button>
+            </div>
+          </form>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- Bootstrap JS & Custom Script -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/script.js"></script>
+
+  
+</body>
+</html>

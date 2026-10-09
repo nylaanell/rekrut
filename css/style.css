@@ -1,0 +1,1438 @@
+/* ==========================================
+   1. OFFICIAL COLOR PALETTE VARIABLES (FIGMA)
+   ========================================== */
+:root {
+  --primary-blue: #1677FF;   /* Biru Utama */
+  --warning-yellow: #FFCC00; /* Kuning */
+  --danger-red: #FF3B30;     /* Merah */
+  --success-green: #34C759;  /* Hijau */
+  --neutral-light: #CCCCCC;  /* Abu-abu Terang */
+  --neutral-dark: #A9A9A9;   /* Abu-abu Muted */
+}
+
+/* ==========================================
+   2. RESET & GLOBAL STYLES
+   ========================================== */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+* {
+  font-family: 'Poppins', sans-serif !important;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #f8fafc;
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+}
+
+body.modal-open {
+  overflow: auto !important;
+  padding-right: 0 !important;
+}
+
+html {
+  overflow-y: scroll !important;
+}
+
+/* ==========================================
+   3. UNIFORM NAVBAR HEADER (SEJAJAR KONTEN 1080PX)
+   ========================================== */
+header.header,
+.navbar-custom {
+  height: 70px !important;
+  min-height: 70px !important;
+  max-height: 70px !important;
+  width: 100% !important;
+  background-color: #ffffff !important;
+  border-bottom: 1px solid var(--neutral-light) !important;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.02) !important;
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  padding: 0 !important;
+}
+
+header.header .div,
+.dashboard-hrd-admin header.header .div,
+.navbar-custom .div {
+  display: flex !important;
+  justify-content: space-between !important;
+  align-items: center !important;
+  width: 100% !important;
+  max-width: 1080px !important; 
+  padding: 0 20px !important;    
+  margin: 0 auto !important;
+  position: relative !important;
+}
+
+.brand-container {
+  display: flex !important;
+  align-items: center !important;
+  gap: 12px !important;
+}
+
+.gps-logo-img {
+  height: 38px !important;
+  width: auto !important;
+  object-fit: contain !important;
+}
+
+.brand-text {
+  line-height: 1.2 !important;
+}
+
+.brand-title-top {
+  font-size: 11px !important;
+  color: var(--neutral-dark) !important;
+  letter-spacing: 0.5px !important;
+  font-weight: 500 !important;
+}
+
+.brand-title-main {
+  font-size: 14px !important;
+  font-weight: 700 !important;
+  color: #0f172a !important;
+}
+
+.nav-right-container {
+  display: flex !important;
+  align-items: center !important;
+  gap: 28px !important;
+}
+
+.nav-menu {
+  display: flex !important;
+  align-items: center !important;
+  gap: 28px !important; 
+}
+
+.nav-menu a {
+  font-family: 'Poppins', sans-serif !important;
+  font-size: 14px !important;
+  font-weight: 500 !important;
+  color: #111827 !important;
+  text-decoration: none !important;
+  white-space: nowrap !important;
+  transition: color 0.2s ease !important;
+}
+
+.nav-menu a:hover,
+.nav-menu a.text-primary,
+.nav-menu a.fw-bold {
+  color: var(--primary-blue) !important;
+  font-weight: 600 !important;
+}
+
+.btn-nav-masuk {
+  border: 1px solid #0f172a !important;
+  border-radius: 6px !important;
+  padding: 4px 16px !important;
+  font-size: 13px !important;
+  font-weight: 600 !important;
+  color: #0f172a !important;
+  background: transparent !important;
+  cursor: pointer !important;
+  text-decoration: none !important;
+}
+
+.dashboard-hrd-admin .akun,
+.akun {
+  width: 34px !important;
+  height: 34px !important;
+  border-radius: 50% !important;
+  object-fit: cover !important;
+  flex-shrink: 0 !important;
+}
+
+/* ==========================================
+   4. HALAMAN LOGIN (COMPACT)
+   ========================================== */
+.login-wrapper {
+  min-height: calc(100vh - 70px) !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  padding: 20px 0 !important;
+}
+
+.login-card {
+  width: 100% !important;
+  max-width: 340px !important;
+  padding: 24px !important;
+  border: 1px solid var(--neutral-light) !important;
+  border-radius: 12px !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05) !important;
+  background-color: #ffffff !important;
+}
+
+.lock-icon-main {
+  width: 32px !important;
+  height: auto !important;
+  margin-bottom: 8px !important;
+}
+
+.login-card h1 {
+  font-size: 1.1rem !important;
+  font-weight: 700 !important;
+  margin-bottom: 4px !important;
+}
+
+.login-card p {
+  font-size: 0.75rem !important;
+  color: var(--neutral-dark) !important;
+  line-height: 1.3 !important;
+}
+
+.form-label {
+  font-size: 0.75rem !important;
+  margin-bottom: 4px !important;
+  font-weight: 500 !important;
+}
+
+.form-control {
+  border: 1px solid var(--neutral-light) !important;
+  border-radius: 6px !important;
+  padding: 8px 10px !important;
+  font-size: 0.8rem !important;
+}
+
+.form-control:focus {
+  border-color: var(--primary-blue) !important;
+  box-shadow: 0 0 0 0.2rem rgba(22, 119, 255, 0.2) !important;
+}
+
+.login-card a {
+  color: var(--primary-blue) !important;
+}
+
+.login-card span, 
+.login-card a, 
+.login-card label {
+  font-size: 0.75rem !important;
+}
+
+/* ==========================================
+   5. LAYOUT UTAMA DASHBOARD & CARDS
+   ========================================== */
+.dashboard-hrd-admin {
+  display: flex;
+  flex-direction: column;
+  min-height: calc(100vh - 70px);
+  align-items: center;
+  gap: 24px;
+  background-color: #f2f2f7;
+  padding-top: 24px;
+  padding-bottom: 40px;
+  width: 100%;
+}
+
+.dashboard-hrd-admin .frame-2 {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 1080px;
+  padding: 0 20px;
+  gap: 20px;
+}
+
+.dashboard-hrd-admin .frame-3 {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 4px;
+  width: 100%;
+}
+
+.dashboard-hrd-admin .text-wrapper-3 {
+  font-size: 22px;
+  font-weight: 700;
+  color: #000000;
+  margin: 0;
+}
+
+.sub-text {
+  font-size: 13px;
+  color: var(--neutral-dark) !important;
+  font-weight: 400;
+}
+
+.dashboard-hrd-admin .frame-4 {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  width: 100%;
+}
+
+.dashboard-hrd-admin .frame-4 .card {
+  background-color: var(--primary-blue) !important;
+  border-radius: 16px !important;
+}
+
+.dashboard-hrd-admin .judul,
+.dashboard-hrd-admin .frame-5 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  width: 100%;
+}
+
+.dashboard-hrd-admin .text-wrapper-4 {
+  font-size: 12px;
+  font-weight: 500;
+  color: #ffffff;
+  text-align: center;
+}
+
+.dashboard-hrd-admin .text-wrapper-5 {
+  font-size: 24px;
+  font-weight: 700;
+  color: #ffffff;
+  text-align: center;
+}
+
+/* ==========================================
+   6. BUTTON & BADGE PALETTE OVERRIDES
+   ========================================== */
+.btn-primary,
+.bg-primary {
+  background-color: var(--primary-blue) !important;
+  border-color: var(--primary-blue) !important;
+}
+
+.btn-primary:hover {
+  background-color: #0d5cdd !important;
+  border-color: #0d5cdd !important;
+}
+
+.btn-warning,
+.bg-warning {
+  background-color: var(--warning-yellow) !important;
+  border-color: var(--warning-yellow) !important;
+  color: #ffffff !important;
+}
+
+.btn-danger,
+.bg-danger {
+  background-color: var(--danger-red) !important;
+  border-color: var(--danger-red) !important;
+}
+
+.bg-success {
+  background-color: var(--success-green) !important;
+}
+
+.search-section {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+}
+
+.filter-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  padding: 4px;
+  cursor: pointer;
+}
+
+.search-bar {
+  display: flex;
+  align-items: center;
+  background-color: #ffffff;
+  border-radius: 25px;
+  padding: 4px 6px 4px 18px;
+  width: 380px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  border: 1px solid var(--neutral-light);
+}
+
+.input-search {
+  border: none;
+  outline: none;
+  width: 100%;
+  font-size: 13px;
+  color: #374151;
+  background: transparent;
+}
+
+.input-search::placeholder {
+  color: var(--neutral-dark) !important;
+}
+
+.btn-search {
+  background-color: var(--primary-blue) !important;
+  color: #ffffff;
+  border: none;
+  padding: 6px 20px;
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.btn-search:hover {
+  background-color: #0d5cdd !important;
+}
+
+/* ==========================================
+   7. TABEL UTAMA & PAGINATION
+   ========================================== */
+.tabel-container {
+  width: 100%;
+  background-color: #ffffff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.03);
+  border: 1px solid var(--neutral-light);
+}
+
+.lamaran-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+}
+
+.lamaran-table thead tr {
+  background-color: var(--primary-blue) !important;
+}
+
+.lamaran-table th {
+  color: #ffffff;
+  font-weight: 600;
+  font-size: 13px;
+  padding: 12px 18px;
+  white-space: nowrap;
+}
+
+.lamaran-table tbody tr {
+  border-bottom: 1px solid #f0f0f0;
+  transition: background-color 0.15s ease;
+}
+
+.lamaran-table tbody tr:last-child {
+  border-bottom: none;
+}
+
+.lamaran-table tbody tr:hover {
+  background-color: #f9fafb;
+}
+
+.lamaran-table td {
+  padding: 12px 18px;
+  font-size: 13px;
+  color: #1f2937;
+  vertical-align: middle;
+}
+
+.applicant-cell {
+  display: flex;
+  flex-direction: column;
+}
+
+.applicant-cell .name {
+  font-weight: 600;
+  color: #111827;
+}
+
+.applicant-cell .email {
+  font-size: 12px;
+  color: var(--neutral-dark) !important;
+}
+
+.font-code {
+  font-family: monospace, sans-serif;
+  font-size: 12px;
+  color: #374151;
+}
+
+.link-detail {
+  color: var(--primary-blue) !important;
+  font-weight: 500;
+  font-size: 13px;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.link-detail:hover {
+  text-decoration: underline;
+}
+
+.badge-text {
+  font-weight: 600;
+}
+
+.badge-text.warning {
+  color: var(--warning-yellow) !important;
+}
+
+.badge-text.danger {
+  color: var(--danger-red) !important;
+}
+
+.pagination-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin-top: 10px;
+}
+
+.pagination {
+  display: flex;
+  align-items: center;
+  background-color: #ffffff;
+  padding: 6px 14px;
+  border-radius: 12px;
+  gap: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.03);
+  border: 1px solid var(--neutral-light);
+}
+
+.page-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 6px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+  color: #374151;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.page-btn.nav-btn {
+  background-color: #e5e7eb;
+  color: #4b5563;
+  width: 34px;
+  height: 34px;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.page-btn.nav-btn:hover {
+  background-color: #d1d5db;
+  color: #1f2937;
+}
+
+.page-btn.active {
+  background-color: var(--primary-blue) !important;
+  color: #ffffff;
+  font-weight: 600;
+}
+
+.page-btn:not(.active):not(.nav-btn):hover {
+  background-color: #f3f4f6;
+  color: var(--primary-blue) !important;
+}
+
+/* ==========================================
+   8. STYLING TAMBAHAN KELOLA LOWONGAN (COMPACT & PAS)
+   ========================================== */
+.card-job-item {
+  border: 1px solid var(--neutral-light) !important;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card-job-item:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08) !important;
+}
+
+.font-size-badge {
+  font-size: 11px !important;
+}
+
+.py-1-5 {
+  padding-top: 6px !important;
+  padding-bottom: 6px !important;
+}
+
+.px-2-5 {
+  padding-left: 12px !important;
+  padding-right: 12px !important;
+}
+
+/* ==========================================
+   9. STYLING KELOLA JADWAL SELEKSI
+   ========================================== */
+.schedule-item {
+  border-bottom: 1px solid #e5e7eb;
+  transition: background-color 0.2s ease;
+}
+
+.schedule-item:hover {
+  background-color: #f8fafc;
+}
+
+.date-box {
+  min-width: 58px;
+  line-height: 1.1;
+}
+
+.schedule-code {
+  font-family: 'Poppins', sans-serif;
+  font-size: 14px;
+}
+
+.time-badge {
+  font-size: 14px;
+  font-weight: 500;
+  border-radius: 6px;
+  background-color: #f1f5f9;
+  color: #1e293b;
+  border: 1px solid #cbd5e1;
+}
+
+.schedule-item-disabled {
+  background-color: #f9fafb;
+}
+
+/* ==========================================
+   10. STYLING KELOLA KARYAWAN BARU (COMPACT)
+   ========================================== */
+.employee-table {
+  border-collapse: separate;
+  border-spacing: 0;
+}
+
+.employee-table thead th {
+  background-color: #1677ff !important;
+  color: #ffffff !important;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  font-size: 13.5px;
+  border: none;
+  white-space: nowrap;
+}
+
+.employee-table tbody tr {
+  border-bottom: 1px solid #e5e7eb;
+  transition: background-color 0.2s ease;
+}
+
+.employee-table tbody tr:hover {
+  background-color: #f8fafc;
+}
+
+.employee-table tbody td {
+  padding: 10px 12px !important;
+  font-family: 'Poppins', sans-serif;
+  font-size: 13.5px;
+  color: #1e293b;
+  white-space: nowrap;
+}
+
+.employee-table .text-detail-link {
+  color: rgba(22, 119, 255, 0.85);
+  font-size: 13px;
+  transition: color 0.2s ease;
+}
+
+.employee-table .text-detail-link:hover {
+  color: #1677ff;
+  text-decoration: underline !important;
+}
+
+/* ==========================================
+   HALAMAN AKUN SAYA (akun.css)
+   ========================================== */
+#v-pills-tab .nav-link {
+  color: #495057;
+  border-radius: 8px;
+  transition: all 0.2s ease-in-out;
+}
+
+#v-pills-tab .nav-link:hover {
+  background-color: #f8f9fa;
+  color: #1677ff;
+}
+
+#v-pills-tab .nav-link.active {
+  background-color: #e6f4ff !important;
+  color: #1677ff !important;
+  font-weight: 600;
+}
+
+#tab-logout-tab:hover {
+  background-color: #fff1f0 !important;
+  color: #ff4d4f !important;
+}
+
+.input-group-text {
+  border-left: none;
+}
+
+.input-group .form-control {
+  border-right: none;
+}
+
+.input-group .form-control:focus {
+  box-shadow: none;
+  border-color: #dee2e6;
+}
+
+.input-group:focus-within {
+  border-radius: 6px;
+  box-shadow: 0 0 0 0.25rem rgba(22, 119, 255, 0.15);
+}
+
+.input-group:focus-within .form-control,
+.input-group:focus-within .input-group-text {
+  border-color: #1677ff;
+}
+
+#btnUbahFoto {
+  transition: transform 0.15s ease, background-color 0.15s ease;
+}
+
+#btnUbahFoto:hover {
+  transform: translateY(-1px);
+}
+
+/* ==========================================
+   11. STYLING HALAMAN DETAIL LAMARAN
+   ========================================== */
+.step-section {
+  transition: opacity 0.25s ease-in-out;
+}
+
+.step-section .card {
+  height: auto !important;
+  border-radius: 16px !important;
+  border: 1px solid var(--neutral-light) !important;
+}
+
+.btn-arrow-figma {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  cursor: pointer;
+  background-color: #94a3b8 !important;
+  color: #ffffff !important;
+  transition: all 0.2s ease-in-out !important;
+}
+
+.btn-arrow-figma:not(:disabled):hover {
+  background-color: #1677ff !important;
+  transform: scale(1.08);
+  box-shadow: 0 4px 10px rgba(22, 119, 255, 0.3);
+}
+
+.btn-arrow-figma:disabled {
+  background-color: #cbd5e1 !important;
+  opacity: 0.6 !important;
+  cursor: not-allowed !important;
+  transform: none !important;
+  box-shadow: none !important;
+}
+
+.btn-back-figma {
+  position: absolute !important;
+  left: -45px !important;
+  top: 50% !important;
+  transform: translateY(-50%) !important;
+  background: transparent !important;
+  background-color: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  width: auto !important;
+  height: auto !important;
+  border-radius: 0 !important;
+  color: #111827 !important;
+  font-size: 22px !important;
+  text-decoration: none !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  transition: opacity 0.2s ease !important;
+}
+
+.btn-back-figma:hover {
+  opacity: 0.7 !important;
+  background: transparent !important;
+}
+
+/* ==========================================
+   12. STYLING HALAMAN BUAT LOWONGAN BARU
+   ========================================== */
+.detail-container-compact {
+  max-width: 680px !important;
+  margin: 0 auto !important;
+  width: 100%;
+}
+
+.card-detail-wrapper {
+  background-color: #ffffff;
+  border-radius: 16px;
+  overflow: hidden;
+  border: 1px solid #dee2e6;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.04);
+}
+
+.header-blue-banner {
+  background-color: #1677ff;
+  color: #ffffff;
+  padding: 10px 18px !important;
+}
+
+.dashboard-hrd-admin .section-title {
+  font-size: 14.5px !important;
+  font-weight: 600 !important;
+  color: #000000;
+  margin-bottom: 2px;
+}
+
+.dashboard-hrd-admin .section-subtitle {
+  font-size: 11.5px !important;
+  color: #64748b !important;
+  margin-bottom: 12px !important;
+}
+
+.dashboard-hrd-admin .form-label {
+  font-size: 12px !important;
+  font-weight: 500 !important;
+  color: #1f2937 !important;
+}
+
+.form-control-compact {
+  font-size: 12px !important;
+  padding: 6px 10px !important;
+  border-radius: 6px !important;
+  border: 1px solid #ced4da !important;
+  background-color: #ffffff !important;
+  color: #000000 !important;
+}
+
+.form-control-compact::placeholder {
+  font-size: 11.5px !important;
+  color: #adb5bd !important;
+}
+
+.dashboard-hrd-admin textarea.form-control {
+  font-size: 12px !important;
+  padding: 6px 10px !important;
+  border-radius: 6px !important;
+}
+
+.dashboard-hrd-admin textarea.form-control::placeholder {
+  font-size: 11.5px !important;
+}
+
+.dashboard-hrd-admin .form-select {
+  font-size: 12px !important;
+  padding: 5px 10px !important;
+}
+
+.dashboard-hrd-admin .form-check-label {
+  font-size: 12px !important;
+  color: #1f2937 !important;
+}
+
+label.custom-label-gaji {
+  font-size: 12px !important;
+  font-weight: 500 !important;
+  color: #1f2937 !important;
+}
+
+.item-card-row {
+  background-color: #ffffff;
+  border: 1px solid #dee2e6;
+  border-radius: 6px;
+  padding: 8px 12px;
+}
+
+.foto-frame-wrapper {
+  width: 140px;
+  height: 180px;
+  border-radius: 8px;
+  border: 1px solid #cbd5e1;
+  overflow: hidden;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  background-color: #f8fafc;
+  margin: 0 auto;
+}
+
+.foto-pelamar-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.footer-opsional-box {
+  background-color: #e6f4ff;
+  padding: 18px 20px;
+  border-top: 1px solid #bae0ff;
+}
+
+/* ==========================================
+   13. STYLING HALAMAN DETAIL LOWONGAN (FIX KECIL & RAPI)
+   ========================================== */
+.detail-lowongan-hrd {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  align-items: center;
+  gap: 40px;
+  position: relative;
+  background-color: #f8f9fa;
+}
+
+.detail-lowongan-hrd .components {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 720px !important; /* Dikecilkan agar pas seperti detail lamaran */
+  align-items: flex-start;
+  position: relative;
+  padding: 0 15px;
+  margin: 0 auto !important;
+}
+
+.detail-lowongan-hrd .card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  width: 100%;
+  background-color: #ffffff;
+  border-radius: 16px !important;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+/* KUNCI UTAMA: Tinggi card-header dibuat auto dan padding-nya tipis persis Detail Lamaran */
+.detail-lowongan-hrd .card-header {
+  display: flex !important;
+  flex-direction: column !important;
+  height: auto !important;
+  min-height: unset !important;
+  max-height: unset !important;
+  align-items: flex-start !important;
+  justify-content: center !important;
+  padding: 12px 20px !important;
+  width: 100% !important;
+  background-color: #1677ff !important;
+}
+
+.detail-lowongan-hrd .card-header .text-wrapper-3 {
+  font-family: "Poppins", sans-serif !important;
+  font-weight: 600 !important;
+  color: #ffffff !important;
+  font-size: 18px !important;
+  line-height: 1.2 !important;
+}
+
+.detail-lowongan-hrd .card-header .p {
+  font-family: "Poppins", sans-serif !important;
+  font-weight: 400 !important;
+  color: #ffffff !important;
+  font-size: 12px !important;
+  margin-bottom: 0 !important;
+}
+
+.detail-lowongan-hrd .components-2 {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.detail-lowongan-hrd .components-3 {
+  align-items: flex-start;
+  gap: 24px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.detail-lowongan-hrd .judul-4 {
+  gap: 12px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.detail-lowongan-hrd .text-wrapper-4 {
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  color: #000000;
+  font-size: 20px;
+  margin-bottom: 2px;
+}
+
+.detail-lowongan-hrd .text-wrapper-5 {
+  font-family: "Poppins", sans-serif;
+  font-size: 13px;
+}
+
+.detail-lowongan-hrd .text-wrapper-7 {
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  color: #000000;
+  font-size: 14px;
+  margin-bottom: 6px;
+}
+
+.detail-lowongan-hrd .text-wrapper-8, 
+.detail-lowongan-hrd .pendidikan-minimal,
+.detail-lowongan-hrd ul.text-wrapper-8 li,
+.detail-lowongan-hrd ul.pendidikan-minimal li {
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  color: #555555;
+  font-size: 12.5px;
+  line-height: 1.5;
+}
+
+.detail-lowongan-hrd .tag {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+}
+
+.detail-lowongan-hrd .detail,
+.detail-lowongan-hrd .div-wrapper {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  font-size: 11px;
+  border-radius: 100px;
+  background-color: #1677ff;
+  color: #ffffff;
+  padding: 4px 12px !important;
+}
+
+.detail-lowongan-hrd .detail {
+  background-color: #ffc107;
+  color: #000000;
+}
+
+/* ==========================================
+   FINAL TWEAK: BIKIN BANNER BIRU LEBIH TIPIS & PAS
+   ========================================== */
+.detail-lowongan-hrd .card-header {
+  padding: 8px 20px !important;
+}
+
+.detail-lowongan-hrd .card-header .text-wrapper-3 {
+  font-size: 16px !important;
+  line-height: 1.1 !important;
+}
+
+.detail-lowongan-hrd .card-header .p {
+  font-size: 11px !important;
+}
+
+/* ==========================================
+   FINAL TWEAK: BIKIN SEMUA ISI CARD KECIL & RAPAT
+   ========================================== */
+
+/* 1. Rapatkan padding isi card putih secara keseluruhan */
+.detail-lowongan-hrd .card > div:last-child,
+.detail-lowongan-hrd .p-4 {
+  padding: 20px 24px !important;
+}
+
+/* 2. Rapatkan jarak antar section (deskripsi, tanggung jawab, dll) */
+.detail-lowongan-hrd .components-3 {
+  gap: 16px !important;
+}
+
+/* 3. Kecilkan ukuran judul posisi ("Finance & Accounting") */
+.detail-lowongan-hrd .text-wrapper-4 {
+  font-size: 18px !important;
+  margin-bottom: 2px !important;
+}
+
+/* 4. Kecilkan teks sub-divisi ("Divisi: Keuangan") */
+.detail-lowongan-hrd .text-wrapper-5 {
+  font-size: 12px !important;
+}
+
+/* 5. Kecilkan ukuran tombol/badge status agar tidak terlalu besar */
+.detail-lowongan-hrd .tag .detail,
+.detail-lowongan-hrd .tag .div-wrapper {
+  font-size: 11px !important;
+  padding: 3px 10px !important;
+}
+
+/* 6. Kecilkan sub-judul section ("Deskripsi Pekerjaan", dll) */
+.detail-lowongan-hrd .text-wrapper-7 {
+  font-size: 13.5px !important;
+  margin-bottom: 4px !important;
+}
+
+/* 7. Rapatkan teks paragraf dan list di dalam card */
+.detail-lowongan-hrd .text-wrapper-8, 
+.detail-lowongan-hrd .pendidikan-minimal,
+.detail-lowongan-hrd ul.text-wrapper-8 li,
+.detail-lowongan-hrd ul.pendidikan-minimal li {
+  font-size: 12px !important;
+  line-height: 1.4 !important;
+}
+
+/* ==========================================
+   STYLING KHUSUS EDIT LOWONGAN (FIGMA EXACT)
+   ========================================== */
+.edit-lowongan-hrd {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  align-items: center;
+  gap: 30px;
+  position: relative;
+  background-color: #f8f9fa;
+  padding-bottom: 40px;
+}
+
+.edit-lowongan-hrd .components {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 780px !important;
+  align-items: flex-start;
+  position: relative;
+  padding: 0 15px;
+  margin: 0 auto !important;
+}
+
+.edit-lowongan-hrd .card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  width: 100%;
+  background-color: #ffffff;
+  border-radius: 16px !important;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.edit-lowongan-hrd .card-header {
+  display: flex !important;
+  flex-direction: column !important;
+  height: auto !important;
+  min-height: unset !important;
+  max-height: unset !important;
+  align-items: flex-start !important;
+  justify-content: center !important;
+  padding: 12px 20px !important;
+  width: 100% !important;
+  background-color: #1677ff !important;
+}
+
+.edit-lowongan-hrd .card-header .text-wrapper-3 {
+  font-family: "Poppins", sans-serif !important;
+  font-weight: 600 !important;
+  color: #ffffff !important;
+  font-size: 16px !important;
+  line-height: 1.1 !important;
+}
+
+.edit-lowongan-hrd .card-header .p {
+  font-family: "Poppins", sans-serif !important;
+  font-weight: 400 !important;
+  color: #ffffff !important;
+  font-size: 11px !important;
+  margin-bottom: 0 !important;
+}
+
+/* Kotak input form bergaya Figma: compact, border tipis hitam */
+.form-control-figma {
+  border: 1px solid #111827 !important;
+  border-radius: 8px !important;
+  padding: 8px 14px !important;
+  font-size: 13.5px !important;
+  font-family: 'Poppins', sans-serif !important;
+  color: #1f2937 !important;
+  background-color: #ffffff !important;
+}
+
+.form-control-figma:focus {
+  border-color: #1677ff !important;
+  box-shadow: 0 0 0 0.15rem rgba(22, 119, 255, 0.15) !important;
+}
+
+/* ==========================================
+   FINAL TWEAK: BIKIN ISI FORM KECIL, RAPAT & PAS
+   ========================================== */
+
+/* 1. Rapatkan padding isi card putih secara keseluruhan */
+.edit-lowongan-hrd .p-4 {
+  padding: 20px 28px !important;
+}
+
+/* 2. Rapatkan jarak antar field form */
+.edit-lowongan-hrd .vstack {
+  gap: 12px !important;
+}
+
+/* 3. Kecilkan ukuran teks label judul field ("Nama posisi lowongan", dll) */
+.edit-lowongan-hrd .form-label {
+  font-size: 12px !important;
+  margin-bottom: 2px !important;
+}
+
+/* 4. Kecilkan tinggi dan ukuran font kotak input (form-control) */
+.edit-lowongan-hrd .form-control-figma {
+  padding: 6px 12px !important;
+  font-size: 12.5px !important;
+  border-radius: 6px !important;
+}
+
+/* 5. Kecilkan ukuran ikon pena di dalam input */
+.edit-lowongan-hrd .bi-pencil-fill {
+  font-size: 11px !important;
+  right: 12px !important;
+}
+
+/* ==========================================
+   BIKIN HEADER CARD BIRU KECIL, TIPIS & PAS
+   ========================================== */
+.edit-lowongan-hrd .card-header {
+  padding: 8px 20px !important;
+}
+
+.edit-lowongan-hrd .card-header .text-wrapper-3 {
+  font-size: 15px !important;
+  line-height: 1.1 !important;
+}
+
+.edit-lowongan-hrd .card-header .p {
+  font-size: 11px !important;
+}
+
+/* ==========================================
+   WARNA TEKS INPUT ABU-ABU & IKON PENSIL FIGMA
+   ========================================== */
+.edit-lowongan-hrd .form-control-figma {
+  color: #a9a9a9 !important; /* Membuat teks di dalam input berwarna abu-abu */
+}
+
+.edit-lowongan-hrd .form-control-figma::placeholder {
+  color: #a9a9a9 !important;
+}
+
+/* ==========================================
+   MENYEMBUNYIKAN IKON BAWAAN BROWSER PADA INPUT DATE
+   ========================================== */
+.form-control-date::-webkit-calendar-picker-indicator {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  cursor: pointer;
+}
+
+/* ==========================================
+   PAKSA GESER POSISI IKON KALENDER AGAR SEJAJAR DENGAN PENSIL
+   ========================================== */
+.edit-lowongan-hrd .position-relative .icon-kalender-custom {
+  right: 25px !important;
+  left: auto !important;
+}
+
+/* ==========================================
+   14. STYLING HALAMAN BUAT JADWAL SELEKSI
+   ========================================== */
+.buat-jadwal-hrd {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  align-items: center;
+  gap: 30px;
+  position: relative;
+  background-color: #f8f9fa;
+  padding-bottom: 40px;
+}
+
+.buat-jadwal-hrd .components {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 780px !important;
+  align-items: flex-start;
+  position: relative;
+  padding: 0 15px;
+  margin: 0 auto !important;
+}
+
+.buat-jadwal-hrd .card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  width: 100%;
+  background-color: #ffffff;
+  border-radius: 16px !important;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.buat-jadwal-hrd .card-header {
+  display: flex !important;
+  flex-direction: column !important;
+  height: auto !important;
+  min-height: unset !important;
+  max-height: unset !important;
+  align-items: flex-start !important;
+  justify-content: center !important;
+  padding: 12px 20px !important;
+  width: 100% !important;
+  background-color: #1677ff !important;
+}
+
+.buat-jadwal-hrd .card-header .text-wrapper-3 {
+  font-family: "Poppins", sans-serif !important;
+  font-weight: 600 !important;
+  color: #ffffff !important;
+  font-size: 16px !important;
+  line-height: 1.1 !important;
+}
+
+.buat-jadwal-hrd .card-header .p {
+  font-family: "Poppins", sans-serif !important;
+  font-weight: 400 !important;
+  color: #ffffff !important;
+  font-size: 11px !important;
+  margin-bottom: 0 !important;
+}
+
+/* Penyesuaian khusus form bagian buat jadwal agar selaras */
+.buat-jadwal-hrd .p-4 {
+  padding: 20px 28px !important;
+}
+
+.buat-jadwal-hrd .form-label {
+  font-size: 12px !important;
+  margin-bottom: 2px !important;
+}
+
+.buat-jadwal-hrd .form-control,
+.buat-jadwal-hrd .form-select {
+  padding: 6px 12px !important;
+  font-size: 12.5px !important;
+  border-radius: 6px !important;
+  border: 1px solid #ced4da !important;
+}
+
+.buat-jadwal-hrd .form-control:focus,
+.buat-jadwal-hrd .form-select:focus {
+  border-color: #1677ff !important;
+  box-shadow: 0 0 0 0.15rem rgba(22, 119, 255, 0.15) !important;
+}
+
+/* ==========================================
+   PERBAIKAN UKURAN DETAIL KARYAWAN (COMPACT & RAPI)
+   ========================================== */
+.detail-karyawan-hrd {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  align-items: center;
+  gap: 24px;
+  position: relative;
+  background-color: #f8f9fa;
+  padding-bottom: 40px;
+}
+
+.detail-karyawan-hrd .components {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 720px !important; /* Dibatasi agar ukurannya pas dan tidak terlalu besar */
+  align-items: flex-start;
+  position: relative;
+  padding: 0 15px;
+  margin: 0 auto !important;
+}
+
+.detail-karyawan-hrd .card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  width: 100%;
+  background-color: #ffffff;
+  border-radius: 16px !important;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.detail-karyawan-hrd .card-header {
+  display: flex !important;
+  flex-direction: column !important;
+  height: auto !important;
+  min-height: unset !important;
+  max-height: unset !important;
+  align-items: flex-start !important;
+  justify-content: center !important;
+  padding: 10px 20px !important;
+  width: 100% !important;
+  background-color: #1677ff !important;
+}
+
+.detail-karyawan-hrd .card-header h1,
+.detail-karyawan-hrd .card-header .text-wrapper-3 {
+  font-family: "Poppins", sans-serif !important;
+  font-weight: 600 !important;
+  color: #ffffff !important;
+  font-size: 16px !important;
+  line-height: 1.1 !important;
+  margin-bottom: 2px !important;
+}
+
+.detail-karyawan-hrd .card-header p,
+.detail-karyawan-hrd .card-header .p {
+  font-family: "Poppins", sans-serif !important;
+  font-weight: 400 !important;
+  color: #ffffff !important;
+  font-size: 11px !important;
+  margin-bottom: 0 !important;
+}
+
+.detail-karyawan-hrd .card-body {
+  padding: 20px 28px !important;
+  width: 100% !important;
+}
+
+.detail-karyawan-hrd .form-label {
+  font-size: 12px !important;
+  font-weight: 500 !important;
+  color: #1f2937 !important;
+  margin-bottom: 2px !important;
+}
+
+.detail-karyawan-hrd .form-control {
+  font-size: 12.5px !important;
+  padding: 6px 12px !important;
+  border-radius: 6px !important;
+  border: 1px solid #ced4da !important;
+}
+
+.detail-karyawan-hrd h2.h5 {
+  font-size: 15px !important;
+  font-weight: 600 !important;
+}

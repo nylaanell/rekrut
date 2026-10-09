@@ -1,0 +1,405 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Formulir Lamaran Kerja - PT Gagah Putera Satria</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Bootstrap CSS & Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"/>
+
+    <!-- File Style Custom Utama -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="detail-karyawan.css">
+
+    <!-- Styling Tambahan untuk Menyamakan Tinggi Input & Select -->
+    <style>
+      .detail-container-compact {
+        max-width: 680px;
+        margin: 0 auto;
+        width: 100%;
+      }
+      .card-detail-wrapper {
+        background-color: #ffffff;
+        border-radius: 12px;
+        overflow: hidden;
+        border: 1px solid rgba(0,0,0,0.08);
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+      }
+      .header-blue-banner {
+        background-color: #1677ff;
+      }
+      /* Menyamakan persis tinggi & padding field text dan dropdown agar sama persis */
+      .form-control-sm, .form-select-sm {
+        padding: 6px 10px !important;
+        font-size: 12px !important;
+        height: calc(1.5em + 0.75rem + 2px);
+      }
+      .border-dashed {
+        border-style: dashed !important;
+      }
+      /* Menyembunyikan ikon bawaan browser agar ikon kustom Bootstrap yang tampil */
+      input[type="date"]::-webkit-calendar-picker-indicator {
+        background: transparent;
+        bottom: 0;
+        color: transparent;
+        cursor: pointer;
+        height: auto;
+        left: 0;
+        position: absolute;
+        right: 0;
+        top: 0;
+        width: auto;
+      }
+    </style>
+  </head>
+  <body class="bg-body-tertiary">
+
+    <!-- 1. HEADER / NAVBAR DENGAN TOMBOL BACK YANG DISAMAKAN -->
+    <header class="header">
+      <div class="div">
+        <a href="index.html" class="btn-back-figma" title="Kembali ke Beranda">
+          <i class="bi bi-arrow-left"></i>
+        </a>
+        <div class="brand-container">
+          <img class="gps-logo-img" src="images/logo.png" alt="Logo GPS" />
+          <div class="brand-text">
+            <div class="brand-title-top">PORTAL LAYANAN</div>
+            <div class="brand-title-main">LOWONGAN KERJA</div>
+          </div>
+        </div>
+
+        <div class="nav-right-container">
+          <nav class="nav-menu">
+            <a href="index.html" class="text-wrapper-2 text-decoration-none">Beranda</a>
+            <a href="index.html#lowongan" class="text-wrapper-2 text-decoration-none">Lowongan</a>
+            <a href="index.html#cek-status" class="text-wrapper-2 text-decoration-none">Cek Status</a>
+          </nav>
+          <a href="login.html" class="btn btn-primary px-3 py-1 rounded-pill text-white text-decoration-none fw-medium shadow-sm" style="background-color: #1677ff; border: none; font-size: 12.5px;">Masuk</a>
+        </div>
+      </div>
+    </header>
+
+    <!-- 2. MAIN CONTENT AREA -->
+    <div class="dashboard-hrd-admin py-4">
+        <main class="detail-container-compact">
+            
+            <!-- JUDUL & STEPPER -->
+            <div class="text-center mb-3">
+              <h1 class="fw-bold fs-4 mb-1 text-dark" style="font-family: 'Poppins', sans-serif;">Form Lamaran Kerja</h1>
+              <p class="text-muted small mb-4" id="posisiDilamarText" style="font-size: 13px;">Posisi dilamar: IT Support</p>
+            </div>
+
+            <!-- STEPPER INDICATOR -->
+            <div class="position-relative mb-5" style="max-width: 540px; margin: 0 auto;">
+              <!-- Garis Abu-abu (Background) -->
+              <div class="position-absolute bg-secondary-subtle" style="top: 20px; left: 35px; right: 55px; height: 3px; z-index: 1;"></div>
+              <!-- Garis Biru (Progress Aktif: 0%) -->
+              <div class="position-absolute bg-primary" style="top: 20px; left: 35px; width: 0%; height: 3px; z-index: 1; transition: width 0.3s ease;"></div>
+              
+              <div class="d-flex justify-content-between align-items-center position-relative" style="z-index: 2;">
+                <div class="d-flex flex-column align-items-center">
+                  <div class="rounded-circle text-white d-flex align-items-center justify-content-center fw-semibold shadow-sm" style="width: 40px; height: 40px; font-size: 13px; background-color: #1677ff;">1</div>
+                  <span style="font-size: 11px;" class="mt-1 fw-medium text-dark text-nowrap">Data pribadi</span>
+                </div>
+                <div class="d-flex flex-column align-items-center">
+                  <div class="rounded-circle text-muted bg-secondary-subtle d-flex align-items-center justify-content-center fw-semibold shadow-sm" style="width: 40px; height: 40px; font-size: 13px;">2</div>
+                  <span style="font-size: 11px;" class="mt-1 text-muted text-nowrap">Keluarga</span>
+                </div>
+                <div class="d-flex flex-column align-items-center">
+                  <div class="rounded-circle text-muted bg-secondary-subtle d-flex align-items-center justify-content-center fw-semibold shadow-sm" style="width: 40px; height: 40px; font-size: 13px;">3</div>
+                  <span style="font-size: 11px;" class="mt-1 text-muted text-nowrap">Pendidikan</span>
+                </div>
+                <div class="d-flex flex-column align-items-center">
+                  <div class="rounded-circle text-muted bg-secondary-subtle d-flex align-items-center justify-content-center fw-semibold shadow-sm" style="width: 40px; height: 40px; font-size: 13px;">4</div>
+                  <span style="font-size: 11px;" class="mt-1 text-muted text-nowrap">Pekerjaan</span>
+                </div>
+                <div class="d-flex flex-column align-items-center">
+                  <div class="rounded-circle text-muted bg-secondary-subtle d-flex align-items-center justify-content-center fw-semibold shadow-sm" style="width: 40px; height: 40px; font-size: 13px;">5</div>
+                  <span style="font-size: 11px;" class="mt-1 text-muted text-nowrap">Dokumen & Tambahan</span>
+                </div>
+              </div>
+            </div>
+            
+            <form id="formDatapribadi" class="needs-validation" novalidate>
+                <div class="card-detail-wrapper mb-4">
+                    
+                    <!-- Header Banner Biru -->
+                    <div class="header-blue-banner py-3 px-4">
+                        <h2 class="text-white mb-0" style="font-size: 15px; font-weight: 600;">Data Pribadi</h2>
+                        <p class="text-white mb-0" style="font-size: 11px; opacity: 0.9;">Lengkapi bagian wajib terlebih dahulu, bagian opsional ada di bawahnya.</p>
+                    </div>
+
+                    <!-- Card Body Form -->
+                    <div class="p-4 pb-0">
+                        
+                        <div class="fw-semibold text-danger mb-3" style="font-size: 12px;">*Wajib diisi</div>
+
+                        <div class="vstack gap-3">
+                            <div>
+                                <label for="namaLengkap" class="form-label text-dark fw-medium mb-1" style="font-size: 12px;">Nama lengkap</label>
+                                <input type="text" id="namaLengkap" class="form-control form-control-sm rounded-2" placeholder="Sesuai KTP" required />
+                            </div>
+
+                            <div>
+                                <label for="alamat" class="form-label text-dark fw-medium mb-1" style="font-size: 12px;">Alamat dalam kota (lengkap)</label>
+                                <input type="text" id="alamat" class="form-control form-control-sm rounded-2" placeholder="Alamat" required />
+                            </div>
+
+                            <div>
+                                <label for="noTelepon" class="form-label text-dark fw-medium mb-1" style="font-size: 12px;">No. Telepon</label>
+                                <input type="tel" id="noTelepon" class="form-control form-control-sm rounded-2" placeholder="0812xxxxxxxx" required />
+                            </div>
+
+                            <div>
+                                <label for="tempatLahir" class="form-label text-dark fw-medium mb-1" style="font-size: 12px;">Tempat Lahir</label>
+                                <input type="text" id="tempatLahir" class="form-control form-control-sm rounded-2" placeholder="Masukkan Tempat Lahir" required />
+                            </div>
+
+                            <!-- Tanggal Lahir dengan Ikon Kalender Solid yang Serasi -->
+                            <div>
+                                <label for="tanggalLahir" class="form-label text-dark fw-medium mb-1" style="font-size: 12px;">Tanggal Lahir</label>
+                                <div class="position-relative">
+                                    <input 
+                                        type="text" 
+                                        id="tanggalLahir" 
+                                        class="form-control form-control-sm py-1 px-2.5 rounded-2" 
+                                        placeholder="mm/dd/yyyy"
+                                        onfocus="this.type = 'date'"
+                                        onblur="if (!this.value) this.type = 'text';"
+                                        style="font-size: 12px;"
+                                        required 
+                                    />
+                                    <i class="bi bi-calendar-fill position-absolute top-50 translate-middle-y text-secondary" 
+                                       style="right: 12px; font-size: 13px; pointer-events: none; opacity: 0.7;"></i>
+                                </div>
+                            </div>
+
+                            <div>
+                                <label for="noKtp" class="form-label text-dark fw-medium mb-1" style="font-size: 12px;">No KTP</label>
+                                <input type="text" id="noKtp" class="form-control form-control-sm rounded-2" placeholder="Masukkan No KTP" required />
+                            </div>
+
+                            <div>
+                                <label for="beratBadan" class="form-label text-dark fw-medium mb-1" style="font-size: 12px;">Berat (kg)</label>
+                                <input type="number" id="beratBadan" class="form-control form-control-sm rounded-2" placeholder="Masukkan Berat (kg)" required />
+                            </div>
+
+                            <div>
+                                <label for="tinggiBadan" class="form-label text-dark fw-medium mb-1" style="font-size: 12px;">Tinggi (cm)</label>
+                                <input type="number" id="tinggiBadan" class="form-control form-control-sm rounded-2" placeholder="Masukkan Tinggi (cm)" required />
+                            </div>
+
+                            <div>
+                                <label for="kebangsaan" class="form-label text-dark fw-medium mb-1" style="font-size: 12px;">Kebangsaan</label>
+                                <input type="text" id="kebangsaan" class="form-control form-control-sm rounded-2" value="Indonesia" required />
+                            </div>
+
+                            <div>
+                                <label for="jenisKelamin" class="form-label text-dark fw-medium mb-1" style="font-size: 12px;">Jenis Kelamin</label>
+                                <select id="jenisKelamin" class="form-select form-select-sm rounded-2" required>
+                                    <option value="" selected disabled>Pilih</option>
+                                    <option value="Laki-laki">Laki-laki</option>
+                                    <option value="Perempuan">Perempuan</option>
+                                </select>
+                            </div>
+
+                            <div>
+                                <label for="agama" class="form-label text-dark fw-medium mb-1" style="font-size: 12px;">Agama</label>
+                                <select id="agama" class="form-select form-select-sm rounded-2" required>
+                                    <option value="" selected disabled>Pilih</option>
+                                    <option value="Islam">Islam</option>
+                                    <option value="Kristen">Kristen</option>
+                                    <option value="Katolik">Katolik</option>
+                                    <option value="Hindu">Hindu</option>
+                                    <option value="Buddha">Buddha</option>
+                                    <option value="Konghucu">Konghucu</option>
+                                </select>
+                            </div>
+
+                            <div>
+                                <label for="statusKawin" class="form-label text-dark fw-medium mb-1" style="font-size: 12px;">Status Kawin</label>
+                                <select id="statusKawin" class="form-select form-select-sm rounded-2" required>
+                                    <option value="" selected disabled>Pilih</option>
+                                    <option value="Belum Menikah">Belum Menikah</option>
+                                    <option value="Menikah">Menikah</option>
+                                    <option value="Cerai">Cerai</option>
+                                </select>
+                            </div>
+
+                            <div>
+                                <label for="golDarah" class="form-label text-dark fw-medium mb-1" style="font-size: 12px;">Golongan Darah</label>
+                                <select id="golDarah" class="form-select form-select-sm rounded-2" required>
+                                    <option value="" selected disabled>Pilih</option>
+                                    <option value="A">A</option>
+                                    <option value="B">B</option>
+                                    <option value="AB">AB</option>
+                                    <option value="O">O</option>
+                                    <option value="-">Tidak Tahu</option>
+                                </select>
+                            </div>
+
+                            <div>
+                                <label for="statusRumah" class="form-label text-dark fw-medium mb-1" style="font-size: 12px;">Status rumah tinggal</label>
+                                <select id="statusRumah" class="form-select form-select-sm rounded-2" required>
+                                    <option value="" selected disabled>Pilihan</option>
+                                    <option value="Milik Sendiri">Milik Sendiri</option>
+                                    <option value="Milik Orang Tua">Milik Orang Tua</option>
+                                    <option value="Kontrak / Kos">Kontrak / Kos</option>
+                                    <option value="Dinas">Dinas</option>
+                                </select>
+                            </div>
+
+                            <!-- Upload Foto (Dashed Box Interaktif) -->
+                            <div class="mb-2">
+                                <label class="form-label text-dark fw-medium mb-1" style="font-size: 12px;">Upload Foto</label>
+                                <label for="uploadFoto" class="border border-2 border-primary border-dashed rounded-3 p-4 text-center w-100 d-block" style="background-color: rgba(22, 119, 255, 0.02); border-color: #91caff !important; cursor: pointer;">
+                                    <div class="d-flex flex-column align-items-center justify-content-center gap-1">
+                                        <div class="bg-primary text-white rounded-2 d-flex align-items-center justify-content-center mb-1" style="width: 32px; height: 32px;">
+                                            <i class="bi bi-upload" style="font-size: 14px;"></i>
+                                        </div>
+                                        <span class="text-secondary fw-medium" id="uploadFotoText" style="font-size: 11.5px;">Upload foto</span>
+                                        <!-- Input file disembunyikan tapi aktif karena terhubung dengan label di atas -->
+                                        <input type="file" id="uploadFoto" class="d-none" accept="image/*" onchange="document.getElementById('uploadFotoText').innerText = this.files[0] ? this.files[0].name : 'Upload foto'" />
+                                    </div>
+                                </label>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <!-- BAGIAN OPSIONAL -->
+                    <div class="p-4 mt-3" style="background-color: #e6f4ff; border-top: 1px solid #bae0ff;">
+                        <div class="fw-semibold text-dark mb-3" style="font-size: 12px;">*Opsional</div>
+                        <div class="vstack gap-3">
+                            <div>
+                                <label for="alamatLuar" class="form-label text-dark fw-medium mb-1" style="font-size: 12px;">Alamat Luar Kota</label>
+                                <input type="text" id="alamatLuar" class="form-control form-control-sm rounded-2 bg-white" placeholder="Jika Ada" />
+                            </div>
+                            <div>
+                                <label for="telpLuar" class="form-label text-dark fw-medium mb-1" style="font-size: 12px;">No. telp (luar kota)</label>
+                                <input type="tel" id="telpLuar" class="form-control form-control-sm rounded-2 bg-white" placeholder="Opsional" />
+                            </div>
+                            <div>
+                                <label for="noSim" class="form-label text-dark fw-medium mb-1" style="font-size: 12px;">No SIM</label>
+                                <input type="text" id="noSim" class="form-control form-control-sm rounded-2 bg-white" placeholder="Opsional" />
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- ACTION BUTTONS -->
+                <div class="d-flex align-items-center justify-content-between mb-4 px-2">
+                    <button type="button" class="btn btn-secondary px-3 py-1.5 fw-medium rounded-2 text-dark shadow-sm" disabled style="background-color: #e4e6eb; border: none; font-size: 12.5px; opacity: 0.6;">Kembali ke step sebelumnya</button>
+                    <button type="submit" class="btn btn-primary px-3.5 py-1.5 rounded-2 fw-medium text-white shadow-sm" style="font-size: 12.5px; background-color: #1677ff; border: none;">Lanjut ke step berikutnya</button>
+                </div>
+
+            </form>
+        </main>
+    </div>
+
+    <!-- Bootstrap JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- File JS Custom -->
+    <script src="js/form-lamaran-script.js"></script>
+    
+    <!-- Script Perbaikan Sinkronisasi Posisi, Input Teks, & Upload Foto (Base64) -->
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+          // 1. SINKRONISASI POSISI LOWONGAN DINAMIS
+          const urlParams = new URLSearchParams(window.location.search);
+          const posisiUrl = urlParams.get('posisi');
+
+          if (posisiUrl) {
+              localStorage.setItem("formDataPosisi", posisiUrl);
+          }
+
+          const posisiTerpilih = localStorage.getItem("formDataPosisi") || "IT Support";
+          const posisiTextEl = document.getElementById("posisiDilamarText");
+          if (posisiTextEl) {
+              posisiTextEl.innerText = "Posisi dilamar: " + posisiTerpilih;
+          }
+
+          // 2. MUAT KEMBALI DATA TEKS YANG PERNAH DIISI
+          if (localStorage.getItem("formDataNama")) document.getElementById("namaLengkap").value = localStorage.getItem("formDataNama");
+          if (localStorage.getItem("formDataAlamat")) document.getElementById("alamat").value = localStorage.getItem("formDataAlamat");
+          if (localStorage.getItem("formDataTelepon")) document.getElementById("noTelepon").value = localStorage.getItem("formDataTelepon");
+          if (localStorage.getItem("formDataTempatLahir")) document.getElementById("tempatLahir").value = localStorage.getItem("formDataTempatLahir");
+          if (localStorage.getItem("formDataTglLahir")) document.getElementById("tanggalLahir").value = localStorage.getItem("formDataTglLahir");
+          if (localStorage.getItem("formDataNoKtp")) document.getElementById("noKtp").value = localStorage.getItem("formDataNoKtp");
+          if (localStorage.getItem("formDataBerat")) document.getElementById("beratBadan").value = localStorage.getItem("formDataBerat");
+          if (localStorage.getItem("formDataTinggi")) document.getElementById("tinggiBadan").value = localStorage.getItem("formDataTinggi");
+          if (localStorage.getItem("formDataKelamin")) document.getElementById("jenisKelamin").value = localStorage.getItem("formDataKelamin");
+          if (localStorage.getItem("formDataAgama")) document.getElementById("agama").value = localStorage.getItem("formDataAgama");
+          if (localStorage.getItem("formDataStatusKawin")) document.getElementById("statusKawin").value = localStorage.getItem("formDataStatusKawin");
+          if (localStorage.getItem("formDataGolDarah")) document.getElementById("golDarah").value = localStorage.getItem("formDataGolDarah");
+          if (localStorage.getItem("formDataStatusRumah")) document.getElementById("statusRumah").value = localStorage.getItem("formDataStatusRumah");
+          if (localStorage.getItem("formDataAlamatLuar")) document.getElementById("alamatLuar").value = localStorage.getItem("formDataAlamatLuar");
+          if (localStorage.getItem("formDataTelpLuar")) document.getElementById("telpLuar").value = localStorage.getItem("formDataTelpLuar");
+          if (localStorage.getItem("formDataNoSim")) document.getElementById("noSim").value = localStorage.getItem("formDataNoSim");
+
+          // Muat kembali nama file foto yang tersimpan
+          const savedFotoName = localStorage.getItem("formDataFotoName");
+          if (savedFotoName) {
+              document.getElementById("uploadFotoText").innerText = savedFotoName;
+          }
+
+          // 3. EVENT KETIKA FILE FOTO DIPILIH (Ubah ke Base64 agar tersimpan permanen di browser)
+          const uploadFotoInput = document.getElementById("uploadFoto");
+          if (uploadFotoInput) {
+              uploadFotoInput.addEventListener("change", function(e) {
+                  const file = e.target.files[0];
+                  if (file) {
+                      document.getElementById("uploadFotoText").innerText = file.name;
+                      localStorage.setItem("formDataFotoName", file.name);
+
+                      const reader = new FileReader();
+                      reader.onload = function(uploadEvent) {
+                          // Simpan data gambar dalam bentuk base64 string
+                          localStorage.setItem("formDataFotoBase64", uploadEvent.target.result);
+                      };
+                      reader.readAsDataURL(file);
+                  }
+              });
+          }
+
+          // 4. SIMPAN SEMUA DATA KE LOCALSTORAGE KETIKA TOMBOL LANJUT DIKLIK
+          const formDatapribadi = document.getElementById("formDatapribadi");
+          if (formDatapribadi) {
+              formDatapribadi.addEventListener("submit", function (e) {
+                  e.preventDefault(); 
+                  
+                  localStorage.setItem("formDataNama", document.getElementById("namaLengkap").value);
+                  localStorage.setItem("formDataAlamat", document.getElementById("alamat").value);
+                  localStorage.setItem("formDataTelepon", document.getElementById("noTelepon").value);
+                  localStorage.setItem("formDataTempatLahir", document.getElementById("tempatLahir").value);
+                  localStorage.setItem("formDataTglLahir", document.getElementById("tanggalLahir").value);
+                  localStorage.setItem("formDataNoKtp", document.getElementById("noKtp").value);
+                  localStorage.setItem("formDataBerat", document.getElementById("beratBadan").value);
+                  localStorage.setItem("formDataTinggi", document.getElementById("tinggiBadan").value);
+                  localStorage.setItem("formDataKelamin", document.getElementById("jenisKelamin").value);
+                  localStorage.setItem("formDataAgama", document.getElementById("agama").value);
+                  localStorage.setItem("formDataStatusKawin", document.getElementById("statusKawin").value);
+                  localStorage.setItem("formDataGolDarah", document.getElementById("golDarah").value);
+                  localStorage.setItem("formDataStatusRumah", document.getElementById("statusRumah").value);
+                  localStorage.setItem("formDataAlamatLuar", document.getElementById("alamatLuar").value);
+                  localStorage.setItem("formDataTelpLuar", document.getElementById("telpLuar").value);
+                  localStorage.setItem("formDataNoSim", document.getElementById("noSim").value);
+
+                  // Pindah ke halaman step 2
+                  window.location.href = "form-lamaran-2.html";
+              });
+          }
+      });
+    </script>
+  </body>
+</html>

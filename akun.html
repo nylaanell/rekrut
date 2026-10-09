@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Akun Saya - HRD Admin</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Bootstrap CSS & Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
+
+  <!-- File Style Custom Utama & Custom Akun CSS -->
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/akun.css">
+</head>
+<body class="bg-body-tertiary">
+
+  <!-- 1. HEADER / NAVBAR -->
+  <header class="header">
+    <div class="div">
+      <!-- Brand / Logo -->
+      <div class="brand-container">
+        <img class="gps-logo-img" src="images/logo.png" alt="Logo GPS" />
+        <div class="brand-text">
+          <div class="brand-title-top">PORTAL LAYANAN</div>
+          <div class="brand-title-main">LOWONGAN KERJA</div>
+        </div>
+      </div>
+
+      <!-- Menu Navigasi Kanan & Profil -->
+      <div class="nav-right-container">
+        <nav class="nav-menu">
+          <a href="dashboard.html" class="text-wrapper-2 text-decoration-none">Dashboard</a>
+          <a href="kelola-lamaran.html" class="text-wrapper-2 text-decoration-none">Lamaran</a>
+          <a href="kelola-lowongan.html" class="text-wrapper-2 text-decoration-none">Lowongan</a>
+          <a href="kelola-jadwal.html" class="text-wrapper-2 text-decoration-none">Jadwal Seleksi</a>
+          <a href="kelola-karyawan.html" class="text-wrapper-2 text-decoration-none">Karyawan Baru</a>
+        </nav>
+        <a href="akun.html" title="Akun Saya">
+          <img class="akun border border-primary border-2 rounded-circle" src="images/akun.png" alt="Foto Profil" />
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- 2. MAIN CONTENT AREA -->
+  <div class="dashboard-hrd-admin">
+    <main class="frame-2">
+      
+      <!-- Card Container Utama -->
+      <div class="bg-white rounded-3 shadow-sm border p-4">
+        <div class="row g-4">
+          
+          <!-- Sidebar Navigasi Kiri -->
+          <div class="col-md-3 border-end pe-md-4">
+            <div class="nav flex-column nav-pills gap-2" id="v-pills-tab" role="tablist">
+              <button class="nav-link active text-start fw-medium d-flex align-items-center gap-2 py-2 px-3" id="tab-akun-tab" data-bs-toggle="pill" data-bs-target="#tab-akun" type="button" role="tab">
+                <i class="bi bi-person-circle fs-5"></i> Akun Saya
+              </button>
+              <button class="nav-link text-start text-dark fw-medium d-flex align-items-center gap-2 py-2 px-3" id="tab-info-tab" data-bs-toggle="pill" data-bs-target="#tab-info" type="button" role="tab">
+                <i class="bi bi-info-circle fs-5"></i> Informasi Pribadi
+              </button>
+              <button class="nav-link text-start text-dark fw-medium d-flex align-items-center gap-2 py-2 px-3" id="tab-keamanan-tab" data-bs-toggle="pill" data-bs-target="#tab-keamanan" type="button" role="tab">
+                <i class="bi bi-shield-lock fs-5"></i> Keamanan
+              </button>
+              <!-- Tombol Keluar Akun Langsung Memicu Modal Logout -->
+              <button class="nav-link text-start text-danger fw-medium d-flex align-items-center gap-2 py-2 px-3" type="button" data-bs-toggle="modal" data-bs-target="#modalLogout">
+                <i class="bi bi-box-arrow-right fs-5"></i> Keluar Akun
+              </button>
+            </div>
+          </div>
+
+          <!-- Konten Form Kanan -->
+          <div class="col-md-9 ps-md-4">
+            <div class="tab-content" id="v-pills-tabContent">
+              
+              <!-- Section 1: Akun Saya -->
+              <div class="tab-pane fade show active" id="tab-akun" role="tabpanel">
+                <h2 class="fw-bold fs-6 text-dark mb-3">Akun Saya</h2>
+                
+                <div class="d-flex align-items-center gap-3 mb-4">
+                  <!-- Ditambahkan id="previewFoto" agar bisa diubah secara dinamis -->
+                  <img src="images/akun.png" alt="Foto Profil" id="previewFoto" class="rounded-circle border" style="width: 70px; height: 70px; object-fit: cover;">
+                  <div>
+                    <button class="btn btn-warning text-white btn-sm rounded-2 d-flex align-items-center gap-1 fw-medium px-3 py-1" id="btnUbahFoto" style="font-size: 12px;">
+                      <i class="bi bi-pencil-fill"></i> Ubah Foto
+                    </button>
+                    <input type="file" id="inputFotoProfil" class="d-none" accept="image/*">
+                  </div>
+                </div>
+
+                <div class="row g-3" style="max-width: 500px;">
+                  <div class="col-12">
+                    <label class="form-label small text-secondary mb-1">Nama User</label>
+                    <input type="text" class="form-control form-control-sm bg-light" id="displayNama" value="HRD GPS" readonly>
+                  </div>
+                  <div class="col-12">
+                    <label class="form-label small text-secondary mb-1">Email</label>
+                    <input type="email" class="form-control form-control-sm bg-light" id="displayEmail" value="AdminHRD@gmail.com" readonly>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Section 2: Informasi Pribadi -->
+              <div class="tab-pane fade" id="tab-info" role="tabpanel">
+                <h2 class="fw-bold fs-6 text-dark mb-3">Informasi Pribadi</h2>
+                
+                <form id="formInfoPribadi" style="max-width: 600px;">
+                  <div class="mb-3">
+                    <label class="form-label small text-secondary mb-1">Nama User</label>
+                    <div class="input-group input-group-sm">
+                      <input type="text" class="form-control bg-light" id="infoNama" value="HRD GPS" readonly>
+                      <button class="btn btn-outline-secondary bg-white btn-toggle-edit" type="button" data-target="infoNama" title="Ubah Nama">
+                        <i class="bi bi-pencil text-muted"></i>
+                      </button>
+                    </div>
+                  </div>
+
+                  <div class="mb-3">
+                    <label class="form-label small text-secondary mb-1">Email</label>
+                    <div class="input-group input-group-sm">
+                      <input type="email" class="form-control bg-light" id="infoEmail" value="AdminHRD@gmail.com" readonly>
+                      <button class="btn btn-outline-secondary bg-white btn-toggle-edit" type="button" data-target="infoEmail" title="Ubah Email">
+                        <i class="bi bi-pencil text-muted"></i>
+                      </button>
+                    </div>
+                  </div>
+
+                  <div class="mb-3">
+                    <label class="form-label small text-secondary mb-1">No Telepon</label>
+                    <div class="input-group input-group-sm">
+                      <input type="tel" class="form-control bg-light" id="infoTelepon" value="08123456789" readonly>
+                      <button class="btn btn-outline-secondary bg-white btn-toggle-edit" type="button" data-target="infoTelepon" title="Ubah No Telepon">
+                        <i class="bi bi-pencil text-muted"></i>
+                      </button>
+                    </div>
+                  </div>
+
+                  <!-- Tombol Memicu Modal Simpan -->
+                  <button type="button" class="btn btn-primary btn-sm px-4 fw-medium mt-2" data-bs-toggle="modal" data-bs-target="#modalSimpanPerubahan" style="font-size: 13px;">Simpan Perubahan</button>
+                </form>
+              </div>
+
+              <!-- Section 3: Keamanan -->
+              <div class="tab-pane fade" id="tab-keamanan" role="tabpanel">
+                <h2 class="fw-bold fs-6 text-dark mb-3">Keamanan</h2>
+                
+                <form id="formKeamanan" style="max-width: 600px;">
+                  <!-- Kata Sandi Saat Ini -->
+                  <div class="mb-3">
+                    <label class="form-label small text-secondary mb-1">Kata sandi saat ini</label>
+                    <div class="input-group input-group-sm">
+                      <input type="password" class="form-control bg-light" id="passSaatIni" value="12345678" readonly>
+                      <button class="btn btn-outline-secondary bg-white btn-toggle-password" type="button" title="Lihat Kata Sandi">
+                        <i class="bi bi-eye text-muted"></i>
+                      </button>
+                    </div>
+                  </div>
+
+                  <!-- Kata Sandi Baru -->
+                  <div class="mb-3">
+                    <label class="form-label small text-secondary mb-1">Kata sandi baru</label>
+                    <div class="input-group input-group-sm">
+                      <input type="password" class="form-control bg-light" id="passBaru" placeholder="Masukkan kata sandi baru" readonly>
+                      <button class="btn btn-outline-secondary bg-white btn-toggle-edit" type="button" title="Ubah Kata Sandi Baru">
+                        <i class="bi bi-pencil text-muted"></i>
+                      </button>
+                      <button class="btn btn-outline-secondary bg-white btn-toggle-password" type="button" title="Lihat Kata Sandi">
+                        <i class="bi bi-eye text-muted"></i>
+                      </button>
+                    </div>
+                  </div>
+
+                  <!-- Konfirmasi Kata Sandi Baru -->
+                  <div class="mb-3">
+                    <label class="form-label small text-secondary mb-1">Konfirmasi kata sandi baru</label>
+                    <div class="input-group input-group-sm">
+                      <input type="password" class="form-control bg-light" id="passKonfirmasi" placeholder="Ulangi kata sandi baru" readonly>
+                      <button class="btn btn-outline-secondary bg-white btn-toggle-edit" type="button" title="Ubah Konfirmasi Kata Sandi">
+                        <i class="bi bi-pencil text-muted"></i>
+                      </button>
+                      <button class="btn btn-outline-secondary bg-white btn-toggle-password" type="button" title="Lihat Kata Sandi">
+                        <i class="bi bi-eye text-muted"></i>
+                      </button>
+                    </div>
+                  </div>
+
+                  <!-- Tombol Simpan Perubahan dengan Validasi JS -->
+                  <button type="button" class="btn btn-primary btn-sm px-4 fw-medium mt-2" id="btnProsesKeamanan" style="font-size: 13px;">Simpan Perubahan</button>
+                </form>
+              </div>
+
+              <!-- Section 4: Keluar Akun -->
+              <div class="tab-pane fade" id="tab-logout" role="tabpanel">
+                <h2 class="fw-bold fs-6 text-dark mb-2">Keluar akun</h2>
+                <div class="d-flex align-items-center justify-content-between flex-wrap gap-3 p-3 bg-light rounded-3 border">
+                  <p class="text-secondary small mb-0" style="max-width: 500px;">
+                    Keluar dari akun Anda di perangkat ini. Anda perlu masuk kembali untuk mengakses sistem.
+                  </p>
+                  <button class="btn btn-danger btn-sm px-4 fw-medium" data-bs-toggle="modal" data-bs-target="#modalLogout" style="font-size: 13px;">Log out</button>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </main>
+  </div>
+
+  <!-- MODAL KONFIRMASI SIMPAN PERUBAHAN -->
+  <div class="modal fade" id="modalSimpanPerubahan" tabindex="-1" aria-labelledby="modalSimpanPerubahanLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" style="max-width: 420px;">
+      <div class="modal-content rounded-4 border-0 p-3 shadow">
+        
+        <div class="modal-body text-center p-3">
+          <!-- Ikon Centang Hijau Bulat -->
+          <div class="rounded-circle bg-success-subtle d-inline-flex align-items-center justify-content-center mb-3" style="width: 64px; height: 64px;">
+            <i class="bi bi-check-lg text-success fs-1"></i>
+          </div>
+          
+          <h5 class="modal-title fw-bold text-dark mb-2" id="modalSimpanPerubahanLabel">Simpan perubahan?</h5>
+          <p class="text-secondary mb-4" style="font-size: 12px; line-height: 1.5;">
+            Periksa data yang Anda masukkan sudah benar sebelum disimpan. Perubahan akan langsung diterapkan.
+          </p>
+
+          <div class="d-flex justify-content-center align-items-center gap-2">
+            <button type="button" class="btn btn-secondary bg-secondary-subtle text-secondary border-0 fw-medium flex-grow-1 py-2 btn-sm rounded-3" data-bs-dismiss="modal" style="font-size: 13px;">Batal</button>
+            <button type="button" class="btn btn-success fw-medium flex-grow-1 py-2 btn-sm rounded-3 text-white" id="btnKonfirmasiSimpan" data-bs-dismiss="modal" style="font-size: 13px;">Ya, simpan</button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL PERINGATAN GAGAL / KATA SANDI TIDAK COCOK -->
+  <div class="modal fade" id="modalPeringatanGagal" tabindex="-1" aria-labelledby="modalPeringatanGagalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" style="max-width: 420px;">
+      <div class="modal-content rounded-4 border-0 p-3 shadow">
+        
+        <div class="modal-body text-center p-3">
+          <!-- Ikon Silang Merah Bulat -->
+          <div class="rounded-circle bg-danger-subtle d-inline-flex align-items-center justify-content-center mb-3" style="width: 64px; height: 64px;">
+            <i class="bi bi-x-lg text-danger fs-1"></i>
+          </div>
+          
+          <h5 class="modal-title fw-bold text-dark mb-2" id="modalPeringatanGagalLabel">Kata Sandi Tidak Cocok!</h5>
+          <p class="text-secondary mb-4" id="pesanPeringatanGagal" style="font-size: 12.5px; line-height: 1.5;">
+            Kata sandi baru dan konfirmasi kata sandi tidak cocok. Silakan periksa kembali.
+          </p>
+
+          <div class="d-flex justify-content-center align-items-center">
+            <button type="button" class="btn btn-danger fw-medium w-100 py-2 btn-sm rounded-3 text-white" data-bs-dismiss="modal" style="font-size: 13px;">Periksa Kembali</button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL KONFIRMASI LOGOUT -->
+  <div class="modal fade" id="modalLogout" tabindex="-1" aria-labelledby="modalLogoutLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" style="max-width: 420px;">
+      <div class="modal-content rounded-4 border-0 p-3 shadow">
+        
+        <div class="modal-body text-center p-3">
+          <!-- Ikon Keluar Merah Muda Bulat -->
+          <div class="rounded-circle bg-danger-subtle d-inline-flex align-items-center justify-content-center mb-3" style="width: 64px; height: 64px;">
+            <i class="bi bi-box-arrow-right text-danger fs-2"></i>
+          </div>
+          
+          <h5 class="modal-title fw-bold text-dark mb-2" id="modalLogoutLabel">Keluar dari akun?</h5>
+          <p class="text-secondary mb-4" style="font-size: 12.5px; line-height: 1.5;">
+            Anda akan keluar dari akun HRD GPS di perangkat ini dan perlu masuk kembali untuk mengakses sistem.
+          </p>
+
+          <div class="d-flex justify-content-center align-items-center gap-2">
+            <button type="button" class="btn btn-secondary bg-secondary-subtle text-secondary border-0 fw-medium flex-grow-1 py-2 btn-sm rounded-3" data-bs-dismiss="modal" style="font-size: 13px;">Batal</button>
+            <a href="login.html" class="btn btn-danger fw-medium flex-grow-1 py-2 btn-sm rounded-3" style="font-size: 13px;">Ya, keluar</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- Bootstrap JS & Custom Script -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/script.js"></script>
+
+  <!-- Skrip Fungsionalitas Terpusat & Bebas Konflik -->
+  <script>
+    // 1. Fungsionalitas Tombol Ubah Foto Profil
+    const btnUbahFoto = document.getElementById('btnUbahFoto');
+    if (btnUbahFoto) {
+        btnUbahFoto.addEventListener('click', function() {
+            document.getElementById('inputFotoProfil').click();
+        });
+    }
+
+    const inputFotoProfil = document.getElementById('inputFotoProfil');
+    if (inputFotoProfil) {
+        inputFotoProfil.addEventListener('change', function(event) {
+            const file = event.target.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    document.getElementById('previewFoto').src = e.target.result;
+                    const navImg = document.querySelector('.nav-right-container .akun');
+                    if (navImg) {
+                        navImg.src = e.target.result;
+                    }
+                }
+                reader.readAsDataURL(file);
+            }
+        });
+    }
+
+    // 2. Fungsionalitas Tombol Edit (Ikon Pensil) untuk Membuka Kolom Input
+    document.querySelectorAll('.btn-toggle-edit').forEach(button => {
+        button.addEventListener('click', function() {
+            const targetId = this.getAttribute('data-target');
+            if (targetId) {
+                const inputField = document.getElementById(targetId);
+                if (inputField) {
+                    if (inputField.hasAttribute('readonly')) {
+                        inputField.removeAttribute('readonly');
+                        inputField.classList.remove('bg-light');
+                        inputField.focus();
+                        this.querySelector('i').className = 'bi bi-check-lg text-success';
+                    } else {
+                        inputField.setAttribute('readonly', true);
+                        inputField.classList.add('bg-light');
+                        this.querySelector('i').className = 'bi bi-pencil text-muted';
+                    }
+                }
+            } else {
+                // Untuk form keamanan (passBaru & passKonfirmasi)
+                const inputGroup = this.closest('.input-group');
+                const inputPass = inputGroup.querySelector('input');
+                if (inputPass) {
+                    if (inputPass.hasAttribute('readonly')) {
+                        inputPass.removeAttribute('readonly');
+                        inputPass.classList.remove('bg-light');
+                        inputPass.focus();
+                        this.querySelector('i').className = 'bi bi-check-lg text-success';
+                    } else {
+                        inputPass.setAttribute('readonly', true);
+                        inputPass.classList.add('bg-light');
+                        this.querySelector('i').className = 'bi bi-pencil text-muted';
+                    }
+                }
+            }
+        });
+    });
+
+    // 3. Fungsionalitas Tombol Lihat Kata Sandi (Ikon Mata)
+    document.querySelectorAll('.btn-toggle-password').forEach(button => {
+        button.addEventListener('click', function() {
+            const inputGroup = this.closest('.input-group');
+            const inputPass = inputGroup.querySelector('input');
+            const icon = this.querySelector('i');
+            
+            if (inputPass) {
+                if (inputPass.type === 'password') {
+                    inputPass.type = 'text';
+                    icon.className = 'bi bi-eye-slash text-muted';
+                } else {
+                    inputPass.type = 'password';
+                    icon.className = 'bi bi-eye text-muted';
+                }
+            }
+        });
+    });
+
+    // 4. Validasi & Proses Simpan Perubahan Keamanan (Kata Sandi)
+    const btnProsesKeamanan = document.getElementById('btnProsesKeamanan');
+    let sandiBaruSementara = "";
+
+    if (btnProsesKeamanan) {
+        btnProsesKeamanan.addEventListener('click', function() {
+            const passBaru = document.getElementById('passBaru').value.trim();
+            const passKonfirmasi = document.getElementById('passKonfirmasi').value.trim();
+
+            if (passBaru === "" || passKonfirmasi === "") {
+                document.getElementById('pesanPeringatanGagal').innerText = "Kolom kata sandi baru atau konfirmasi tidak boleh kosong.";
+                var modalGagal = new bootstrap.Modal(document.getElementById('modalPeringatanGagal'));
+                modalGagal.show();
+                return;
+            }
+
+            if (passBaru !== passKonfirmasi) {
+                document.getElementById('pesanPeringatanGagal').innerText = "Kata sandi baru dan konfirmasi kata sandi tidak cocok. Silakan periksa kembali.";
+                var modalGagal = new bootstrap.Modal(document.getElementById('modalPeringatanGagal'));
+                modalGagal.show();
+            } else {
+                sandiBaruSementara = passBaru;
+                var modalSimpan = new bootstrap.Modal(document.getElementById('modalSimpanPerubahan'));
+                modalSimpan.show();
+            }
+        });
+    }
+
+    // 5. Aksi saat tombol "Ya, simpan" di dalam modal diklik
+    const btnKonfirmasiSimpan = document.getElementById('btnKonfirmasiSimpan');
+    if (btnKonfirmasiSimpan) {
+        btnKonfirmasiSimpan.addEventListener('click', function() {
+            if (sandiBaruSementara !== "") {
+                document.getElementById('passSaatIni').value = sandiBaruSementara;
+                
+                const inputBaru = document.getElementById('passBaru');
+                const inputKonf = document.getElementById('passKonfirmasi');
+                
+                inputBaru.value = "";
+                inputKonf.value = "";
+                inputBaru.setAttribute('readonly', true);
+                inputBaru.classList.add('bg-light');
+                inputKonf.setAttribute('readonly', true);
+                inputKonf.classList.add('bg-light');
+
+                sandiBaruSementara = "";
+            }
+        });
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,182 @@
+/* ==========================================
+   CSS KHUSUS HALAMAN PELAMAR (BOOTSTRAP INTEGRATED)
+   ================================---------- */
+
+body {
+    background-color: #f8fafc;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Header / Navbar Pelamar */
+.header-pelamar {
+    background-color: #ffffff;
+    box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.brand-title-top {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 13px;
+    font-weight: 400;
+    color: #000000;
+    line-height: 1.1;
+}
+
+.brand-title-main {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 15px;
+    font-weight: 900;
+    color: #000000;
+    line-height: 1.1;
+}
+
+/* Hero Section */
+.hero-section-pelamar {
+    padding: 40px 0 20px 0;
+}
+
+.hero-title {
+    font-weight: 700;
+    color: #1f2937;
+    font-size: 36px;
+}
+
+.hero-subtitle {
+    color: #6b7280;
+    font-size: 15px;
+}
+
+/* Search & Filter Bar */
+.search-container-pelamar {
+    background: #ffffff;
+    border-radius: 50px;
+    padding: 8px 16px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.03);
+    border: 1px solid #e5e7eb;
+}
+
+/* Kartu Lowongan */
+.card-lowongan-pelamar {
+    background-color: #ffffff;
+    border-radius: 16px;
+    border: 1px solid rgba(0,0,0,0.05);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card-lowongan-pelamar:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.06);
+}
+
+/* Footer Pelamar */
+.footer-pelamar {
+    background-color: #ffffff;
+    border-top: 1px solid #e2e8f0;
+    padding: 40px 0 20px 0;
+    color: #475569;
+    font-size: 13.5px;
+}
+
+/* Penyesuaian Tambahan untuk Detail Lowongan Pelamar */
+body {
+    font-family: 'Poppins', sans-serif;
+}
+
+.card {
+    border-radius: 20px !important;
+}
+
+.badge {
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Custom Styles for Form Lamaran */
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #f8f9fa;
+  font-size: 13.5px;
+}
+
+.border-dashed {
+  border-style: dashed !important;
+}
+
+.form-control, .form-select {
+  border-color: #ced4da;
+}
+
+.form-control:focus, .form-select:focus {
+  border-color: #1677ff;
+  box-shadow: 0 0 0 0.2rem rgba(22, 119, 255, 0.15);
+}
+
+/* Styling Tambahan & Override Kustom */
+body {
+    background-color: var(--colors-backgrounds-secondary-elevated, #f8f9fa);
+    font-family: "Poppins", sans-serif;
+}
+
+.form-control:focus {
+    border-color: #1677ff;
+    box-shadow: 0 0 0 0.25rem rgba(22, 119, 255, 0.25);
+}
+
+/* Penyesuaian responsif stepper pada perangkat mobile */
+@media (max-width: 768px) {
+    .stepper div {
+        font-size: 12px;
+    }
+}
+
+/* Styling Kompak Konsisten Formulir Lamaran */
+.detail-container-compact {
+  max-width: 680px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.card-detail-wrapper {
+  background-color: #ffffff;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+}
+
+.header-blue-banner {
+  background-color: #1677ff;
+}
+
+/* Konsistensi tinggi & padding form control dan select agar rapi */
+.form-control-sm, 
+.form-select-sm {
+  padding: 6px 10px !important;
+  font-size: 12px !important;
+  height: calc(1.5em + 0.75rem + 2px);
+}
+
+/* Styling Pendukung Khusus Form Lamaran Step 4 */
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f8f9fa;
+}
+
+.font-montserrat {
+    font-family: 'Montserrat', sans-serif;
+}
+
+/* Kustomisasi Input Form */
+.form-control {
+    border-color: #ced4da;
+    font-size: 14px;
+}
+
+.form-control:focus {
+    border-color: #1677ff;
+    box-shadow: 0 0 0 0.25rem rgba(22, 119, 255, 0.15);
+}
+
+/* Transisi dan Efek Kartu */
+.card {
+    transition: all 0.3s ease;
+}

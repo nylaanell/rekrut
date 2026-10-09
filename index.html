@@ -1,0 +1,903 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portal Lowongan Kerja - PT Gagah Putera Satria</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&family=Poppins:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Bootstrap CSS & Icons -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    />
+
+    <!-- File Style Custom Utama -->
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/pelamar-style.css" />
+
+    <style>
+      .badge-dibuka {
+        background-color: #34c759 !important;
+        color: #fff !important;
+        font-size: 11.5px;
+        font-weight: 500;
+      }
+      .badge-akan-tutup {
+        background-color: #ffcc00 !important;
+        color: #fff !important;
+        font-size: 11.5px;
+        font-weight: 500;
+      }
+      .badge-tutup {
+        background-color: #ff3b30 !important;
+        color: #fff !important;
+        font-size: 11.5px;
+        font-weight: 500;
+      }
+      /* Efek Hover Card Naik Khusus Card Lowongan */
+      .card-lowongan {
+        transition: transform 0.2s ease, box-shadow 0.2s ease !important;
+      }
+      .card-lowongan:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 .5rem 1rem rgba(0,0,0,.15) !important;
+      }
+      /* Efek Smooth Scroll Saat Menu Cek Status Diklik */
+      html {
+        scroll-behavior: smooth;
+      }
+
+      /* Hero Full-Width */
+      .hero-fullscreen-bg {
+        width: 100%;
+        min-height: 450px;
+        background: linear-gradient(rgba(10, 25, 47, 0.55), rgba(10, 25, 47, 0.7)), url('images/gedung.png');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        color: #fff;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        padding-bottom: 40px;
+        margin-bottom: 20px;
+      }
+
+      .hero-navbar-full {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 25px 30px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+      }
+
+      .hero-nav-menu {
+        display: flex;
+        align-items: center;
+        gap: 30px;
+      }
+
+      .hero-nav-menu a {
+        color: #fff !important;
+        text-decoration: none;
+        font-weight: 500;
+        font-size: 14px;
+        transition: opacity 0.2s;
+      }
+
+      .hero-nav-menu a:hover {
+        opacity: 0.8;
+      }
+
+      .hero-content-inner {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 30px;
+        width: 100%;
+      }
+
+      /* Section Cek Status dengan Background Gedung Penuh */
+      .cek-status-fullscreen-bg {
+        width: 100%;
+        min-height: 80vh;
+        background: linear-gradient(rgba(10, 25, 47, 0.7), rgba(10, 25, 47, 0.8)), url('images/gedung.png');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      /* Styling Modal Filter Persis Referensi Figma (Compact / Tanpa Scroll) */
+      .modal-content-figma {
+        border-radius: 20px;
+        border: none;
+        box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+        padding: 20px 24px;
+        background-color: #ffffff;
+        position: relative;
+      }
+      .filter-icon-header {
+        width: 44px;
+        height: 44px;
+        background-color: #e6f0ff;
+        color: #1677ff;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto 8px auto;
+        font-size: 18px;
+      }
+      /* Box Pembungkus Input Berwarna Biru Muda Lembut (Compact) */
+      .figma-inner-box {
+        background-color: #f0f6ff;
+        border: 1px solid #d6e4ff;
+        border-radius: 14px;
+        padding: 14px 16px;
+      }
+      .figma-input-box {
+        background-color: #ffffff;
+        border: 1px solid #d1d5db;
+        border-radius: 8px;
+        padding: 7px 12px;
+        font-size: 12.5px;
+        color: #374151;
+      }
+      .figma-input-box:focus {
+        border-color: #1677ff;
+        box-shadow: 0 0 0 3px rgba(22, 119, 255, 0.15);
+        background-color: #fff;
+      }
+      .figma-label {
+        font-size: 12px;
+        font-weight: 500;
+        color: #374151;
+        margin-bottom: 3px;
+      }
+    </style>
+  </head>
+  <body class="bg-body-tertiary">
+
+    <!-- HERO SECTION FULL-WIDTH DENGAN BACKGROUND GEDUNG DI BELAKANG -->
+    <div class="hero-fullscreen-bg">
+      <!-- Navbar di Atas Background -->
+      <header class="hero-navbar-full">
+        <!-- Logo GPS -->
+        <div class="d-flex align-items-center">
+          <img src="images/logo-header.png" alt="Logo GPS" style="height: 50px; object-fit: contain;" />
+        </div>
+
+        <!-- Menu Navigasi Kanan -->
+        <div class="d-flex align-items-center gap-4">
+          <nav class="hero-nav-menu d-none d-md-flex align-items-center gap-4">
+            <a href="index.html">Beranda</a>
+            <a href="#lowongan">Lowongan</a>
+            <a href="#cek-status">Cek Status</a>
+          </nav>
+          <a
+            href="login.html"
+            class="btn btn-light fw-medium px-4 py-1.5 rounded-pill text-nowrap text-decoration-none shadow-sm"
+            style="font-size: 13px; color: #fff; background-color: #1677ff; border: none;"
+            >Masuk</a
+          >
+        </div>
+      </header>
+
+      <!-- Teks Utama di Atas Background Gedung -->
+      <div class="hero-content-inner">
+        <h1 class="fw-bold mb-1 text-white" style="font-size: 34px; text-shadow: 0 2px 8px rgba(0,0,0,0.6);">
+          PT. Gagah Putera Satria
+        </h1>
+        <p class="text-white mb-1 fw-semibold" style="font-size: 14px; letter-spacing: 1px; text-shadow: 0 1px 5px rgba(0,0,0,0.6);">
+          Tumbuh Harmoni Dalam Kebersamaan
+        </p>
+        <p class="text-light mb-0" style="font-size: 13px; max-width: 520px; text-shadow: 0 1px 4px rgba(0,0,0,0.6);">
+          Temukan posisi pekerjaan yang sesuai dengan keahlian dan passion kamu di sini  
+        </p>
+      </div>
+    </div>
+
+    <!-- 2. MAIN CONTENT AREA -->
+    <div class="dashboard-hrd-admin pt-0">
+      <main class="frame-2">
+        
+        <!-- SECTION CARI & FILTER -->
+        <div class="search-section mb-4">
+          <div
+            class="filter-icon"
+            id="triggerFilterModal"
+            style="cursor: pointer;"
+            title="Filter Lowongan"
+            data-bs-toggle="modal"
+            data-bs-target="#modalFilterLowongan"
+          >
+            <i class="bi bi-funnel-fill text-dark fs-5"></i>
+          </div>
+          <form class="search-bar" action="#" method="GET">
+            <input
+              type="text"
+              placeholder="Cari posisi atau deskripsi lowongan..."
+              class="input-search"
+              style="font-size: 13px"
+            />
+            <button type="submit" class="btn-search" style="font-size: 13px">
+              Cari
+            </button>
+          </form>
+        </div>
+
+        <!-- JUDUL SECTION LOWONGAN -->
+        <div class="mb-3" id="lowongan">
+          <h2 class="text-wrapper-3" style="font-size: 20px">
+            Lowongan Tersedia
+          </h2>
+        </div>
+
+        <!-- SECTION CARDS GRID -->
+        <div class="row g-3 mb-5" id="pelamarLowonganContainer">
+          <!-- Card 1: Accounting & Finance -->
+          <div class="col-12 col-md-6" data-status="dibuka">
+            <div
+              class="card card-lowongan h-100 p-3 border-0 shadow-sm rounded-3 bg-white d-flex flex-column justify-content-between"
+            >
+              <div class="mb-3">
+                <div
+                  class="d-flex justify-content-between align-items-center mb-1"
+                >
+                  <h3 class="fs-6 fw-bold text-dark mb-0">
+                    Accounting & Finance
+                  </h3>
+                  <span
+                    class="badge badge-dibuka rounded-pill px-3 py-1 fw-medium"
+                    >Dibuka</span
+                  >
+                </div>
+                <div class="text-muted small mb-2" style="font-size: 12px">
+                  Banjarmasin - Full time
+                </div>
+                <p
+                  class="text-secondary small mb-0 lh-sm"
+                  style="font-size: 13px"
+                >
+                  Mengelola laporan keuangan seluruh unit bisnis.
+                </p>
+              </div>
+              <div
+                class="d-flex gap-2 align-items-center w-100 pt-2 border-top border-light-subtle"
+              >
+                <a
+                  href="form-lamaran-1.html?posisi=Accounting"
+                  class="btn btn-primary flex-grow-1 fw-medium py-2 rounded-2 btn-sm text-decoration-none text-center text-white"
+                  style="
+                    font-size: 13px;
+                    background-color: #1677ff;
+                    border: none;
+                  "
+                  >Lamar sekarang</a
+                >
+                <a
+                  href="detail-lowongan-pelamar.html"
+                  class="btn btn-primary flex-grow-1 fw-medium py-2 rounded-2 btn-sm text-decoration-none text-center text-white"
+                  style="
+                    font-size: 13px;
+                    background-color: #1677ff;
+                    border: none;
+                  "
+                  >Detail</a
+                >
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 2: IT & System -->
+          <div class="col-12 col-md-6" data-status="akan ditutup">
+            <div
+              class="card card-lowongan h-100 p-3 border-0 shadow-sm rounded-3 bg-white d-flex flex-column justify-content-between"
+            >
+              <div class="mb-3">
+                <div
+                  class="d-flex justify-content-between align-items-center mb-1"
+                >
+                  <h3 class="fs-6 fw-bold text-dark mb-0">IT & System</h3>
+                  <span
+                    class="badge badge-akan-tutup rounded-pill px-3 py-1 fw-medium"
+                    >Akan ditutup</span
+                  >
+                </div>
+                <div class="text-muted small mb-2" style="font-size: 12px">
+                  Banjarmasin - Full time
+                </div>
+                <p
+                  class="text-secondary small mb-0 lh-sm"
+                  style="font-size: 13px"
+                >
+                  Menjaga jaringan komunikasi dan infrastruktur data antar-site
+                  lapangan.
+                </p>
+              </div>
+              <div
+                class="d-flex gap-2 align-items-center w-100 pt-2 border-top border-light-subtle"
+              >
+                <a
+                  href="form-lamaran-1.html?posisi=IT"
+                  class="btn btn-primary flex-grow-1 fw-medium py-2 rounded-2 btn-sm text-decoration-none text-center text-white"
+                  style="
+                    font-size: 13px;
+                    background-color: #1677ff;
+                    border: none;
+                  "
+                  >Lamar sekarang</a
+                >
+                <a
+                  href="detail-lowongan-pelamar.html"
+                  class="btn btn-primary flex-grow-1 fw-medium py-2 rounded-2 btn-sm text-decoration-none text-center text-white"
+                  style="
+                    font-size: 13px;
+                    background-color: #1677ff;
+                    border: none;
+                  "
+                  >Detail</a
+                >
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 3: Pajak -->
+          <div class="col-12 col-md-6" data-status="dibuka">
+            <div
+              class="card card-lowongan h-100 p-3 border-0 shadow-sm rounded-3 bg-white d-flex flex-column justify-content-between"
+            >
+              <div class="mb-3">
+                <div
+                  class="d-flex justify-content-between align-items-center mb-1"
+                >
+                  <h3 class="fs-6 fw-bold text-dark mb-0">Pajak</h3>
+                  <span
+                    class="badge badge-dibuka rounded-pill px-3 py-1 fw-medium"
+                    >Dibuka</span
+                  >
+                </div>
+                <div class="text-muted small mb-2" style="font-size: 12px">
+                  Banjarmasin - Full time
+                </div>
+                <p
+                  class="text-secondary small mb-0 lh-sm"
+                  style="font-size: 13px"
+                >
+                  Menangani pelaporan pajak dan kepatuhan hukum perusahaan.
+                </p>
+              </div>
+              <div
+                class="d-flex gap-2 align-items-center w-100 pt-2 border-top border-light-subtle"
+              >
+                <a
+                  href="form-lamaran-1.html?posisi=Pajak"
+                  class="btn btn-primary flex-grow-1 fw-medium py-2 rounded-2 btn-sm text-decoration-none text-center text-white"
+                  style="
+                    font-size: 13px;
+                    background-color: #1677ff;
+                    border: none;
+                  "
+                  >Lamar sekarang</a
+                >
+                <a
+                  href="detail-lowongan-pelamar.html"
+                  class="btn btn-primary flex-grow-1 fw-medium py-2 rounded-2 btn-sm text-decoration-none text-center text-white"
+                  style="
+                    font-size: 13px;
+                    background-color: #1677ff;
+                    border: none;
+                  "
+                  >Detail</a
+                >
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 4: HRGA -->
+          <div class="col-12 col-md-6" data-status="dibuka">
+            <div
+              class="card card-lowongan h-100 p-3 border-0 shadow-sm rounded-3 bg-white d-flex flex-column justify-content-between"
+            >
+              <div class="mb-3">
+                <div
+                  class="d-flex justify-content-between align-items-center mb-1"
+                >
+                  <h3 class="fs-6 fw-bold text-dark mb-0">
+                    HRGA (Human Resource & General Affairs)
+                  </h3>
+                  <span
+                    class="badge badge-dibuka rounded-pill px-3 py-1 fw-medium"
+                    >Dibuka</span
+                  >
+                </div>
+                <div class="text-muted small mb-2" style="font-size: 12px">
+                  Banjarmasin - Full time
+                </div>
+                <p
+                  class="text-secondary small mb-0 lh-sm"
+                  style="font-size: 13px"
+                >
+                  Mengurus rekrutmen karyawan, payroll, serta kebutuhan
+                  fasilitas kantor.
+                </p>
+              </div>
+              <div
+                class="d-flex gap-2 align-items-center w-100 pt-2 border-top border-light-subtle"
+              >
+                <a
+                  href="form-lamaran-1.html?posisi=HRGA"
+                  class="btn btn-primary flex-grow-1 fw-medium py-2 rounded-2 btn-sm text-decoration-none text-center text-white"
+                  style="
+                    font-size: 13px;
+                    background-color: #1677ff;
+                    border: none;
+                  "
+                  >Lamar sekarang</a
+                >
+                <a
+                  href="detail-lowongan-pelamar.html"
+                  class="btn btn-primary flex-grow-1 fw-medium py-2 rounded-2 btn-sm text-decoration-none text-center text-white"
+                  style="
+                    font-size: 13px;
+                    background-color: #1677ff;
+                    border: none;
+                  "
+                  >Detail</a
+                >
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 5: Operational & Maintenance -->
+          <div class="col-12 col-md-6" data-status="tutup">
+              <div class="card card-lowongan h-100 p-3 border-0 shadow-sm rounded-3 bg-white d-flex flex-column justify-content-between card-tutup" style="cursor: pointer;">
+                  <div class="mb-3">
+                      <div class="d-flex justify-content-between align-items-center mb-1">
+                          <h3 class="fs-6 fw-bold mb-0" style="color: #a9a9a9;">Operational & Maintenance</h3>
+                          <span class="badge badge-tutup rounded-pill px-3 py-1 fw-medium">Tutup</span>
+                      </div>
+                      <div class="text-muted small mb-2" style="font-size: 12px;">Banjarmasin - Full time</div>
+                      <p class="text-secondary small mb-0 lh-sm" style="font-size: 13px;">Menyusun rencana perawatan (maintenance planner) alat berat dan pengawasan proyek.</p>
+                  </div>
+                  <div class="d-flex gap-2 align-items-center w-100 pt-2 border-top border-light-subtle">
+                      <button class="btn btn-secondary flex-grow-1 py-2 rounded-2 btn-sm text-secondary bg-secondary-subtle border-0 disabled" style="font-size: 13px;">Lamar sekarang</button>
+                      <button class="btn btn-secondary flex-grow-1 py-2 rounded-2 btn-sm text-secondary bg-secondary-subtle border-0 disabled" style="font-size: 13px;">Detail</button>
+                  </div>
+              </div>
+          </div>
+
+          <!-- Card 6: Marketing & Digital Media -->
+          <div class="col-12 col-md-6" data-status="akan ditutup">
+            <div
+              class="card card-lowongan h-100 p-3 border-0 shadow-sm rounded-3 bg-white d-flex flex-column justify-content-between"
+            >
+              <div class="mb-3">
+                <div
+                  class="d-flex justify-content-between align-items-center mb-1"
+                >
+                  <h3 class="fs-6 fw-bold text-dark mb-0">
+                    Marketing & Digital Media
+                  </h3>
+                  <span
+                    class="badge badge-akan-tutup rounded-pill px-3 py-1 fw-medium"
+                    >Akan ditutup</span
+                  >
+                </div>
+                <div class="text-muted small mb-2" style="font-size: 12px">
+                  Banjarmasin - Full time
+                </div>
+                <p
+                  class="text-secondary small mb-0 lh-sm"
+                  style="font-size: 13px"
+                >
+                  Mengelola hubungan klien, media sosial, dan citra publik
+                  group.
+                </p>
+              </div>
+              <div
+                class="d-flex gap-2 align-items-center w-100 pt-2 border-top border-light-subtle"
+              >
+                <a
+                  href="form-lamaran-1.html?posisi=Marketing"
+                  class="btn btn-primary flex-grow-1 fw-medium py-2 rounded-2 btn-sm text-decoration-none text-center text-white"
+                  style="
+                    font-size: 13px;
+                    background-color: #1677ff;
+                    border: none;
+                  "
+                  >Lamar sekarang</a
+                >
+                <a
+                  href="detail-lowongan-pelamar.html"
+                  class="btn btn-primary flex-grow-1 fw-medium py-2 rounded-2 btn-sm text-decoration-none text-center text-white"
+                  style="
+                    font-size: 13px;
+                    background-color: #1677ff;
+                    border: none;
+                  "
+                  >Detail</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </main>
+    </div>
+
+    <!-- SECTION CEK STATUS DENGAN BACKGROUND GEDUNG -->
+    <section id="cek-status" class="cek-status-fullscreen-bg py-5" >
+      <div class="container py-4" style="max-width: 700px;">
+        <div class="text-center mb-4">
+          <h2 class="fw-bold fs-4 text-white mb-1" style="font-family: 'Poppins', sans-serif;">Cek Status Lamaran</h2>
+          <p class="text-light small opacity-85">Pantau perkembangan tahapan seleksi lamaran Anda dengan mudah tanpa perlu masuk akun.</p>
+        </div>
+
+        <div class="card border-0 shadow-lg rounded-4 p-4 p-md-5 bg-white text-dark">
+            <form id="formCekStatus">
+                <div class="mb-3">
+                    <label for="inputNoLamaran" class="form-label text-dark fw-medium" style="font-size: 13px;">
+                         Nomor Pendaftaran / Lamaran
+                    </label>
+                    <input type="text" id="inputNoLamaran" class="form-control rounded-3 py-2" placeholder="Silahkan masukan no lamaran anda" required style="font-size: 13.5px;" />
+                </div>
+
+                <div class="mb-4">
+                    <label for="inputEmailKontak" class="form-label text-dark fw-medium" style="font-size: 13px;">
+                        Email atau Nomor HP
+                    </label>
+                    <input type="text" id="inputEmailKontak" class="form-control rounded-3 py-2" placeholder="pelamar@email.com atau 0812xxxx" required style="font-size: 13.5px;" />
+                </div>
+
+                <button type="submit" class="btn btn-primary w-100 py-2.5 rounded-3 fw-medium text-white shadow-sm" style="background-color: #1677ff; border: none; font-size: 14px;">
+                     Cek Status Sekarang
+                </button>
+            </form>
+
+            <!-- CONTAINER HASIL CEK STATUS -->
+            <div id="resultCekStatus" class="mt-4 pt-4 border-top d-none">
+                <h6 class="fw-bold text-dark mb-3" style="font-size: 14px;"><i class="bi bi-info-circle text-primary me-1"></i> Hasil Pencarian Lamaran</h6>
+                <div id="detailHasilStatus" class="p-3 rounded-3 bg-light border text-dark text-start">
+                    <!-- Hasil akan dirender secara dinamis lewat JavaScript -->
+                </div>
+            </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER PELAMAR -->
+    <footer class="bg-white pt-4 pb-3 border-top mt-0">
+      <div class="container" style="max-width: 1200px">
+        <div class="row g-4 mb-3 align-items-start px-3">
+          <!-- Kolom 1: Logo & Deskripsi -->
+          <div class="col-12 col-md-5">
+            <img
+              src="images/logo-1.png"
+              alt="Logo GPS"
+              style="width: 100px"
+              class="mb-2"
+            />
+            <p class="text-secondary mb-0" style="font-size: 12px">
+              Portal resmi penerimaan karyawan PT Gagah Putera Satria. Temukan
+              karir impianmu di sini.
+            </p>
+          </div>
+
+          <!-- Kolom 2: Navigasi -->
+          <div class="col-6 col-md-3 text-start">
+            <h5 class="fw-bold text-dark fs-6 mb-2" style="font-size: 13px">
+              Navigasi
+            </h5>
+            <p class="mb-1" style="font-size: 12px"><a href="index.html" class="text-decoration-none text-secondary hover-primary">Beranda</a></p>
+            <p class="mb-1" style="font-size: 12px"><a href="#lowongan" class="text-decoration-none text-secondary hover-primary">Lowongan</a></p>
+            <p class="mb-1" style="font-size: 12px"><a href="#cek-status" class="text-decoration-none text-secondary hover-primary">Cek Status</a></p>
+          </div>
+
+          <!-- Kolom 3: Kontak & Lokasi -->
+          <div class="col-6 col-md-4 text-start">
+            <h5 class="fw-bold text-dark fs-6 mb-2" style="font-size: 13px">
+              Kontak & Lokasi
+            </h5>
+            <p class="mb-2 text-secondary lh-sm" style="font-size: 12px">
+              Jl. Kapten Piere Tendean No. 158, Banjarmasin Tengah<br>
+              Banjarmasin, Kalimantan Selatan
+            </p>
+            <div class="d-flex align-items-center gap-2">
+              <a href="https://instagram.com/pt.gpsgroup" target="_blank" class="text-decoration-none text-secondary d-flex align-items-center gap-1 hover-primary">
+                <i class="bi bi-instagram fs-6"></i>
+                <span style="font-size: 12px">pt.gpsgroup</span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div
+          class="d-flex justify-content-between align-items-center pt-2 border-top border-secondary-subtle text-muted px-3"
+          style="font-size: 11px"
+        >
+          <p class="mb-0">
+            &copy; 2026 PT Gagah Putera Satria. All rights reserved.
+          </p>
+          <p class="mb-0">Kebijakan Privasi &nbsp;|&nbsp; Syarat & Ketentuan</p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- MODAL FILTER LOWONGAN -->
+    <div class="modal fade" id="modalFilterLowongan" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" style="max-width: 460px;">
+            <div class="modal-content modal-content-figma">
+                
+                <button type="button" class="btn-close position-absolute top-0 end-0 m-3 shadow-none" data-bs-dismiss="modal" aria-label="Close"></button>
+
+                <div class="text-center mb-2">
+                    <div class="filter-icon-header">
+                        <i class="bi bi-funnel-fill"></i>
+                    </div>
+                    <h4 class="fw-bold text-dark fs-6 mb-1" style="font-family: 'Poppins', sans-serif;">Filter Lamaran</h4>
+                    <p class="text-secondary small mb-0" style="font-size: 12px;">Cari daftar lowongan berdasarkan posisi, status, atau tanggal.</p>
+                </div>
+                
+                <div class="figma-inner-box mb-3">
+                    <div class="mb-2 text-start">
+                        <label class="figma-label form-label">Lowongan tersedia</label>
+                        <select id="filterPosisi" class="form-select figma-input-box">
+                            <option value="semua">Semua lowongan</option>
+                            <option value="accounting">Accounting & Finance</option>
+                            <option value="it">IT & System</option>
+                            <option value="pajak">Pajak</option>
+                            <option value="hrga">HRGA</option>
+                            <option value="operational">Operational & Maintenance</option>
+                            <option value="marketing">Marketing & Digital Media</option>
+                        </select>
+                    </div>
+
+                    <div class="mb-2 text-start">
+                        <label class="figma-label form-label">Status Lowongan</label>
+                        <select id="filterStatusSelect" class="form-select figma-input-box">
+                            <option value="semua">Semua Status</option>
+                            <option value="dibuka">Dibuka</option>
+                            <option value="akan ditutup">Akan Ditutup</option>
+                            <option value="tutup">Tutup</option>
+                        </select>
+                    </div>
+
+                    <div class="row g-2 mb-2">
+                        <div class="col-6 text-start">
+                            <label class="figma-label form-label">Tanggal buka Dari</label>
+                            <input type="date" id="filterTglDari" class="form-control figma-input-box">
+                        </div>
+                        <div class="col-6 text-start">
+                            <label class="figma-label form-label">Sampai</label>
+                            <input type="date" id="filterTglSampai" class="form-control figma-input-box">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="d-flex gap-2">
+                    <button type="button" id="btnResetFilter" class="btn btn-light flex-grow-1 py-2 rounded-3 fw-medium text-dark border shadow-sm" style="font-size: 13px; background-color: #e5e7eb;">Reset</button>
+                    <button type="button" id="btnTerapkanFilter" class="btn btn-primary flex-grow-1 py-2 rounded-3 text-white fw-medium shadow-sm" style="background-color: #1677ff; border: none; font-size: 13px;" data-bs-dismiss="modal">Terapkan perubahan</button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- MODAL PERINGATAN LOWONGAN TUTUP -->
+    <div class="modal fade" id="modalLowonganTutupPelamar" tabindex="-1" aria-labelledby="modalLowonganTutupPelamarLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" style="max-width: 420px;">
+            <div class="modal-content rounded-4 border-0 p-4 shadow text-center bg-white">
+                
+                <div class="mx-auto rounded-circle bg-danger-subtle d-flex align-items-center justify-content-center mb-3" style="width: 64px; height: 64px;">
+                    <i class="bi bi-exclamation-circle-fill text-danger fs-2"></i>
+                </div>
+
+                <h4 class="modal-title fw-bold text-dark fs-5 mb-2" id="modalLowonganTutupPelamarLabel">Lowongan Sudah Tutup</h4>
+                <p class="text-secondary small mb-4 px-2" style="font-size: 13px;">
+                    Maaf, lowongan ini sudah ditutup dan tidak dapat melihat detail lebih lanjut.
+                </p>
+
+                <button type="button" id="btnSelesaiTutup" class="btn btn-danger w-100 py-2 rounded-3 fw-medium text-white shadow-sm" data-bs-dismiss="modal" style="background-color: #ff3b30; border: none;">
+                    Selesai
+                </button>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- File JS Khusus Pelamar -->
+    <script src="js/pelamar-script.js"></script>
+
+    <!-- Skrip Interaktif Cek Status & Sinkronisasi Lowongan -->
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+          // Handler Form Cek Status Lamaran
+          const formCekStatus = document.getElementById("formCekStatus");
+          if (formCekStatus) {
+              formCekStatus.addEventListener("submit", function (e) {
+                  e.preventDefault();
+                  const noLamaran = document.getElementById("inputNoLamaran").value.trim();
+                  const emailKontak = document.getElementById("inputEmailKontak").value.trim();
+
+                  if (!noLamaran || !emailKontak) {
+                      alert("Silakan masukkan nomor lamaran dan email/nomor HP terlebih dahulu.");
+                      return;
+                  }
+
+                  window.location.href = "detail-status.html?no=" + encodeURIComponent(noLamaran);
+              });
+          }
+
+          const modalEl = document.getElementById('modalLowonganTutupPelamar');
+          const modalInstance = modalEl ? new bootstrap.Modal(modalEl) : null;
+
+          function bindCardTutupEvents() {
+              document.querySelectorAll('.card-tutup').forEach(card => {
+                  card.style.cursor = "pointer";
+                  card.onclick = function(e) {
+                      e.preventDefault();
+                      if (modalInstance) {
+                          modalInstance.show();
+                      }
+                  };
+              });
+          }
+
+          bindCardTutupEvents();
+
+          const btnSelesaiTutup = document.getElementById('btnSelesaiTutup');
+          if (btnSelesaiTutup) {
+              btnSelesaiTutup.addEventListener('click', function() {
+                  if (modalInstance) {
+                      modalInstance.hide();
+                  }
+                  document.querySelectorAll('.modal-backdrop').forEach(el => el.remove());
+                  document.body.classList.remove('modal-open');
+                  document.body.style.overflow = '';
+                  document.body.style.paddingRight = '';
+              });
+          }
+
+          let daftarLowongan = JSON.parse(localStorage.getItem("daftarLowongan")) || [];
+
+          if (daftarLowongan.length > 0) {
+              const rowGrid = document.getElementById('pelamarLowonganContainer');
+              if (rowGrid) {
+                  rowGrid.innerHTML = daftarLowongan.map(item => {
+                      const rawStatus = item.status || "Dibuka";
+                      const statusLower = rawStatus.toLowerCase();
+                      let badgeClass = "badge-dibuka";
+                      let badgeText = rawStatus;
+
+                      if (statusLower.includes("akan")) {
+                          badgeClass = "badge-akan-tutup";
+                          badgeText = "Akan ditutup";
+                      } else if (statusLower.includes("tutup") || statusLower.includes("ditutup")) {
+                          badgeClass = "badge-tutup";
+                          badgeText = "Tutup";
+                      } else {
+                          badgeClass = "badge-dibuka";
+                          badgeText = "Dibuka";
+                      }
+
+                      const detailUrl = `detail-lowongan-pelamar.html?judul=${encodeURIComponent(item.judul)}&divisi=${encodeURIComponent(item.departemen || item.divisi || 'Umum')}&lokasi=${encodeURIComponent(item.lokasi || 'Banjarmasin')}&tipe=${encodeURIComponent(item.tipe || 'Full-time')}&jumlah=${encodeURIComponent(item.jumlah || '1 orang')}&deskripsi=${encodeURIComponent(item.deskripsi || '')}&gaji=${encodeURIComponent(item.gaji || 'Gaji: Kompetitif')}&tanggungJawab=${encodeURIComponent(item.tanggungJawab || '')}&kualifikasi=${encodeURIComponent(item.kualifikasi || '')}&status=${encodeURIComponent(badgeText)}&tglTutup=${encodeURIComponent(item.tglTutup || '')}&dokumen=${encodeURIComponent(JSON.stringify(item.dokumen || []))}&tahap=${encodeURIComponent(JSON.stringify(item.tahap || []))}`;
+                      const lamarUrl = `form-lamaran-1.html?posisi=${encodeURIComponent(item.judul)}`;
+
+                      if (badgeText === "Tutup") {
+                          return `
+                              <div class="col-12 col-md-6" data-status="tutup">
+                                  <div class="card card-lowongan h-100 p-3 border-0 shadow-sm rounded-3 bg-white d-flex flex-column justify-content-between card-tutup" style="cursor: pointer;">
+                                      <div class="mb-3">
+                                          <div class="d-flex justify-content-between align-items-center mb-1">
+                                              <h3 class="fs-6 fw-bold mb-0" style="color: #a9a9a9;">${item.judul}</h3>
+                                              <span class="badge ${badgeClass} rounded-pill px-3 py-1 fw-medium">${badgeText}</span>
+                                          </div>
+                                          <div class="text-muted small mb-2" style="font-size: 12px;">${item.lokasi || 'Banjarmasin'} - ${item.tipe || 'Full time'}</div>
+                                          <p class="text-secondary small mb-0 lh-sm" style="font-size: 13px;">${item.deskripsi || ''}</p>
+                                      </div>
+                                      <div class="d-flex gap-2 align-items-center w-100 pt-2 border-top border-light-subtle">
+                                          <button class="btn btn-secondary flex-grow-1 py-2 rounded-2 btn-sm text-secondary bg-secondary-subtle border-0 disabled" style="font-size: 13px;">Lamar sekarang</button>
+                                          <button class="btn btn-secondary flex-grow-1 py-2 rounded-2 btn-sm text-secondary bg-secondary-subtle border-0 disabled" style="font-size: 13px;">Detail</button>
+                                      </div>
+                                  </div>
+                              </div>
+                          `;
+                      } else {
+                          const dataStatusAttr = badgeText.toLowerCase();
+                          return `
+                              <div class="col-12 col-md-6" data-status="${dataStatusAttr}">
+                                  <div class="card card-lowongan h-100 p-3 border-0 shadow-sm rounded-3 bg-white d-flex flex-column justify-content-between">
+                                      <div class="mb-3">
+                                          <div class="d-flex justify-content-between align-items-center mb-1">
+                                              <h3 class="fs-6 fw-bold text-dark mb-0">${item.judul}</h3>
+                                              <span class="badge ${badgeClass} rounded-pill px-3 py-1 fw-medium">${badgeText}</span>
+                                          </div>
+                                          <div class="text-muted small mb-2" style="font-size: 12px;">${item.lokasi || 'Banjarmasin'} - ${item.tipe || 'Full time'}</div>
+                                          <p class="text-secondary small mb-0 lh-sm" style="font-size: 13px;">${item.deskripsi || ''}</p>
+                                      </div>
+                                      <div class="d-flex gap-2 align-items-center w-100 pt-2 border-top border-light-subtle">
+                                          <a href="${lamarUrl}" class="btn btn-primary flex-grow-1 py-2 rounded-2 btn-sm text-decoration-none text-center text-white btn-lamar-terpilih" style="font-size: 13px; background-color: #1677ff; border: none;" data-posisi="${item.judul}">Lamar sekarang</a>
+                                          <a href="${detailUrl}" class="btn btn-primary flex-grow-1 py-2 rounded-2 btn-sm text-decoration-none text-center text-white" style="font-size: 13px; background-color: #1677ff; border: none;">Detail</a>
+                                      </div>
+                                  </div>
+                              </div>
+                          `;
+                      }
+                  }).join("");
+
+                  bindCardTutupEvents();
+              }
+          }
+
+          // TAMBAHAN AMAN: Menangkap klik tombol Lamar untuk menyimpan posisi ke localStorage
+          document.addEventListener('click', function(e) {
+              const targetLamar = e.target.closest('a[href*="form-lamaran-1.html"]');
+              if (targetLamar) {
+                  const href = targetLamar.getAttribute('href');
+                  const urlParams = new URLSearchParams(href.split('?')[1]);
+                  const posisiDipilih = urlParams.get('posisi');
+                  if (posisiDipilih) {
+                      localStorage.setItem('formDataPosisi', posisiDipilih);
+                  }
+              }
+          });
+
+          const btnTerapkanFilter = document.getElementById('btnTerapkanFilter');
+          if (btnTerapkanFilter) {
+              btnTerapkanFilter.addEventListener('click', function() {
+                  const selectedPosisi = document.getElementById('filterPosisi').value.toLowerCase();
+                  const selectedStatus = document.getElementById('filterStatusSelect').value.toLowerCase();
+                  const cards = document.querySelectorAll('#pelamarLowonganContainer > div');
+
+                  cards.forEach(card => {
+                      const titleEl = card.querySelector('h3');
+                      const cardTitle = titleEl ? titleEl.innerText.toLowerCase() : '';
+                      const cardStatus = card.getAttribute('data-status') || '';
+                      
+                      let matchPosisi = (selectedPosisi === 'semua' || cardTitle.includes(selectedPosisi));
+                      let matchStatus = (selectedStatus === 'semua' || cardStatus.includes(selectedStatus));
+
+                      if (matchPosisi && matchStatus) {
+                          card.style.display = 'block';
+                      } else {
+                          card.style.display = 'none';
+                      }
+                  });
+              });
+          }
+
+          const btnResetFilter = document.getElementById('btnResetFilter');
+          if (btnResetFilter) {
+              btnResetFilter.addEventListener('click', function() {
+                  document.getElementById('filterPosisi').value = 'semua';
+                  document.getElementById('filterStatusSelect').value = 'semua';
+                  document.getElementById('filterTglDari').value = '';
+                  document.getElementById('filterTglSampai').value = '';
+                  
+                  const cards = document.querySelectorAll('#pelamarLowonganContainer > div');
+                  cards.forEach(card => card.style.display = 'block');
+              });
+          }
+      });
+    </script>
+  </body>
+</html>

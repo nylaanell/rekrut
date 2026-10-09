@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Status Lamaran - PT Gagah Putera Satria</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Bootstrap CSS & Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"/>
+
+    <!-- File Style Custom Utama -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="detail-karyawan.css">
+
+    <style>
+      /* Mengatur agar container mengambil ruang tengah secara vertikal */
+      .center-wrapper {
+        min-height: calc(100vh - 85px); /* Tinggi layar dikurangi tinggi header navbar */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .status-container-compact {
+        max-width: 580px;
+        width: 100%;
+      }
+      .card-status-wrapper {
+        background-color: #ffffff;
+        border-radius: 12px;
+        overflow: hidden;
+        border: 1px solid rgba(0,0,0,0.08);
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+      }
+      .icon-box-danger {
+        width: 50px;
+        height: 50px;
+        background-color: #fff2f2;
+        color: #ff3b30;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 22px;
+        margin: 0 auto;
+      }
+    </style>
+  </head>
+  <body class="bg-body-tertiary">
+
+    <!-- HEADER / NAVBAR -->
+    <header class="header">
+      <div class="div">
+        <a href="index.html" class="btn-back-figma" title="Kembali ke Beranda">
+          <i class="bi bi-arrow-left"></i>
+        </a>
+        <div class="brand-container">
+          <img class="gps-logo-img" src="images/logo.png" alt="Logo GPS" />
+          <div class="brand-text">
+            <div class="brand-title-top">PORTAL LAYANAN</div>
+            <div class="brand-title-main">LOWONGAN KERJA</div>
+          </div>
+        </div>
+
+        <div class="nav-right-container">
+          <nav class="nav-menu">
+            <a href="index.html" class="text-wrapper-2 text-decoration-none">Beranda</a>
+            <a href="index.html#lowongan" class="text-wrapper-2 text-decoration-none">Lowongan</a>
+            <a href="index.html#cek-status" class="text-wrapper-2 text-decoration-none">Cek Status</a>
+          </nav>
+          <a href="login.html" class="btn btn-primary px-3 py-1 rounded-pill text-white text-decoration-none fw-medium shadow-sm" style="background-color: #1677ff; border: none; font-size: 12.5px;">Masuk</a>
+        </div>
+      </div>
+    </header>
+
+    <!-- MAIN CONTENT AREA (Posisinya Dipusatkan) -->
+    <div class="center-wrapper py-3">
+        <main class="status-container-compact px-3">
+            
+            <div class="card-status-wrapper p-4 text-center">
+                
+                <!-- Icon Silang Kustom yang Pasti Tebal -->
+                <div class="icon-box-danger mb-3 shadow-sm fw-bold" style="font-size: 24px; font-family: 'Poppins', sans-serif;">
+                    ✕
+                </div>
+
+                <!-- Informasi Utama -->
+                <h3 class="fw-bold text-dark mb-2" style="font-family: 'Poppins', sans-serif; font-size: 18px;">Mohon Maaf</h3>
+                <p class="text-secondary mb-3" style="font-size: 13px; line-height: 1.5;">
+                    Berdasarkan pengecekan pada nomor pendaftaran <span class="fw-semibold text-dark" id="displayNoLamaran">--</span>, status lamaran Anda di PT Gagah Putera Satria dinyatakan <span class="fw-semibold text-danger">Belum Diterima / Tidak Terdaftar</span> dalam tahap seleksi aktif.
+                </p>
+
+                <!-- Kotak Detail Info Tambahan -->
+                <div class="p-2.5 px-3 rounded-3 bg-light border text-start mb-3" style="font-size: 12.5px;">
+                    <div class="fw-semibold text-dark mb-1"><i class="bi bi-info-circle text-primary me-1"></i> Catatan Penting:</div>
+                    <ul class="text-secondary ps-3 mb-0" style="line-height: 1.5;">
+                        <li>Pastikan nomor lamaran dan email yang dimasukkan sudah benar.</li>
+                        <li>Terima kasih atas antusiasme dan partisipasi Anda melamar di perusahaan kami.</li>
+                    </ul>
+                </div>
+
+                <!-- Tombol Aksi Kembali -->
+                <div class="d-grid gap-2">
+                    <a href="index.html#cek-status" class="btn btn-primary py-2 rounded-2 fw-medium text-white text-decoration-none shadow-sm" style="background-color: #1677ff; border: none; font-size: 13px;">
+                        Cek Kembali / Coba Nomor Lain
+                    </a>
+                    <a href="index.html" class="btn btn-light py-2 rounded-2 fw-medium text-secondary text-decoration-none border" style="font-size: 13px;">
+                        Kembali ke Beranda
+                    </a>
+                </div>
+
+            </div>
+
+        </main>
+    </div>
+
+    <!-- Bootstrap JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Script Menangkap Nomor Lamaran dari URL -->
+    <script>
+      const urlParams = new URLSearchParams(window.location.search);
+      const noParam = urlParams.get('no');
+      if (noParam) {
+          document.getElementById('displayNoLamaran').innerText = noParam;
+      }
+    </script>
+  </body>
+</html>

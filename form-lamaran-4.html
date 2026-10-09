@@ -1,0 +1,382 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Formulir Lamaran Kerja - Step 4 (Pekerjaan) - PT Gagah Putera Satria</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Bootstrap CSS & Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"/>
+
+    <!-- File Style Custom Utama & Detail Karyawan -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="detail-karyawan.css">
+
+    <!-- Styling Tambahan agar Ukuran & Tinggi Input Konsisten -->
+    <style>
+      .detail-container-compact {
+        max-width: 680px;
+        margin: 0 auto;
+        width: 100%;
+      }
+      .card-detail-wrapper {
+        background-color: #ffffff;
+        border-radius: 12px;
+        overflow: hidden;
+        border: 1px solid rgba(0,0,0,0.08);
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+      }
+      .header-blue-banner {
+        background-color: #1677ff;
+      }
+      .form-control-sm, .form-select-sm, textarea.form-control-sm {
+        padding: 6px 10px !important;
+        font-size: 12px !important;
+      }
+    </style>
+  </head>
+  <body class="bg-body-tertiary">
+
+    <!-- HEADER / NAVBAR -->
+    <header class="header">
+      <div class="div">
+        <a href="index.html" class="btn-back-figma" title="Kembali ke Beranda">
+          <i class="bi bi-arrow-left"></i>
+        </a>
+        <div class="brand-container">
+          <img class="gps-logo-img" src="images/logo.png" alt="Logo GPS" />
+          <div class="brand-text">
+            <div class="brand-title-top">PORTAL LAYANAN</div>
+            <div class="brand-title-main">LOWONGAN KERJA</div>
+          </div>
+        </div>
+
+        <div class="nav-right-container">
+          <nav class="nav-menu">
+            <a href="index.html" class="text-wrapper-2 text-decoration-none">Beranda</a>
+            <a href="index.html#lowongan" class="text-wrapper-2 text-decoration-none">Lowongan</a>
+            <a href="index.html#cek-status" class="text-wrapper-2 text-decoration-none">Cek Status</a>
+          </nav>
+          <a href="login.html" class="btn btn-primary px-3 py-1 rounded-pill text-white text-decoration-none fw-medium shadow-sm" style="background-color: #1677ff; border: none; font-size: 12.5px;">Masuk</a>
+        </div>
+      </div>
+    </header>
+
+    <!-- MAIN CONTENT AREA -->
+    <div class="dashboard-hrd-admin py-4">
+        <main class="detail-container-compact">
+            
+            <!-- JUDUL & STEPPER -->
+            <div class="text-center mb-3">
+              <h1 class="fw-bold fs-4 mb-1 text-dark" style="font-family: 'Poppins', sans-serif;">Form Lamaran Kerja</h1>
+              <p class="text-muted small mb-4" id="posisiDilamarText" style="font-size: 13px;">Posisi dilamar: IT Support</p>
+            </div>
+
+            <!-- STEPPER INDICATOR -->
+            <div class="position-relative mb-5" style="max-width: 540px; margin: 0 auto;">
+              <div class="position-absolute bg-secondary-subtle" style="top: 20px; left: 35px; right: 55px; height: 3px; z-index: 1;"></div>
+              <div class="position-absolute bg-primary" style="top: 20px; left: 35px; width: 60%; height: 3px; z-index: 1; transition: width 0.3s ease;"></div>
+              
+              <div class="d-flex justify-content-between align-items-center position-relative" style="z-index: 2;">
+                <div class="d-flex flex-column align-items-center">
+                  <div class="rounded-circle text-white d-flex align-items-center justify-content-center fw-semibold shadow-sm" style="width: 40px; height: 40px; font-size: 13px; background-color: #1677ff;"><i class="bi bi-check-lg"></i></div>
+                  <span style="font-size: 11px;" class="mt-1 text-muted text-nowrap">Data pribadi</span>
+                </div>
+                <div class="d-flex flex-column align-items-center">
+                  <div class="rounded-circle text-white d-flex align-items-center justify-content-center fw-semibold shadow-sm" style="width: 40px; height: 40px; font-size: 13px; background-color: #1677ff;"><i class="bi bi-check-lg"></i></div>
+                  <span style="font-size: 11px;" class="mt-1 text-muted text-nowrap">Keluarga</span>
+                </div>
+                <div class="d-flex flex-column align-items-center">
+                  <div class="rounded-circle text-white d-flex align-items-center justify-content-center fw-semibold shadow-sm" style="width: 40px; height: 40px; font-size: 13px; background-color: #1677ff;"><i class="bi bi-check-lg"></i></div>
+                  <span style="font-size: 11px;" class="mt-1 text-muted text-nowrap">Pendidikan</span>
+                </div>
+                <div class="d-flex flex-column align-items-center">
+                  <div class="rounded-circle text-white d-flex align-items-center justify-content-center fw-semibold shadow-sm" style="width: 40px; height: 40px; font-size: 13px; background-color: #1677ff;">4</div>
+                  <span style="font-size: 11px;" class="mt-1 fw-medium text-dark text-nowrap">Pekerjaan</span>
+                </div>
+                <div class="d-flex flex-column align-items-center">
+                  <div class="rounded-circle text-muted bg-secondary-subtle d-flex align-items-center justify-content-center fw-semibold shadow-sm" style="width: 40px; height: 40px; font-size: 13px;">5</div>
+                  <span style="font-size: 11px;" class="mt-1 text-muted text-nowrap">Dokumen & Tambahan</span>
+                </div>
+              </div>
+            </div>
+            
+            <form id="formPekerjaan" class="needs-validation" novalidate>
+                <div class="card-detail-wrapper mb-4">
+                    
+                    <!-- Header Banner Biru -->
+                    <div class="header-blue-banner py-3 px-4">
+                        <h2 class="text-white mb-0" style="font-size: 15px; font-weight: 600;">Pekerjaan</h2>
+                        <p class="text-white mb-0" style="font-size: 11px; opacity: 0.9;">Lengkapi bagian wajib terlebih dahulu, bagian opsional ada di bawahnya.</p>
+                    </div>
+
+                    <!-- Card Body Form (Wajib: Pekerjaan Terakhir, Referensi, Kontak Darurat, Ekspektasi & Kesediaan) -->
+                    <div class="p-4 pb-0">
+                        <div class="fw-semibold text-danger mb-3" style="font-size: 12px;">*Wajib diisi</div>
+
+                        <!-- 1. Pekerjaan Terakhir -->
+                        <div class="fw-bold text-dark mb-3 fs-6">Pekerjaan Terakhir</div>
+                        <div class="vstack gap-3 mb-3">
+                            <div>
+                                <label class="form-label text-dark fw-medium mb-1" style="font-size: 12px;">Nama perusahaan</label>
+                                <input type="text" id="workPerusahaan" class="form-control form-control-sm rounded-2" placeholder="Nama perusahaan" required />
+                            </div>
+                            <div>
+                                <label class="form-label text-dark fw-medium mb-1" style="font-size: 12px;">Alamat perusahaan</label>
+                                <input type="text" id="workAlamat" class="form-control form-control-sm rounded-2" placeholder="Alamat lengkap perusahaan" required />
+                            </div>
+                            <div>
+                                <label class="form-label text-dark fw-medium mb-1" style="font-size: 12px;">Telepon</label>
+                                <input type="tel" id="workTelepon" class="form-control form-control-sm rounded-2" placeholder="No telepon perusahaan" required />
+                            </div>
+                            <div class="row g-2">
+                                <div class="col-6">
+                                    <label class="form-label text-dark fw-medium mb-1" style="font-size: 12px;">Jabatan awal</label>
+                                    <input type="text" id="workJabatanAwal" class="form-control form-control-sm rounded-2" placeholder="Jabatan awal" required />
+                                </div>
+                                <div class="col-6">
+                                    <label class="form-label text-dark fw-medium mb-1" style="font-size: 12px;">Jabatan akhir</label>
+                                    <input type="text" id="workJabatanAkhir" class="form-control form-control-sm rounded-2" placeholder="Jabatan akhir" required />
+                                </div>
+                            </div>
+                            <div>
+                                <label class="form-label text-dark fw-medium mb-1" style="font-size: 12px;">Dari - sampai</label>
+                                <input type="text" id="workPeriode" class="form-control form-control-sm rounded-2" placeholder="Contoh: Jan 2023 - Des 2025" required />
+                            </div>
+                            <div>
+                                <label class="form-label text-dark fw-medium mb-1" style="font-size: 12px;">Uraian tugas & tanggung jawab</label>
+                                <textarea id="workUraian" class="form-control form-control-sm rounded-2" rows="3" placeholder="Jelaskan uraian tugas..." required></textarea>
+                            </div>
+                        </div>
+
+                        <hr class="text-secondary opacity-25 my-4">
+
+                        <!-- 2. Referensi -->
+                        <div class="fw-bold text-dark mb-3 fs-6">Referensi</div>
+                        <div class="vstack gap-3 mb-3">
+                            <div>
+                                <label class="form-label text-dark fw-medium mb-1" style="font-size: 12px;">Nama</label>
+                                <input type="text" id="refNama" class="form-control form-control-sm rounded-2" placeholder="Nama referensi" required />
+                            </div>
+                            <div>
+                                <label class="form-label text-dark fw-medium mb-1" style="font-size: 12px;">Alamat</label>
+                                <input type="text" id="refAlamat" class="form-control form-control-sm rounded-2" placeholder="Alamat referensi" required />
+                            </div>
+                            <div>
+                                <label class="form-label text-dark fw-medium mb-1" style="font-size: 12px;">No telepon</label>
+                                <input type="tel" id="refTelepon" class="form-control form-control-sm rounded-2" placeholder="No telepon referensi" required />
+                            </div>
+                            <div>
+                                <label class="form-label text-dark fw-medium mb-1" style="font-size: 12px;">Hubungan</label>
+                                <input type="text" id="refHubungan" class="form-control form-control-sm rounded-2" placeholder="Contoh: Mantan Atasan" required />
+                            </div>
+                        </div>
+
+                        <hr class="text-secondary opacity-25 my-4">
+
+                        <!-- 3. Kontak Darurat -->
+                        <div class="fw-bold text-dark mb-3 fs-6">Kontak Darurat</div>
+                        <div class="vstack gap-3 mb-3">
+                            <div>
+                                <label class="form-label text-dark fw-medium mb-1" style="font-size: 12px;">Nama</label>
+                                <input type="text" id="daruratNama" class="form-control form-control-sm rounded-2" placeholder="Nama kontak darurat" required />
+                            </div>
+                            <div>
+                                <label class="form-label text-dark fw-medium mb-1" style="font-size: 12px;">Alamat</label>
+                                <input type="text" id="daruratAlamat" class="form-control form-control-sm rounded-2" placeholder="Alamat kontak darurat" required />
+                            </div>
+                            <div>
+                                <label class="form-label text-dark fw-medium mb-1" style="font-size: 12px;">No telepon</label>
+                                <input type="tel" id="daruratTelepon" class="form-control form-control-sm rounded-2" placeholder="No telepon darurat" required />
+                            </div>
+                            <div>
+                                <label class="form-label text-dark fw-medium mb-1" style="font-size: 12px;">Hubungan</label>
+                                <input type="text" id="daruratHubungan" class="form-control form-control-sm rounded-2" placeholder="Contoh: Orang Tua / Saudara" required />
+                            </div>
+                        </div>
+
+                        <hr class="text-secondary opacity-25 my-4">
+
+                        <!-- 4. Ekspektasi & Kesediaan -->
+                        <div class="fw-bold text-dark mb-3 fs-6">Ekspektasi & Kesediaan</div>
+                        <div class="vstack gap-3 mb-3">
+                            <div>
+                                <label class="form-label text-dark fw-medium mb-1" style="font-size: 12px;">Ekspektasi gaji</label>
+                                <input type="text" id="expGaji" class="form-control form-control-sm rounded-2" placeholder="Contoh: Rp 5.000.000" required />
+                            </div>
+                            <div class="form-check my-1">
+                                <input class="form-check-input" type="checkbox" id="checkLuarKota">
+                                <label class="form-check-label text-dark fw-medium" for="checkLuarKota" style="font-size: 12px;">
+                                    Bersedia ditempatkan di luar kota
+                                </label>
+                            </div>
+                            
+                            <!-- Input Tanggal dengan Ikon Kalender yang Konsisten -->
+                            <div>
+                                <label class="form-label text-dark fw-medium mb-1" style="font-size: 12px;">Bisa mulai kerja</label>
+                                <div class="position-relative">
+                                    <input 
+                                        type="text" 
+                                        id="mulaiKerja"
+                                        class="form-control form-control-sm py-1 px-2.5 rounded-2" 
+                                        placeholder="mm/dd/yyyy"
+                                        onfocus="this.type = 'date'"
+                                        onblur="if (!this.value) this.type = 'text';"
+                                        style="font-size: 12px;"
+                                        required 
+                                    />
+                                    <i class="bi bi-calendar-fill position-absolute top-50 translate-middle-y text-secondary" 
+                                       style="right: 12px; font-size: 13px; pointer-events: none; opacity: 0.7;"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- BAGIAN OPSIONAL (Di dalam card-detail-wrapper) -->
+                    <div class="p-4 mt-3" style="background-color: #e6f4ff; border-top: 1px solid #bae0ff;">
+                        <div class="fw-semibold text-dark mb-3" style="font-size: 12px;">*Opsional</div>
+                        <div class="vstack gap-3">
+                            <!-- Riwayat Pekerjaan Sebelumnya -->
+                            <div class="bg-white p-3 rounded-2 border shadow-sm">
+                                <div class="d-flex align-items-center justify-content-between">
+                                    <span class="fw-medium text-dark" style="font-size: 12px;">Riwayat pekerjaan sebelumnya</span>
+                                    <button type="button" class="btn btn-primary px-3 py-1 rounded-2 fw-medium text-white shadow-sm" onclick="tambahField('containerRiwayatPekerjaan', 'Nama Perusahaan / Posisi')" style="font-size: 11.5px; background-color: #1677ff; border: none;">+ Tambah</button>
+                                </div>
+                                <div id="containerRiwayatPekerjaan" class="vstack gap-2 mt-2"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div> <!-- Akhir dari .card-detail-wrapper -->
+
+                <!-- ACTION BUTTONS (Berada di luar kartu dan sejajar rapi di bawah form) -->
+                <div class="d-flex align-items-center justify-content-between mb-4 px-2">
+                    <a href="form-lamaran-3.html" class="btn btn-secondary px-3.5 py-1.5 fw-medium rounded-2 text-dark text-decoration-none shadow-sm" style="background-color: #e4e6eb; border: none; font-size: 12.5px;">Kembali ke step sebelumnya</a>
+                    <button type="submit" class="btn btn-primary px-3.5 py-1.5 rounded-2 fw-medium text-white shadow-sm" style="font-size: 12.5px; background-color: #1677ff; border: none;">Lanjut ke step berikutnya</button>
+                </div>
+
+            </form>
+        </main>
+    </div>
+
+    <!-- Bootstrap JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- Script Sinkronisasi Posisi, Form Pekerjaan, & Penyimpanan LocalStorage Lengkap -->
+    <script>
+      function tambahField(containerId, placeholderText, nilaiTeks = '') {
+          const container = document.getElementById(containerId);
+          if (!container) return;
+          
+          const wrapper = document.createElement('div');
+          wrapper.className = 'input-group input-group-sm mt-2';
+          
+          const input = document.createElement('input');
+          input.type = 'text';
+          input.className = 'form-control form-control-sm rounded-2';
+          input.placeholder = placeholderText;
+          input.value = nilaiTeks;
+          
+          const deleteBtn = document.createElement('button');
+          deleteBtn.type = 'button';
+          deleteBtn.className = 'btn btn-outline-danger btn-sm rounded-2 ms-2';
+          deleteBtn.innerHTML = '<i class="bi bi-trash"></i>';
+          deleteBtn.onclick = function() {
+              container.removeChild(wrapper);
+          };
+          
+          wrapper.appendChild(input);
+          wrapper.appendChild(deleteBtn);
+          container.appendChild(wrapper);
+      }
+
+      document.addEventListener("DOMContentLoaded", function () {
+          // 1. SINKRONISASI POSISI LOWONGAN
+          const posisiTerpilih = localStorage.getItem("formDataPosisi") || "IT Support";
+          const posisiTextEl = document.getElementById("posisiDilamarText");
+          if (posisiTextEl) {
+              posisiTextEl.innerText = "Posisi dilamar: " + posisiTerpilih;
+          }
+
+          // 2. AMBIL DAN MUAT KEMBALI DATA WAJIB BERDASARKAN ID
+          if (localStorage.getItem("workPerusahaan")) document.getElementById("workPerusahaan").value = localStorage.getItem("workPerusahaan");
+          if (localStorage.getItem("workAlamat")) document.getElementById("workAlamat").value = localStorage.getItem("workAlamat");
+          if (localStorage.getItem("workTelepon")) document.getElementById("workTelepon").value = localStorage.getItem("workTelepon");
+          if (localStorage.getItem("workJabatanAwal")) document.getElementById("workJabatanAwal").value = localStorage.getItem("workJabatanAwal");
+          if (localStorage.getItem("workJabatanAkhir")) document.getElementById("workJabatanAkhir").value = localStorage.getItem("workJabatanAkhir");
+          if (localStorage.getItem("workPeriode")) document.getElementById("workPeriode").value = localStorage.getItem("workPeriode");
+          if (localStorage.getItem("workUraian")) document.getElementById("workUraian").value = localStorage.getItem("workUraian");
+          
+          if (localStorage.getItem("refNama")) document.getElementById("refNama").value = localStorage.getItem("refNama");
+          if (localStorage.getItem("refAlamat")) document.getElementById("refAlamat").value = localStorage.getItem("refAlamat");
+          if (localStorage.getItem("refTelepon")) document.getElementById("refTelepon").value = localStorage.getItem("refTelepon");
+          if (localStorage.getItem("refHubungan")) document.getElementById("refHubungan").value = localStorage.getItem("refHubungan");
+          
+          if (localStorage.getItem("daruratNama")) document.getElementById("daruratNama").value = localStorage.getItem("daruratNama");
+          if (localStorage.getItem("daruratAlamat")) document.getElementById("daruratAlamat").value = localStorage.getItem("daruratAlamat");
+          if (localStorage.getItem("daruratTelepon")) document.getElementById("daruratTelepon").value = localStorage.getItem("daruratTelepon");
+          if (localStorage.getItem("daruratHubungan")) document.getElementById("daruratHubungan").value = localStorage.getItem("daruratHubungan");
+          
+          if (localStorage.getItem("expGaji")) document.getElementById("expGaji").value = localStorage.getItem("expGaji");
+          if (localStorage.getItem("mulaiKerja")) document.getElementById("mulaiKerja").value = localStorage.getItem("mulaiKerja");
+
+          const checkLuarKota = document.getElementById("checkLuarKota");
+          if (checkLuarKota) {
+              checkLuarKota.checked = localStorage.getItem("checkLuarKota") === "true";
+          }
+
+          // 3. MUAT KEMBALI DATA OPSIONAL DINAMIS (Riwayat Pekerjaan Sebelumnya)
+          const savedRiwayat = JSON.parse(localStorage.getItem("formDataRiwayatPekerjaan") || "[]");
+          savedRiwayat.forEach(val => tambahField('containerRiwayatPekerjaan', 'Nama Perusahaan / Posisi', val));
+
+          // 4. SIMPAN DATA KE LOCALSTORAGE KETIKA TOMBOL LANJUT DIKLIK
+          const formPekerjaan = document.getElementById("formPekerjaan");
+
+          if (formPekerjaan) {
+              formPekerjaan.addEventListener("submit", function (e) {
+                  e.preventDefault(); 
+                  
+                  // Simpan data wajib Pekerjaan berdasarkan ID yang aman
+                  localStorage.setItem("workPerusahaan", document.getElementById("workPerusahaan").value);
+                  localStorage.setItem("workAlamat", document.getElementById("workAlamat").value);
+                  localStorage.setItem("workTelepon", document.getElementById("workTelepon").value);
+                  localStorage.setItem("workJabatanAwal", document.getElementById("workJabatanAwal").value);
+                  localStorage.setItem("workJabatanAkhir", document.getElementById("workJabatanAkhir").value);
+                  localStorage.setItem("workPeriode", document.getElementById("workPeriode").value);
+                  localStorage.setItem("workUraian", document.getElementById("workUraian").value);
+                  
+                  localStorage.setItem("refNama", document.getElementById("refNama").value);
+                  localStorage.setItem("refAlamat", document.getElementById("refAlamat").value);
+                  localStorage.setItem("refTelepon", document.getElementById("refTelepon").value);
+                  localStorage.setItem("refHubungan", document.getElementById("refHubungan").value);
+                  
+                  localStorage.setItem("daruratNama", document.getElementById("daruratNama").value);
+                  localStorage.setItem("daruratAlamat", document.getElementById("daruratAlamat").value);
+                  localStorage.setItem("daruratTelepon", document.getElementById("daruratTelepon").value);
+                  localStorage.setItem("daruratHubungan", document.getElementById("daruratHubungan").value);
+                  
+                  localStorage.setItem("expGaji", document.getElementById("expGaji").value);
+                  localStorage.setItem("mulaiKerja", document.getElementById("mulaiKerja").value);
+
+                  if (checkLuarKota) {
+                      localStorage.setItem("checkLuarKota", checkLuarKota.checked);
+                  }
+
+                  // Simpan data opsional dinamis
+                  const arrRiwayat = Array.from(document.querySelectorAll('#containerRiwayatPekerjaan input')).map(i => i.value).filter(v => v.trim() !== "");
+                  localStorage.setItem("formDataRiwayatPekerjaan", JSON.stringify(arrRiwayat));
+
+                  // Lanjut ke step 5 (Dokumen & Tambahan)
+                  window.location.href = "form-lamaran-5.html";
+              });
+          }
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Detail Lowongan - HRD Admin</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&family=Poppins:wght@400;500;600;700&display=swap"
+    rel="stylesheet"
+  />
+
+  <!-- Bootstrap CSS & Icons -->
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+  />
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+  />
+
+  <!-- File Style Custom Utama -->
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body class="bg-body-tertiary">
+
+  <!-- 1. HEADER / NAVBAR -->
+  <header class="header position-relative">
+    <!-- Tombol Kembali menggunakan absolute positioning agar posisinya persis dan konsisten seperti halaman Buat Lowongan -->
+    <a href="kelola-lowongan.html" class="text-dark text-decoration-none position-absolute d-flex align-items-center justify-content-center" style="left: 45px; top: 50%; transform: translateY(-50%); font-size: 20px; z-index: 10;" title="Kembali">
+      <i class="bi bi-arrow-left"></i>
+    </a>
+
+    <div class="div">
+      <!-- Brand / Logo -->
+      <div class="brand-container">
+        <img class="gps-logo-img" src="images/logo.png" alt="Logo GPS" />
+        <div class="brand-text">
+          <div class="brand-title-top">PORTAL LAYANAN</div>
+          <div class="brand-title-main">LOWONGAN KERJA</div>
+        </div>
+      </div>
+
+      <!-- Menu Navigasi Kanan & Profil -->
+      <div class="nav-right-container">
+        <nav class="nav-menu">
+          <a href="dashboard.html" class="text-wrapper-2 text-decoration-none">Dashboard</a>
+          <a href="kelola-lamaran.html" class="text-wrapper-2 text-decoration-none">Lamaran</a>
+          <a href="kelola-lowongan.html" class="text-wrapper-2 text-decoration-none fw-bold text-primary">Lowongan</a>
+          <a href="kelola-jadwal.html" class="text-wrapper-2 text-decoration-none">Jadwal Seleksi</a>
+          <a href="kelola-karyawan.html" class="text-wrapper-2 text-decoration-none">Karyawan Baru</a>
+        </nav>
+        <a href="akun.html" title="Akun Saya">
+          <img class="akun border border-primary border-2 rounded-circle" src="images/akun.png" alt="Foto Profil" />
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- MAIN CONTENT (Disesuaikan container-nya agar lebarnya pas dan seragam) -->
+  <div class="dashboard-hrd-admin py-4">
+    <main class="detail-container-compact">
+      <div class="card-detail-wrapper mb-5">
+        
+        <!-- HEADER CARD / BANNER BIRU -->
+        <div class="header-blue-banner py-2 px-3">
+          <h1 class="text-white mb-0" style="font-size: 15px; font-weight: 600;">Detail lowongan</h1>
+          <p class="text-white mb-0" style="font-size: 11px; opacity: 0.9;">Cek detail lowongan yang masih terbuka</p>
+        </div>
+
+        <!-- BODY KONTEN DETAIL -->
+        <div class="p-3.5 p-md-4 w-100">
+          <div class="components-2 w-100">
+            <div class="components-3">
+              
+              <!-- Judul & Divisi -->
+              <div class="judul-2">
+                <div class="judul-3">
+                  <h2 id="detailJudulLowongan" class="text-wrapper-4 text-start" style="font-size: 20px;">IT Support</h2>
+                  <p id="detailDivisiLowongan" class="text-wrapper-5 text-start text-muted mb-0" style="font-size: 14px;">Divisi: IT</p>
+                </div>
+              </div>
+
+              <!-- TAG / BADGE INFORMASI (DIPERBAIKI) -->
+              <div class="d-flex flex-wrap gap-2 align-items-center mt-2">
+                <span id="badgeStatusLowongan" class="badge bg-success text-white px-3 py-1.5 rounded-pill fw-medium" style="font-size: 12px;">Dibuka</span>
+                <span id="badgeLokasiLowongan" class="badge bg-light text-dark border px-3 py-1.5 rounded-pill fw-medium" style="font-size: 12px;">Banjarmasin</span>
+                <span id="badgeTipeLowongan" class="badge bg-light text-dark border px-3 py-1.5 rounded-pill fw-medium" style="font-size: 12px;">Kontrak</span>
+                <span id="badgeSisaWaktu" class="badge bg-light text-dark border px-3 py-1.5 rounded-pill fw-medium" style="font-size: 12px;">Ditutup: 9999-09-09</span>
+                <span id="badgeGajiLowongan" class="badge bg-light text-dark border px-3 py-1.5 rounded-pill fw-medium" style="font-size: 12px;">Rp4.000.000</span>
+              </div>
+
+              <hr class="text-secondary opacity-25 my-3.5" />
+
+              <!-- DESKRIPSI PEKERJAAN -->
+              <div class="judul-4">
+                <div class="judul-5 w-100 h-auto">
+                  <h3 class="text-wrapper-7" style="font-size: 14px; font-weight: 600;">Deskripsi Pekerjaan</h3>
+                  <p id="detailDeskripsiText" class="text-wrapper-8 text-secondary" style="font-size: 12.5px; line-height: 1.5;">
+                    Profesional teknologi yang bertanggung jawab untuk mengelola, memelihara, mengonfigurasi, serta memecahkan masalah perangkat keras (hardware), perangkat lunak (software), dan jaringan komputer di dalam perusahaan.
+                  </p>
+                </div>
+              </div>
+
+              <!-- TANGGUNG JAWAB UTAMA -->
+              <div class="judul-4 mt-3">
+                <div class="judul-6 w-100 h-auto">
+                  <h3 class="text-wrapper-7" style="font-size: 14px; font-weight: 600;">Tanggung Jawab Utama</h3>
+                  <ul id="listTanggungJawab" class="text-wrapper-8 text-secondary ps-3 mb-0" style="font-size: 12.5px; line-height: 1.5;">
+                    <li>Mampu dan mengatasi kendala pada komputer, laptop, printer, dan perangkat IT lainnya baik secara langsung maupun jarak jauh (remote).</li>
+                    <li>Mampu memelihara kestabilan jaringan LAN, Wi-Fi, router, dan switch agar operasional kantor tidak terganggu.</li>
+                    <li>Serta membantu proses backup data server internal secara berkala dan menangani ancaman virus atau malware.</li>
+                  </ul>
+                </div>
+              </div>
+
+              <!-- KUALIFIKASI -->
+              <div class="judul-4 mt-3">
+                <div class="judul-7 w-100 h-auto">
+                  <h3 class="text-wrapper-7" style="font-size: 14px; font-weight: 600;">Kualifikasi</h3>
+                  <ul id="listKualifikasi" class="pendidikan-minimal text-secondary ps-3 mb-0" style="font-size: 12.5px; line-height: 1.5;">
+                    <li>Pendidikan minimal S1 jurusan Teknik Informatika, Sistem Informasi, Teknik Komputer, atau Ilmu Komputer.</li>
+                    <li>Pengalaman 1 tahun.</li>
+                    <li>Paham troubleshooting PC & instalasi jaringan kantor.</li>
+                    <li>Jujur, cekatan, ramah, dan komunikatif.</li>
+                    <li>Siap bekerja full-time di kantor (WFO).</li>
+                    <li>Poin plus jika memiliki sertifikasi IT (CompTIA/Cisco).</li>
+                  </ul>
+                </div>
+              </div>
+
+              <!-- DOKUMEN YANG DIMINTA (TAMBAHAN WADAH DINAMIS) -->
+              <div class="judul-4 mt-3">
+                <div class="w-100 h-auto">
+                  <h3 class="text-wrapper-7" style="font-size: 14px; font-weight: 600;">Dokumen yang Diminta dari Pelamar</h3>
+                  <ul id="detailDokumenContainer" class="text-secondary ps-3 mb-0" style="font-size: 12.5px; line-height: 1.5;">
+                    <!-- Data dokumen akan dimuat secara otomatis lewat script.js -->
+                  </ul>
+                </div>
+              </div>
+
+              <!-- TAHAP SELEKSI (TAMBAH WADAH DINAMIS) -->
+              <div class="judul-4 mt-3">
+                <div class="w-100 h-auto">
+                  <h3 class="text-wrapper-7" style="font-size: 14px; font-weight: 600;">Tahap Seleksi</h3>
+                  <ul id="detailTahapContainer" class="text-secondary ps-3 mb-0 list-unstyled" style="font-size: 12.5px;">
+                    <!-- Data tahap seleksi akan dimuat secara otomatis lewat script.js -->
+                  </ul>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </main>
+  </div>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  
+  <!-- Script Utama Terpisah dengan Benar -->
+  <script src="js/script.js"></script>
+</body>
+</html>

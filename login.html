@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Login HRD/Admin - PT. Gagah Putera Satria</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Bootstrap CSS & Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
+
+  <!-- Custom Stylesheet -->
+  <link rel="stylesheet" href="css/style.css" />
+
+  <style>
+    html, body {
+      height: 100%;
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+    }
+    .login-split-container {
+      display: flex;
+      min-height: 100vh;
+      width: 100%;
+      overflow: hidden;
+    }
+    
+    /* KOLOM KIRI: Gambar Penuh (Full Cover) */
+    .login-left-pane {
+      flex: 1;
+      position: relative;
+      background-image: url('images/gambar-login.png'); 
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      display: none;
+    }
+
+    /* Efek lapisan transparan di atas gambar */
+    .login-left-pane::before {
+      content: "";
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(0, 0, 0, 0.3);
+    }
+
+    @media (min-width: 992px) {
+      .login-left-pane {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        padding: 40px;
+      }
+    }
+
+    /* KOLOM KANAN: Form Login */
+    .login-right-pane {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 30px;
+      background-color: #f8f9fa;
+    }
+    .login-card-custom {
+      width: 100%;
+      max-width: 400px;
+      border: none;
+      border-radius: 16px;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+      background: #ffffff;
+      padding: 40px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="login-split-container">
+    
+    <!-- KOLOM KIRI: GAMBAR FULL PENUH -->
+    <div class="login-left-pane text-white text-center">
+      <div class="position-relative p-4 z-1">
+        <h2 class="fw-bold fs-3" style="font-family: 'Montserrat', sans-serif; text-shadow: 0 2px 4px rgba(0,0,0,0.5);">PORTAL LAYANAN HRD</h2>
+        <p class="opacity-90 fs-6 mt-2" style="text-shadow: 0 1px 3px rgba(0,0,0,0.5);">Sistem Manajemen & Perekrutan Terpadu PT. Gagah Putera Satria</p>
+      </div>
+    </div>
+
+    <!-- KOLOM KANAN: FORM LOGIN -->
+    <div class="login-right-pane">
+      <div class="card login-card-custom">
+        <div class="text-center mb-4">
+          <!-- Kotak/Bulatan putih dibuang, gambar tampil bersih tanpa background -->
+          <div class="mb-2">
+            <img src="images/logo-header.png" alt="Logo Header" style="max-height: 30px; object-fit: contain;">
+          </div>
+          <h1 class="fw-bold text-dark fs-4 mb-1" style="font-family: 'Poppins', sans-serif;">Login HRD/Admin</h1>
+          <p class="text-muted small mb-0">Khusus untuk tim internal PT. Gagah Putera Satria</p>
+        </div>
+
+        <form id="loginForm" novalidate>
+          <!-- Field Username/Email -->
+          <div class="mb-3">
+            <label for="username" class="form-label fw-semibold text-dark small">Username/Email</label>
+            <input type="text" class="form-control form-control-sm py-2 rounded-2" id="username" placeholder="Masukkan username anda disini" required />
+          </div>
+
+          <!-- Field Password -->
+          <div class="mb-3">
+            <label for="password" class="form-label fw-semibold text-dark small">Password</label>
+            <div class="input-group input-group-sm">
+              <input type="password" class="form-control py-2 rounded-start-2" id="password" placeholder="Password" required />
+              <button class="btn btn-outline-secondary px-3 rounded-end-2" type="button" id="togglePassword">
+                <i class="bi bi-eye" id="toggleIcon"></i>
+              </button>
+            </div>
+          </div>
+
+          <!-- Checkbox Ingat Saya & Lupa Password -->
+          <div class="d-flex justify-content-between align-items-center mb-4 small">
+            <div class="form-check p-0 d-flex align-items-center gap-2">
+              <input class="form-check-input m-0" type="checkbox" id="rememberMe">
+              <label class="form-check-label text-muted" for="rememberMe">Ingat saya</label>
+            </div>
+            <a href="lupa-password.html" class="text-decoration-none fw-semibold text-primary">Lupa Password?</a>
+          </div>
+
+          <!-- Tombol Masuk Utama Form -->
+          <button type="submit" class="btn btn-primary w-100 fw-semibold py-2 rounded-2 mb-3 shadow-sm" style="background-color: #1677ff; border: none;">Masuk</button>
+
+          <!-- Link Kembali -->
+          <div class="text-center small">
+            <span class="text-muted">Bukan HRD/Admin? </span>
+            <a href="index.html" class="text-decoration-none fw-bold text-primary">Kembali ke portal lowongan</a>
+          </div>
+        </form>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Bootstrap JS & Custom Script -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/script.js"></script>
+</body>
+</html>

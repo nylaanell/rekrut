@@ -1,0 +1,519 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Buat Jadwal Seleksi - HRD Admin</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&family=Poppins:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Bootstrap CSS & Icons -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    />
+
+    <!-- File Style Custom Utama -->
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body class="bg-body-tertiary">
+    <!-- 1. HEADER / NAVBAR UTAMA -->
+    <header class="header position-relative">
+      <!-- Tombol Back dengan jarak left yang pas -->
+      <a
+        href="kelola-jadwal.html"
+        class="text-dark text-decoration-none position-absolute d-flex align-items-center justify-content-center"
+        style="
+          left: 45px;
+          top: 50%;
+          transform: translateY(-50%);
+          font-size: 20px;
+          z-index: 10;
+        "
+        title="Kembali"
+      >
+        <i class="bi bi-arrow-left"></i>
+      </a>
+
+      <div class="div">
+        <!-- Brand / Logo -->
+        <div class="brand-container">
+          <img class="gps-logo-img" src="images/logo.png" alt="Logo GPS" />
+          <div class="brand-text">
+            <div class="brand-title-top">PORTAL LAYANAN</div>
+            <div class="brand-title-main">LOWONGAN KERJA</div>
+          </div>
+        </div>
+
+        <!-- Menu Navigasi Kanan & Profil -->
+        <div class="nav-right-container">
+          <nav class="nav-menu">
+            <a href="dashboard.html" class="text-wrapper-2 text-decoration-none"
+              >Dashboard</a
+            >
+            <a
+              href="kelola-lamaran.html"
+              class="text-wrapper-2 text-decoration-none"
+              >Lamaran</a
+            >
+            <a
+              href="kelola-lowongan.html"
+              class="text-wrapper-2 text-decoration-none"
+              >Lowongan</a
+            >
+            <a
+              href="kelola-jadwal.html"
+              class="text-wrapper-2 text-decoration-none fw-bold text-primary"
+              >Jadwal Seleksi</a
+            >
+            <a
+              href="kelola-karyawan.html"
+              class="text-wrapper-2 text-decoration-none"
+              >Karyawan Baru</a
+            >
+          </nav>
+          <a href="akun.html" title="Akun Saya">
+            <img
+              class="akun border border-primary border-2 rounded-circle"
+              src="images/akun.png"
+              alt="Foto Profil"
+            />
+          </a>
+        </div>
+      </div>
+    </header>
+
+    <!-- 2. MAIN CONTENT -->
+    <div class="dashboard-hrd-admin py-4">
+      <main class="detail-container-compact">
+        <form id="formBuatJadwal">
+          <div class="card-detail-wrapper mb-5">
+            <!-- Header Banner Biru -->
+            <div class="header-blue-banner py-2 px-3">
+              <h1
+                class="text-white mb-0"
+                style="font-size: 15px; font-weight: 600"
+              >
+                Buat jadwal
+              </h1>
+              <p class="text-white mb-0" style="font-size: 11px; opacity: 0.9">
+                Tentukan jadwal HR Call, interview, atau psikotes untuk pelamar.
+              </p>
+            </div>
+
+            <!-- Form Body -->
+            <div class="p-3.5 p-md-4">
+              <!-- SECTION 1: PELAMAR -->
+              <div class="mb-3">
+                <h3 class="fw-semibold text-dark mb-1" style="font-size: 14px">
+                  1. Pelamar
+                </h3>
+                <p class="text-muted mb-2 fw-normal" style="font-size: 11.5px">
+                  Data inti yang akan tampil di daftar jadwal pelamar.
+                </p>
+
+                <div class="mb-2">
+                  <label
+                    class="form-label text-dark fw-medium mb-1"
+                    style="font-size: 12px"
+                    >Nama pelamar</label
+                  >
+                  <input
+                    type="text"
+                    id="inputNamaPelamar"
+                    class="form-control form-control-sm py-1 px-2.5 rounded-2"
+                    placeholder="Masukkan nama pelamar"
+                    style="font-size: 12px"
+                  />
+                </div>
+
+                <div class="mb-1.5">
+                  <label
+                    class="form-label text-dark fw-medium mb-1"
+                    style="font-size: 12px"
+                    >Posisi</label
+                  >
+                  <input
+                    type="text"
+                    id="inputPosisiPelamar"
+                    class="form-control form-control-sm py-1 px-2.5 rounded-2"
+                    placeholder="Contoh: IT Support"
+                    style="font-size: 12px"
+                  />
+                </div>
+              </div>
+
+              <hr class="text-secondary opacity-25 my-3.5" />
+
+              <!-- SECTION 2: JENIS & WAKTU -->
+              <div class="mb-3">
+                <h3 class="fw-semibold text-dark mb-1" style="font-size: 14px">
+                  2. Jenis & waktu
+                </h3>
+                <p class="text-muted mb-2 fw-normal" style="font-size: 11.5px">
+                  Tentukan tahapan seleksi serta waktu pelaksanaan.
+                </p>
+
+                <div class="mb-2">
+                  <label
+                    class="form-label text-dark fw-medium mb-1"
+                    style="font-size: 12px"
+                    >Jenis seleksi</label
+                  >
+                  <select
+                    id="inputJenisSeleksi"
+                    class="form-select form-select-sm py-1 px-2.5 rounded-2"
+                    style="font-size: 12px"
+                  >
+                    <option value="Seleksi CV">Seleksi CV</option>
+                    <option value="HR Call">HR Call</option>
+                    <option value="Interview I">Interview I</option>
+                    <option value="Interview II">Interview II</option>
+                    <option value="Interview III">Interview III</option>
+                    <option value="Psikotes">Psikotes</option>
+                    <option value="Check Reference">Check Reference</option>
+                    <option value="Offering Letter">Offering Letter</option>
+                    <option value="MCU">MCU</option>
+                  </select>
+                </div>
+
+                <!-- Tanggal dengan Ikon Kalender yang Serasi -->
+                <div class="mb-2">
+                  <label
+                    class="form-label text-dark fw-medium mb-1"
+                    style="font-size: 12px"
+                    >Tanggal</label
+                  >
+                  <div class="position-relative">
+                    <input
+                      type="text"
+                      id="inputTanggal"
+                      class="form-control form-control-sm py-1 px-2.5 rounded-2"
+                      placeholder="mm/dd/yyyy"
+                      onfocus="this.type = 'date'"
+                      onblur="if (!this.value) this.type = 'text';"
+                      style="font-size: 12px"
+                    />
+                    <i
+                      class="bi bi-calendar-fill position-absolute top-50 translate-middle-y text-secondary"
+                      style="
+                        right: 12px;
+                        font-size: 13px;
+                        pointer-events: none;
+                        opacity: 0.7;
+                      "
+                    ></i>
+                  </div>
+                </div>
+
+                <!-- Jam mulai dengan Ikon Jam yang Serasi -->
+                <div class="mb-2">
+                  <label
+                    class="form-label text-dark fw-medium mb-1"
+                    style="font-size: 12px"
+                    >Jam mulai</label
+                  >
+                  <div class="position-relative">
+                    <input
+                      type="text"
+                      id="inputJamMulai"
+                      class="form-control form-control-sm py-1 px-2.5 rounded-2"
+                      placeholder="--:-- --"
+                      onfocus="this.type = 'time'"
+                      onblur="if (!this.value) this.type = 'text';"
+                      style="font-size: 12px"
+                    />
+                    <i
+                      class="bi bi-clock-fill position-absolute top-50 translate-middle-y text-secondary"
+                      style="
+                        right: 12px;
+                        font-size: 13px;
+                        pointer-events: none;
+                        opacity: 0.7;
+                      "
+                    ></i>
+                  </div>
+                </div>
+
+                <!-- Jam selesai dengan Ikon Jam yang Serasi -->
+                <div class="mb-1.5">
+                  <label
+                    class="form-label text-dark fw-medium mb-1"
+                    style="font-size: 12px"
+                    >Jam selesai</label
+                  >
+                  <div class="position-relative">
+                    <input
+                      type="text"
+                      id="inputJamSelesai"
+                      class="form-control form-control-sm py-1 px-2.5 rounded-2"
+                      placeholder="--:-- --"
+                      onfocus="this.type = 'time'"
+                      onblur="if (!this.value) this.type = 'text';"
+                      style="font-size: 12px"
+                    />
+                    <i
+                      class="bi bi-clock-fill position-absolute top-50 translate-middle-y text-secondary"
+                      style="
+                        right: 12px;
+                        font-size: 13px;
+                        pointer-events: none;
+                        opacity: 0.7;
+                      "
+                    ></i>
+                  </div>
+                </div>
+              </div>
+
+              <hr class="text-secondary opacity-25 my-3.5" />
+
+              <!-- SECTION 3: LOKASI -->
+              <div class="mb-1">
+                <h3 class="fw-semibold text-dark mb-1" style="font-size: 14px">
+                  3. Lokasi
+                </h3>
+                <p class="text-muted mb-2 fw-normal" style="font-size: 11.5px">
+                  Tentukan metode tatap muka atau secara daring.
+                </p>
+
+                <div class="mb-2">
+                  <label
+                    class="form-label text-dark fw-medium mb-1"
+                    style="font-size: 12px"
+                    >Metode</label
+                  >
+                  <select
+                    id="inputMetode"
+                    class="form-select form-select-sm py-1 px-2.5 rounded-2"
+                    style="font-size: 12px"
+                  >
+                    <option value="Offline">Offline (Tatap Muka)</option>
+                    <option value="Online">Online (Meeting / Zoom)</option>
+                  </select>
+                </div>
+
+                <div class="mb-1">
+                  <label
+                    class="form-label text-dark fw-medium mb-1"
+                    style="font-size: 12px"
+                    >Alamat/link meeting</label
+                  >
+                  <input
+                    type="text"
+                    id="inputLokasiDetail"
+                    class="form-control form-control-sm py-1 px-2.5 rounded-2"
+                    placeholder="Masukkan alamat gedung atau tautan Google Meet/Zoom"
+                    style="font-size: 12px"
+                  />
+                </div>
+              </div>
+            </div>
+
+            <!-- SECTION 4: CATATAN (DIPERPANJANG KE BAWAH) -->
+            <div
+              class="mt-3"
+              style="
+                background-color: #edf5ff;
+                border-top: 1px solid #d4e5ff;
+                padding: 18px 20px;
+              "
+            >
+              <div
+                class="text-dark mb-1"
+                style="font-size: 11px; font-weight: 500"
+              >
+                *Opsional
+              </div>
+              <h4
+                class="text-dark mb-1"
+                style="font-size: 13.5px; font-weight: 600"
+              >
+                4. Catatan untuk pelamar
+              </h4>
+              <p class="text-muted mb-2.5 fw-normal" style="font-size: 11.5px">
+                Akan ditampilkan di halaman pelamar
+              </p>
+              <textarea
+                id="inputCatatan"
+                class="form-control form-control-sm py-2 px-2.5 rounded-2 bg-white"
+                rows="6"
+                placeholder="Tuliskan catatan tambahan..."
+                style="font-size: 12px"
+              ></textarea>
+            </div>
+          </div>
+
+          <!-- TOMBOL SIMPAN DI LUAR CARD -->
+          <div class="d-flex justify-content-end mb-4 px-2">
+            <button
+              type="submit"
+              class="btn btn-primary px-3 py-1.5 fw-medium rounded-2 shadow-sm"
+              style="font-size: 12.5px; background-color: #1677ff; border: none"
+            >
+              Simpan perubahan
+            </button>
+          </div>
+        </form>
+      </main>
+    </div>
+
+    <!-- MODAL PERINGATAN DATA BELUM LENGKAP -->
+    <div class="modal fade" id="modalPeringatanJadwal" tabindex="-1" aria-labelledby="modalPeringatanJadwalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered" style="max-width: 480px;">
+        <div class="modal-content border-0 shadow-lg p-4 text-center bg-white" style="border-radius: 20px;">
+          <div class="modal-body p-2">
+            <div class="mb-3 text-warning" style="font-size: 55px;">
+              <i class="bi bi-exclamation-triangle-fill"></i>
+            </div>
+            <h5 class="fw-bold text-dark mb-3" id="modalPeringatanJadwalLabel" style="font-size: 20px;">Peringatan</h5>
+            <p class="text-muted mb-4" style="font-size: 13.5px; line-height: 1.5;">
+              Silahkan masukkan data dengan lengkap terlebih dahulu!
+            </p>
+            <div class="d-flex justify-content-center">
+              <button type="button" class="btn text-white fw-medium shadow-sm py-2" data-bs-dismiss="modal" style="font-size: 14px; background-color: #0d6efd; border: none; border-radius: 8px; width: 140px;">Ok</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- MODAL SUKSES SIMPAN JADWAL -->
+    <div class="modal fade" id="modalSuksesJadwal" tabindex="-1" aria-labelledby="modalSuksesJadwalLabel" aria-hidden="true" data-bs-backdrop="static">
+      <div class="modal-dialog modal-dialog-centered" style="max-width: 420px;">
+        <div class="modal-content border-0 shadow-lg rounded-4 p-4 text-center bg-white">
+          <div class="modal-body p-2">
+            <div class="mb-3 d-flex justify-content-center align-items-center">
+              <div style="width: 70px; height: 70px; background-color: #e8f8ec; border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+                <i class="bi bi-check-lg" style="font-size: 35px; color: #28a745;"></i>
+              </div>
+            </div>
+            <h5 class="fw-bold text-dark mb-2" id="modalSuksesJadwalLabel" style="font-size: 18px;">Perubahan berhasil!</h5>
+            <p class="text-muted mb-4" style="font-size: 13px; line-height: 1.5;">
+              Jadwal seleksi telah berhasil dibuat dan disimpan ke dalam sistem.
+            </p>
+            <div class="d-flex justify-content-center">
+              <button type="button" class="btn text-white fw-medium shadow-sm py-2 px-5" id="btnSelesaiJadwal" style="font-size: 14px; background-color: #28a745; border: none; border-radius: 8px; min-width: 160px;">Selesai</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bootstrap JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Skrip JavaScript Fungsional -->
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const formBuatJadwal = document.getElementById("formBuatJadwal");
+        const modalPeringatan = new bootstrap.Modal(document.getElementById('modalPeringatanJadwal'));
+        const modalSukses = new bootstrap.Modal(document.getElementById('modalSuksesJadwal'));
+        const btnSelesaiJadwal = document.getElementById("btnSelesaiJadwal");
+
+        let jadwalBaruTemp = null;
+
+        if (formBuatJadwal) {
+          formBuatJadwal.addEventListener("submit", function (e) {
+            e.preventDefault();
+
+            const nama = document.getElementById("inputNamaPelamar")
+              ? document.getElementById("inputNamaPelamar").value.trim()
+              : "";
+            const posisi = document.getElementById("inputPosisiPelamar")
+              ? document.getElementById("inputPosisiPelamar").value.trim()
+              : "";
+            const jenisSeleksi = document.getElementById("inputJenisSeleksi")
+              ? document.getElementById("inputJenisSeleksi").value
+              : "Seleksi CV";
+            const tanggal = document.getElementById("inputTanggal")
+              ? document.getElementById("inputTanggal").value
+              : "";
+            const jamMulai = document.getElementById("inputJamMulai")
+              ? document.getElementById("inputJamMulai").value
+              : "";
+            const jamSelesai = document.getElementById("inputJamSelesai")
+              ? document.getElementById("inputJamSelesai").value
+              : "";
+            const metode = document.getElementById("inputMetode")
+              ? document.getElementById("inputMetode").value
+              : "Offline";
+            const lokasiDetail = document.getElementById("inputLokasiDetail")
+              ? document.getElementById("inputLokasiDetail").value.trim()
+              : "";
+            const catatan = document.getElementById("inputCatatan")
+              ? document.getElementById("inputCatatan").value.trim()
+              : "";
+
+            // Validasi: Jika ada field utama yang kosong, tampilkan modal peringatan
+            if (!nama || !posisi || !tanggal || !jamMulai || !jamSelesai || !lokasiDetail) {
+              modalPeringatan.show();
+              return;
+            }
+
+            const randomIdNum = Math.floor(10000 + Math.random() * 90000);
+            const idPelamar = `GPS-2026-${randomIdNum}`;
+
+            let formattedTanggal = tanggal;
+            if (tanggal) {
+              const dateObj = new Date(tanggal);
+              const day = dateObj.getDate();
+              const months = [
+                "Jan",
+                "Feb",
+                "Mar",
+                "Apr",
+                "Mei",
+                "Jun",
+                "Jul",
+                "Agt",
+                "Sep",
+                "Okt",
+                "Nov",
+                "Des",
+              ];
+              const month = months[dateObj.getMonth()];
+              formattedTanggal = `${day} ${month}`;
+            }
+
+            jadwalBaruTemp = {
+              id: idPelamar,
+              nama: nama,
+              keterangan: `${jenisSeleksi} - ${posisi}`,
+              tanggal: formattedTanggal,
+              jam: jamMulai,
+              jamSelesai: jamSelesai,
+              metode: metode,
+              lokasi: lokasiDetail,
+              catatan: catatan,
+            };
+
+            // Munculkan modal sukses
+            modalSukses.show();
+          });
+        }
+
+        if (btnSelesaiJadwal) {
+          btnSelesaiJadwal.addEventListener("click", function () {
+            if (jadwalBaruTemp) {
+              let daftarJadwal =
+                JSON.parse(localStorage.getItem("daftarJadwal")) || [];
+              daftarJadwal.push(jadwalBaruTemp);
+              localStorage.setItem("daftarJadwal", JSON.stringify(daftarJadwal));
+            }
+            window.location.href = "kelola-jadwal.html";
+          });
+        }
+      });
+    </script>
+  </body>
+</html>

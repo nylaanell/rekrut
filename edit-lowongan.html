@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Edit Lowongan - HRD Admin</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&family=Poppins:wght@400;500;600;700&display=swap"
+    rel="stylesheet"
+  />
+
+  <!-- Bootstrap CSS & Icons -->
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+  />
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+  />
+
+  <!-- File Style Custom Utama -->
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body class="bg-body-tertiary">
+
+  <!-- 1. HEADER / NAVBAR -->
+  <header class="header">
+    <div class="div">
+      <!-- Brand / Logo -->
+      <div class="brand-container">
+        <img class="gps-logo-img" src="images/logo.png" alt="Logo GPS" />
+        <div class="brand-text">
+          <div class="brand-title-top">PORTAL LAYANAN</div>
+          <div class="brand-title-main">LOWONGAN KERJA</div>
+        </div>
+      </div>
+
+      <!-- Menu Navigasi Kanan & Profil -->
+      <div class="nav-right-container">
+        <nav class="nav-menu">
+          <a href="dashboard.html" class="text-wrapper-2 text-decoration-none">Dashboard</a>
+          <a href="kelola-lamaran.html" class="text-wrapper-2 text-decoration-none">Lamaran</a>
+          <a href="kelola-lowongan.html" class="text-wrapper-2 text-decoration-none fw-bold text-primary">Lowongan</a>
+          <a href="kelola-jadwal.html" class="text-wrapper-2 text-decoration-none">Jadwal Seleksi</a>
+          <a href="kelola-karyawan.html" class="text-wrapper-2 text-decoration-none">Karyawan Baru</a>
+        </nav>
+        <a href="akun.html" title="Akun Saya">
+          <img class="akun border border-primary border-2 rounded-circle" src="images/akun.png" alt="Foto Profil" />
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- MAIN CONTENT: EDIT LOWONGAN -->
+  <div class="dashboard-hrd-admin py-4">
+    <main class="detail-container-compact">
+      <div class="card-detail-wrapper mb-3">
+        
+        <!-- HEADER CARD / BANNER BIRU -->
+        <div class="header-blue-banner py-2 px-3">
+          <h1 class="text-white mb-0" style="font-size: 15px; font-weight: 600;">Edit lowongan</h1>
+          <p class="text-white mb-0" style="font-size: 11px; opacity: 0.9;">Isi detail singkat berikut, lamaran akan otomatis tampil ke pelamar.</p>
+        </div>
+
+        <!-- BODY FORM EDIT -->
+        <div class="p-3.5 p-md-4 w-100">
+          <form id="formEditLowongan" class="needs-validation" novalidate>
+            <div class="vstack gap-3">
+              
+              <!-- Nama Posisi Lowongan -->
+              <div class="position-relative">
+                <label for="editNamaPosisi" class="form-label fw-medium text-dark mb-1" style="font-size: 13px">Nama posisi lowongan</label>
+                <div class="position-relative">
+                  <input type="text" class="form-control form-control-compact" id="editNamaPosisi" required />
+                  <i class="bi bi-pencil-fill position-absolute top-50 end-0 translate-middle-y me-3 text-muted" style="font-size: 13px; pointer-events: none;"></i>
+                </div>
+              </div>
+
+              <!-- Divisi -->
+              <div class="position-relative">
+                <label for="editDivisi" class="form-label fw-medium text-dark mb-1" style="font-size: 13px">Divisi</label>
+                <div class="position-relative">
+                  <input type="text" class="form-control form-control-compact" id="editDivisi" required />
+                  <i class="bi bi-pencil-fill position-absolute top-50 end-0 translate-middle-y me-3 text-muted" style="font-size: 13px; pointer-events: none;"></i>
+                </div>
+              </div>
+
+              <!-- Status -->
+              <div class="position-relative">
+                <label for="editStatus" class="form-label fw-medium text-dark mb-1" style="font-size: 13px">Status</label>
+                <div class="position-relative">
+                  <select class="form-select form-control-compact" id="editStatus" required>
+                    <option value="" disabled selected>Pilih status lowongan</option>
+                    <option value="Dibuka">Dibuka</option>
+                    <option value="Akan ditutup">Akan ditutup</option>
+                    <option value="Ditutup">Ditutup</option>
+                  </select>
+                </div>
+              </div>
+
+              <!-- Tanggal Penutupan -->
+              <div class="position-relative">
+                <label for="editTanggal" class="form-label fw-medium text-dark mb-1" style="font-size: 13px">Tanggal penutupan</label>
+                <div class="position-relative">
+                  <input type="text" class="form-control form-control-compact" id="editTanggal" placeholder="mm/dd/yyyy" onfocus="this.type='date'" onblur="if(!this.value)this.type='text'" required />
+                  <i class="bi bi-calendar-fill position-absolute top-50 translate-middle-y text-secondary" style="right: 14px; font-size: 13px; pointer-events: none; opacity: 0.7;"></i>
+                </div>
+              </div>
+
+              <!-- Lokasi -->
+              <div class="position-relative">
+                <label for="editLokasi" class="form-label fw-medium text-dark mb-1" style="font-size: 13px">Lokasi</label>
+                <div class="position-relative">
+                  <input type="text" class="form-control form-control-compact" id="editLokasi" required />
+                  <i class="bi bi-pencil-fill position-absolute top-50 end-0 translate-middle-y me-3 text-muted" style="font-size: 13px; pointer-events: none;"></i>
+                </div>
+              </div>
+
+              <!-- Tipe Pekerjaan -->
+              <div class="position-relative">
+                <label for="editTipe" class="form-label fw-medium text-dark mb-1" style="font-size: 13px">Tipe pekerjaan</label>
+                <div class="position-relative">
+                  <select class="form-select form-control-compact" id="editTipe" required>
+                    <option value="" disabled selected>Pilih tipe pekerjaan</option>
+                    <option value="Full-time">Full-time</option>
+                    <option value="Part-time">Part-time</option>
+                    <option value="Kontrak">Kontrak</option>
+                    <option value="Magang">Magang</option>
+                  </select>
+                </div>
+              </div>
+              
+              <!-- Deskripsi Pekerjaan -->
+              <div class="position-relative">
+                <label for="editDeskripsi" class="form-label fw-medium text-dark mb-1" style="font-size: 13px">Deskripsi pekerjaan</label>
+                <div class="position-relative">
+                  <textarea class="form-control form-control-compact" id="editDeskripsi" rows="3" required></textarea>
+                  <i class="bi bi-pencil-fill position-absolute top-0 end-0 mt-3 me-3 text-muted" style="font-size: 13px; pointer-events: none;"></i>
+                </div>
+              </div>
+
+              <!-- Tanggung Jawab Utama -->
+              <div class="position-relative">
+                <label for="editTanggungJawab" class="form-label fw-medium text-dark mb-1" style="font-size: 13px">Tanggung Jawab Utama</label>
+                <div class="position-relative">
+                  <textarea class="form-control form-control-compact" id="editTanggungJawab" rows="3" required></textarea>
+                  <i class="bi bi-pencil-fill position-absolute top-0 end-0 mt-3 me-3 text-secondary" style="font-size: 12px; opacity: 0.7; pointer-events: none;"></i>
+                </div>
+              </div>
+
+              <!-- Kualifikasi -->
+              <div class="position-relative">
+                <label for="editKualifikasi" class="form-label fw-medium text-dark mb-1" style="font-size: 13px">Kualifikasi</label>
+                <div class="position-relative">
+                  <textarea class="form-control form-control-compact" id="editKualifikasi" rows="3" required></textarea>
+                  <i class="bi bi-pencil-fill position-absolute top-0 end-0 mt-3 me-3 text-secondary" style="font-size: 12px; opacity: 0.7; pointer-events: none;"></i>
+                </div>
+              </div>
+
+              <!-- DOKUMEN YANG DIMINTA DARI PELAMAR -->
+              <div class="position-relative mt-2 pt-2 border-top">
+                <h3 class="section-title">Dokumen yang diminta dari pelamar</h3>
+                <p class="section-subtitle">Pilih dokumen yang wajib diupload pelamar untuk lowongan ini.</p>
+                
+                <div id="listDokumenContainer" class="d-flex flex-column gap-2 mb-2">
+                  <!-- Render Dokumen Dinamis -->
+                </div>
+
+                <button type="button" class="btn btn-primary px-3 py-1.5 fw-medium text-white btn-sm mt-2" onclick="bukaModalTambahDokumen()" style="font-size: 13px; border-radius: 6px; background-color: #1677ff; border: none;">
+                  + Tambah dokumen
+                </button>
+              </div>
+
+              <!-- TAHAP SELEKSI -->
+              <div class="position-relative mt-3 pt-3 border-top">
+                <h3 class="section-title">Tahap seleksi</h3>
+                <p class="section-subtitle">Urutan default mengikuti alur perusahaan. Atur juga batas waktu respons pelamar per tahap.</p>
+                
+                <div id="listTahapContainer" class="d-flex flex-column gap-2 mb-2">
+                  <!-- Render Tahap Seleksi Dinamis -->
+                </div>
+
+                <button type="button" class="btn btn-primary px-3 py-1.5 fw-medium text-white btn-sm mt-1.5" onclick="bukaModalTambahTahap()" style="font-size: 13px; border-radius: 6px; background-color: #1677ff; border: none;">
+                  + Tambah tahap seleksi
+                </button>
+              </div>
+
+            </div>
+          </form>
+        </div>
+
+      </div>
+
+      <!-- TOMBOL SIMPAN DI LUAR CARD (JARAK DIDEKATKAN / GESER KE ATAS) -->
+      <div class="d-flex justify-content-end w-100 mt-2 mb-4 px-1">
+        <button type="submit" form="formEditLowongan" class="btn btn-primary text-white px-4 py-2" style="font-size: 13px; border-radius: 6px; background-color: #1677ff; border: none;">
+          Simpan perubahan
+        </button>
+      </div>
+
+    </main>
+  </div>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  
+  <!-- Script Utama -->
+  <script src="js/script.js"></script>
+
+  <!-- Modal Konfirmasi Edit Lowongan -->
+  <div class="modal fade" id="modalKonfirmasi" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content border-0 rounded-4 p-4 text-center shadow" style="border-radius: 24px !important;">
+        <div class="mb-3 mt-2">
+          <div class="mx-auto d-flex align-items-center justify-content-center rounded-circle" style="width: 70px; height: 70px; background-color: #eef4ff; color: #0066ff;">
+            <i class="bi bi-question-lg" style="font-size: 36px;"></i>
+          </div>
+        </div>
+        <h3 class="fw-bold text-dark mb-2" style="font-size: 22px;">Simpan perubahan?</h3>
+        <p class="text-muted mb-4 px-3" style="font-size: 13px; line-height: 1.5;">Periksa data yang Anda masukan sudah benar sebelum di simpan. Perubahan akan langsung diterapkan</p>
+        <div class="d-flex gap-3 justify-content-center mb-2">
+          <button type="button" class="btn text-secondary fw-medium px-4 py-2" data-bs-dismiss="modal" style="font-size: 14px; min-width: 115px; border-radius: 10px; background-color: #dcdfe6; border: none;">Batal</button>
+          <button type="button" class="btn text-white fw-medium px-4 py-2" id="btnYaSimpan" style="font-size: 14px; min-width: 115px; border-radius: 10px; background-color: #0066ff; border: none;">Ya, simpan</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal Sukses Edit Lowongan -->
+  <div class="modal fade" id="modalSukses" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content border-0 rounded-4 p-4 text-center shadow" style="border-radius: 24px !important;">
+        <div class="mb-3 mt-2">
+          <div class="mx-auto d-flex align-items-center justify-content-center rounded-circle" style="width: 70px; height: 70px; background-color: #eafaf1; color: #28a745;">
+            <i class="bi bi-check-lg" style="font-size: 38px; font-weight: bold;"></i>
+          </div>
+        </div>
+        <h3 class="fw-bold text-dark mb-2" style="font-size: 22px;">Perubahan berhasil!</h3>
+        <p class="text-muted mb-4 px-3" style="font-size: 13px; line-height: 1.5;">Perubahan Anda telah berhasil disimpan dan langsung diterapkan pada sistem.</p>
+        <div>
+          <button type="button" class="btn text-white fw-medium px-5 py-2" id="btnSelesaiEdit" style="font-size: 14px; min-width: 140px; border-radius: 10px; background-color: #28a745; border: none;">Selesai</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL TAMBAH DOKUMEN -->
+  <div class="modal fade" id="modalTambahDokumen" tabindex="-1" aria-labelledby="modalTambahDokumenLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" style="max-width: 480px;">
+      <div class="modal-content border-0 shadow-lg" style="border-radius: 20px; padding: 24px 24px 20px 24px; background-color: #ffffff;">
+        <div class="modal-header border-0 pb-2 pt-0 px-0">
+          <h5 class="modal-title fw-bold text-dark" id="modalTambahDokumenLabel" style="font-size: 18px; letter-spacing: -0.2px;">Tambah Dokumen</h5>
+        </div>
+        <div class="modal-body px-0 pt-2 pb-3">
+          <div class="mb-3">
+            <label class="form-label text-dark fw-semibold mb-1.5" style="font-size: 13.5px;">Nama Dokumen</label>
+            <input type="text" id="inputNamaDokumenBaru" class="form-control form-control-md bg-white shadow-none" placeholder="Contoh: Portofolio" style="font-size: 14px; height: 42px; border-radius: 8px; border: 1px solid #ced4da;">
+          </div>
+          <div class="mb-1">
+            <label class="form-label text-dark fw-semibold mb-1.5" style="font-size: 13.5px;">Ketentuan</label>
+            <select id="selectKetentuanDokumen" class="form-select form-select-md bg-white shadow-none" style="font-size: 14px; height: 42px; border-radius: 8px; border: 1px solid #ced4da;">
+              <option value="Wajib" selected>Wajib</option>
+              <option value="Opsional">Opsional</option>
+            </select>
+          </div>
+        </div>
+        <div class="modal-footer border-0 pt-3 px-0 d-flex justify-content-end gap-2">
+          <button type="button" class="btn btn-secondary px-4 py-2" data-bs-dismiss="modal" style="font-size: 14px; font-weight: 500; border-radius: 8px; background-color: #6c757d; border: none; min-width: 90px;">Batal</button>
+          <button type="button" class="btn btn-primary px-4 py-2" id="btnSimpanDokumenBaru" style="font-size: 14px; font-weight: 500; border-radius: 8px; background-color: #0066ff; border: none; min-width: 90px;">Simpan</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal Hapus Dokumen -->
+  <div class="modal fade" id="modalHapusDokumen" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content border-0 rounded-4 p-4 text-center shadow">
+        <h3 class="fw-bold text-dark mb-2" style="font-size: 18px;">Hapus Dokumen?</h3>
+        <p class="text-muted small mb-3">Apakah Anda yakin ingin menghapus <span id="namaDokumenHapus" class="fw-bold"></span>?</p>
+        <div class="d-flex justify-content-center gap-2">
+          <button type="button" class="btn btn-secondary btn-sm px-3" data-bs-dismiss="modal">Batal</button>
+          <button type="button" class="btn btn-danger btn-sm px-3" id="btnKonfirmasiHapus">Hapus</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal Tambah Tahap Seleksi -->
+  <div class="modal fade" id="modalTambahTahap" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content border-0 rounded-4 p-4 shadow">
+        <h3 class="fw-bold text-dark mb-3" style="font-size: 18px;">Tambah Tahap Seleksi</h3>
+        <div class="mb-3">
+          <label class="form-label text-dark small">Nama Tahap</label>
+          <input type="text" class="form-control" id="inputNamaTahapBaru" placeholder="Contoh: Tes Teknis" />
+        </div>
+        <div class="mb-3">
+          <label class="form-label text-dark small">Durasi Perkiraan</label>
+          <input type="text" class="form-control" id="inputDurasiTahapBaru" value="5 hari" />
+        </div>
+        <div class="d-flex justify-content-end gap-2">
+          <button type="button" class="btn btn-secondary btn-sm" data-bs-dismiss="modal">Batal</button>
+          <button type="button" class="btn btn-primary btn-sm" id="btnSimpanTahapBaru">Simpan</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal Edit Tahap Seleksi -->
+  <div class="modal fade" id="modalEditTahap" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content border-0 rounded-4 p-4 shadow">
+        <h3 class="fw-bold text-dark mb-3" style="font-size: 18px;">Edit Tahap Seleksi</h3>
+        <div class="mb-3">
+          <label class="form-label text-dark small">Nama Tahap</label>
+          <input type="text" class="form-control" id="inputEditNamaTahap" />
+        </div>
+        <div class="mb-3">
+          <label class="form-label text-dark small">Durasi Perkiraan</label>
+          <input type="text" class="form-control" id="inputEditDurasiTahap" />
+        </div>
+        <div class="d-flex justify-content-end gap-2">
+          <button type="button" class="btn btn-secondary btn-sm" data-bs-dismiss="modal">Batal</button>
+          <button type="button" class="btn btn-primary btn-sm" id="btnSimpanEditTahap">Simpan Perubahan</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal Hapus Tahap Seleksi -->
+  <div class="modal fade" id="modalHapusTahap" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content border-0 rounded-4 p-4 text-center shadow">
+        <h3 class="fw-bold text-dark mb-2" style="font-size: 18px;">Hapus Tahap Seleksi?</h3>
+        <p class="text-muted small mb-3">Apakah Anda yakin ingin menghapus tahap <span id="namaTahapDihapusText" class="fw-bold"></span>?</p>
+        <div class="d-flex justify-content-center gap-2">
+          <button type="button" class="btn btn-secondary btn-sm px-3" data-bs-dismiss="modal">Batal</button>
+          <button type="button" class="btn btn-danger btn-sm px-3" id="btnKonfirmasiHapusTahap">Hapus</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>

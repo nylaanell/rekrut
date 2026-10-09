@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Status Lamaran - PT Gagah Putera Satria</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Bootstrap CSS & Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"/>
+
+    <!-- File Style Custom Utama & Detail Karyawan -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="detail-karyawan.css">
+
+    <!-- Styling Tambahan agar Kompak & Rapi -->
+    <style>
+      .detail-container-compact {
+        max-width: 580px;
+        margin: 0 auto;
+        width: 100%;
+      }
+      .card-detail-wrapper {
+        background-color: #ffffff;
+        border-radius: 12px;
+        overflow: hidden;
+        border: 1px solid rgba(0,0,0,0.08);
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+      }
+    </style>
+  </head>
+  <body class="bg-body-tertiary">
+
+    <!-- HEADER / NAVBAR -->
+    <header class="header">
+      <div class="div">
+        <a href="index.html" class="btn-back-figma" title="Kembali ke Beranda">
+          <i class="bi bi-arrow-left"></i>
+        </a>
+        <div class="brand-container">
+          <img class="gps-logo-img" src="images/logo.png" alt="Logo GPS" />
+          <div class="brand-text">
+            <div class="brand-title-top">PORTAL LAYANAN</div>
+            <div class="brand-title-main">LOWONGAN KERJA</div>
+          </div>
+        </div>
+
+        <div class="nav-right-container">
+          <nav class="nav-menu">
+            <a href="index.html" class="text-wrapper-2 text-decoration-none">Beranda</a>
+            <a href="index.html#lowongan" class="text-wrapper-2 text-decoration-none">Lowongan</a>
+            <a href="index.html#cek-status" class="text-wrapper-2 text-decoration-none">Cek Status</a>
+          </nav>
+          <a href="login.html" class="btn btn-primary px-3 py-1 rounded-pill text-white text-decoration-none fw-medium shadow-sm" style="background-color: #1677ff; border: none; font-size: 12.5px;">Masuk</a>
+        </div>
+      </div>
+    </header>
+
+    <!-- MAIN CONTENT AREA -->
+    <div class="dashboard-hrd-admin py-4">
+        <main class="detail-container-compact">
+            
+            <div class="card-detail-wrapper p-4 text-center">
+                
+                <!-- Icon Centang Sukses -->
+                <div class="mb-2">
+                    <div class="rounded-circle bg-success text-white d-inline-flex align-items-center justify-content-center shadow-sm" style="width: 52px; height: 52px;">
+                        <i class="bi bi-check-lg" style="font-size: 26px;"></i>
+                    </div>
+                </div>
+
+                <!-- Judul Sukses -->
+                <h1 class="fw-bold text-dark mb-1" style="font-family: 'Poppins', sans-serif; font-size: 18px;">Lamaran berhasil terkirim</h1>
+                <p class="text-muted small mb-3" style="font-size: 12px;">Terima kasih telah melamar posisi <strong class="text-dark">IT Support</strong></p>
+
+                <!-- Box Nomor Lamaran (Kompak & Rapi) -->
+                <div class="mb-3">
+                    <div class="d-inline-block bg-success text-white px-3 py-2 rounded-3 shadow-sm position-relative text-center" style="min-width: 260px;">
+                        <!-- Teks Judul -->
+                        <div style="font-size: 10px; opacity: 0.95; font-weight: 500; text-transform: uppercase; letter-spacing: 0.3px;">Nomor lamaran anda</div>
+                        <!-- Nomor Registrasi -->
+                        <div class="fw-bold" style="font-size: 14px; letter-spacing: 0.5px;" id="nomorLamaranText">GPS-2026-00842</div>
+                        <!-- Tombol Salin di Pojok Kanan -->
+                        <button type="button" class="btn btn-link text-white p-0 text-decoration-none position-absolute top-50 translate-middle-y end-0 me-3" onclick="salinNomorLamaran()" title="Salin Nomor Lamaran">
+                            <i class="bi bi-clipboard" style="font-size: 15px;"></i>
+                        </button>
+                    </div>
+                    <div class="text-muted mt-1" style="font-size: 11px;">Simpan nomor ini untuk cek lamaran kamu</div>
+                </div>
+
+                <hr class="text-secondary opacity-25 my-3">
+
+                <!-- Cara Cek Status Lamaran Nanti (Dirapikan & Diberi Padding Kiri Konsisten) -->
+                <div class="mx-auto" style="max-width: 460px;">
+                    <div class="fw-bold text-dark mb-2 text-start" style="font-size: 12.5px;">Cara cek status lamaran nanti</div>
+                    
+                    <div class="vstack gap-2 text-start mb-3" style="font-size: 11.5px;">
+                        <div class="d-flex align-items-start gap-2">
+                            <span class="rounded-circle bg-primary text-white d-inline-flex align-items-center justify-content-center fw-semibold flex-shrink-0" style="width: 18px; height: 18px; font-size: 10px;">1</span>
+                            <span class="text-dark">Buka halaman "Cek Status Lamaran" di portal ini</span>
+                        </div>
+                        <div class="d-flex align-items-start gap-2">
+                            <span class="rounded-circle bg-primary text-white d-inline-flex align-items-center justify-content-center fw-semibold flex-shrink-0" style="width: 18px; height: 18px; font-size: 10px;">2</span>
+                            <span class="text-dark">Masukkan nomor lamaran di atas beserta email/nomor HP anda</span>
+                        </div>
+                        <div class="d-flex align-items-start gap-2">
+                            <span class="rounded-circle bg-primary text-white d-inline-flex align-items-center justify-content-center fw-semibold flex-shrink-0" style="width: 18px; height: 18px; font-size: 10px;">3</span>
+                            <span class="text-dark">Status dan riwayat tahap seleksi anda akan ditampilkan</span>
+                        </div>
+                    </div>
+
+                    <!-- Notifikasi Email (Diberi Jarak Rapi) -->
+                    <div class="d-flex align-items-center justify-content-center gap-2 text-muted p-2 rounded-2 bg-body-tertiary border" style="font-size: 11px;">
+                        <i class="bi bi-envelope-fill text-primary"></i>
+                        <span>Kami juga sudah mengirim salinannya ke email kamu</span>
+                    </div>
+                </div>
+
+                <!-- Tombol Aksi Akhir -->
+                <div class="d-flex flex-row gap-2 justify-content-center mt-4">
+                    <a href="index.html#cek-status" class="btn btn-primary px-4 py-1.5 rounded-2 fw-medium text-white text-decoration-none shadow-sm" style="background-color: #1677ff; border: none; font-size: 12px;">Cek Status</a>
+                    <a href="index.html#lowongan" class="btn btn-primary px-4 py-1.5 rounded-2 fw-medium text-white text-decoration-none shadow-sm" style="background-color: #1677ff; border: none; font-size: 12px;">Lihat Lowongan Lain</a>
+
+            </div>
+
+        </main>
+    </div>
+
+    <!-- Bootstrap JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Script Fitur Salin Nomor Lamaran -->
+    <script>
+      function salinNomorLamaran() {
+          const nomor = document.getElementById("nomorLamaranText").innerText;
+          navigator.clipboard.writeText(nomor).then(function() {
+              alert("Nomor lamaran " + nomor + " berhasil disalin ke clipboard!");
+          }, function(err) {
+              console.error("Gagal menyalin text: ", err);
+          });
+      }
+    </script>
+  </body>
+</html>
